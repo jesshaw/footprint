@@ -117,7 +117,7 @@ public class Test {
 
 ### 1. java编程面试问题1答案和说明
 
-将输出“false”。“+”操作符优先及高于“=”操作符，最终将输出"s1 == s2 is:abc" == "abc"的结果即false。
+将输出“false”。“+”操作符优先于“==”操作符运逄，最终将输出"s1 == s2 is:abc" == "abc"的结果即false。
 
 ### 2. java编程面试问题2答案和说明
 
