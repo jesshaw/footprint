@@ -4,6 +4,8 @@ tags: test,hexo
 categories: 
   - others
 
+thumbnail: /gallery/blue-water1.jpg
+
 photos:
 - https://www.hdwallpapers.net/previews/starry-night-over-corsica-986.jpg
 - https://www.hdwallpapers.net/previews/water-plant-close-up-979.jpg

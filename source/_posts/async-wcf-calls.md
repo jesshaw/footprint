@@ -4,7 +4,7 @@ tags: asynchronous,wcf, castle, WcfFacility,异步.
 categories: 
   - csharp
 
-thumbnail: /gallery/math.jpg
+thumbnail: /gallery/blue-water2.jpg
 ---
 一个无需svcUtil产生异步代码的、客户端异步调用同步wcf服务端的实现方法
 <!-- more -->
