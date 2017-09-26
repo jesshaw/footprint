@@ -6,13 +6,12 @@ categories:
 
 thumbnail: /gallery/java-se-platform.jpg
 ---
-
+不要只从编程语言的角度来看Java，这只会看到“冰山一角”
 <!-- more -->
 
-不要只从编程语言的角度来看Java，这只会看到「冰山一角」，这可以用Java SE Technologies中的图来印证： 
-
-photos:
-- /gallery/java-se-platform.jpg
+这可以用Java SE Technologies中的图来印证： 
+    
+![Java SE platform](/gallery/java-se-platform.jpg "Java SE platform")
 
 如果你安装JDK，就会安装这全部的东西，而Java Language只是最左上角一小部份。 
 

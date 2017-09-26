@@ -1,6 +1,6 @@
 ---
 title: java编程面试问题
-tags: java,programming, interview,编程,面试.
+tags: java,programming, interview,编程,面试
 categories: 
   - java
 
@@ -148,7 +148,7 @@ finally代码块将不可达。如果falg值为TRUE，将无限循环，若为FA
 不能输出“Hello”，将产生编译时错误，IOException继承自Exception，因此需要分层捕获，更具体的异常在前。
 
 
-[引用](https://www.journaldev.com/370/java-programming-interview-questions)
+[原文](https://www.journaldev.com/370/java-programming-interview-questions)
 
 
 
