@@ -1,12 +1,12 @@
 ---
 title: Java（JVM）内存模型 - Java中的内存管理
-tags: memory,memory mode,memory management
+tags: memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收
 categories: 
   - java
 
 thumbnail: /gallery/green-water2.jpg
 ---
-了解JVM内存模型 ， Java内存管理是非常重要的，如果你想了解Java垃圾收集的工作。 今天，我们将研究java中的内存管理，JVM内存的不同部分以及如何监视和执行垃圾收集调优。
+了解JVM内存模型 ， Java内存管理是非常重要的，如果你想了解Java垃圾回收的工作。 今天，我们将研究java中的内存管理，JVM内存的不同部分以及如何监视和执行垃圾回收调优。
 <!-- more -->
 本文目录
 1. Java（JVM）内存模型
@@ -21,10 +21,10 @@ thumbnail: /gallery/green-water2.jpg
 &nbsp;&nbsp;&nbsp;&nbsp; 3.7. Java中的内存管理 - Java堆内存开关
 &nbsp;&nbsp;&nbsp;&nbsp; 3.8. Java中的内存管理 - Java垃圾回收
 &nbsp;&nbsp;&nbsp;&nbsp; 3.9. Java中的内存管理 - Java垃圾回收类型
-&nbsp;&nbsp;&nbsp;&nbsp; 3.10. Java中的内存管理 - Java垃圾收集监控
+&nbsp;&nbsp;&nbsp;&nbsp; 3.10. Java中的内存管理 - Java垃圾回收监控
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.10.1. jstat
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.10.2. 使用Visual GC的Java VisualVM
-&nbsp;&nbsp;&nbsp;&nbsp; 3.11. Java垃圾收集调整
+&nbsp;&nbsp;&nbsp;&nbsp; 3.11. Java垃圾回收调整
 
 ## Java（JVM）内存模型
 
@@ -48,24 +48,24 @@ thumbnail: /gallery/green-water2.jpg
 
 ## Java中的内存管理 - 老一代
 
-年老代内存里包含了长期存活的对象和经过多次Minor GC后依然存活下来的对象。通常会在老年代内存被占满时进行垃圾回收。老年代的垃圾收集叫做Major GC。Major GC会花费更多的时间。
+年老代内存里包含了长期存活的对象和经过多次Minor GC后依然存活下来的对象。通常会在老年代内存被占满时进行垃圾回收。老年代的垃圾回收叫做Major GC。Major GC会花费更多的时间。
 
 
 ## Stop the World事件
 
-所有的垃圾收集都是“Stop the World”事件，因为所有的应用线程都会停下来直到操作完成（所以叫“Stop the World”）。
+所有的垃圾回收都是“Stop the World”事件，因为所有的应用线程都会停下来直到操作完成（所以叫“Stop the World”）。
 
 因为年轻代里的对象都是一些临时（short-lived ）对象，执行Minor GC非常快，所以应用不会受到（“Stop the World”）影响。
 
 由于Major GC会检查所有存活的对象，因此会花费更长的时间。应该尽量减少Major GC。因为Major GC会在垃圾回收期间让你的应用反应迟钝，所以如果你有一个需要快速响应的应用发生多次Major GC，你会看到超时错误。
 
-垃圾回收时间取决于垃圾回收策略。这就是为什么有必要去监控垃圾收集和对垃圾收集进行调优。从而避免要求快速响应的应用出现超时错误。
+垃圾回收时间取决于垃圾回收策略。这就是为什么有必要去监控垃圾回收和对垃圾回收进行调优。从而避免要求快速响应的应用出现超时错误。
 
 ### Java内存模型 - 永久代
 
 永久代或者“Perm Gen”包含了JVM需要的应用元数据，这些元数据描述了在应用里使用的类和方法。注意，永久代不是Java堆内存的一部分。
 
-永久代存放JVM运行时使用的类。永久代同样包含了Java SE库的类和方法。永久代的对象在full GC时进行垃圾收集。
+永久代存放JVM运行时使用的类。永久代同样包含了Java SE库的类和方法。永久代的对象在full GC时进行垃圾回收。
 
 ### Java内存模型 - 方法区域
 
@@ -103,12 +103,12 @@ VM 开关 | VM开关描述
 
 Java垃圾回收会找出没用的对象，把它从内存中移除并释放出内存给以后创建的对象使用。Java程序语言中的一个最大优点是自动垃圾回收，不像其他的程序语言那样需要手动分配和释放内存，比如C语言。
 
-垃圾收集器是一个后台运行程序。它管理着内存中的所有对象并找出没被引用的对象。所有的这些未引用的对象都会被删除，回收它们的空间并分配给其他对象。
+垃圾回收器是一个后台运行程序。它管理着内存中的所有对象并找出没被引用的对象。所有的这些未引用的对象都会被删除，回收它们的空间并分配给其他对象。
 
 一个基本的垃圾回收过程涉及三个步骤：
 
-1. 标记：这是第一步。在这一步，垃圾收集器会找出哪些对象正在使用和哪些对象不在使用。
-2. 正常清除：垃圾收集器清会除不在使用的对象，回收它们的空间分配给其他对象。
+1. 标记：这是第一步。在这一步，垃圾回收器会找出哪些对象正在使用和哪些对象不在使用。
+2. 正常清除：垃圾回收器清会除不在使用的对象，回收它们的空间分配给其他对象。
 3. 压缩清除：为了提升性能，压缩清除会在删除没用的对象后，把所有存活的对象移到一起。这样可以提高分配新对象的效率。
 
 简单标记和清除方法存在两个问题：
@@ -116,17 +116,17 @@ Java垃圾回收会找出没用的对象，把它从内存中移除并释放出�
 1. 效率很低。因为大多数新建对象都会成为“没用对象”。
 2. 经过多次垃圾回收周期的对象很有可能在以后的周期也会存活下来。
 
-上面简单清除方法的问题在于Java垃圾收集的分代回收的，而且在堆内存里有年轻代和年老代两个区域。我已经在上面解释了Minor GC和Major GC是怎样扫描对象，以及如何把对象从一个分代空间移到另外一个分代空间。
+上面简单清除方法的问题在于Java垃圾回收的分代回收的，而且在堆内存里有年轻代和年老代两个区域。我已经在上面解释了Minor GC和Major GC是怎样扫描对象，以及如何把对象从一个分代空间移到另外一个分代空间。
 
 ### Java中的内存管理 - Java垃圾回收类型
 
 这里有五种可以在应用里使用的垃圾回收类型。仅需要使用JVM开关就可以在我们的应用里启用垃圾回收策略。让我们一起来逐一了解：
 
 1. Serial GC（-XX:+UseSerialGC）：Serial GC使用简单的标记、清除、压缩方法对年轻代和年老代进行垃圾回收，即Minor GC和Major GC。Serial GC在client模式（客户端模式）很有用，比如在简单的独立应用和CPU配置较低的机器。这个模式对占有内存较少的应用很管用。
-2. Parallel GC（-XX:+UseParallelGC）：除了会产生N个线程来进行年轻代的垃圾收集外，Parallel GC和Serial GC几乎一样。这里的N是系统CPU的核数。我们可以使用 -XX:ParallelGCThreads=n 这个JVM选项来控制线程数量。并行垃圾收集器也叫throughput收集器。因为它使用了多CPU加快垃圾回收性能。Parallel GC在进行年老代垃圾收集时使用单线程。
-3. Parallel Old GC（-XX:+UseParallelOldGC）：和Parallel GC一样。不同之处，Parallel Old GC在年轻代垃圾收集和年老代垃圾回收时都使用多线程收集。
-4. 并发标记清除（CMS）收集器（-XX:+UseConcMarkSweepGC)：CMS收集器也被称为短暂停顿并发收集器。它是对年老代进行垃圾收集的。CMS收集器通过多线程并发进行垃圾回收，尽量减少垃圾收集造成的停顿。CMS收集器对年轻代进行垃圾回收使用的算法和Parallel收集器一样。这个垃圾收集器适用于不能忍受长时间停顿要求快速响应的应用。可使用 -XX:ParallelCMSThreads=n JVM选项来限制CMS收集器的线程数量。
-5. G1垃圾收集器（-XX:+UseG1GC) G1（Garbage First）：垃圾收集器是在Java 7后才可以使用的特性，它的长远目标时代替CMS收集器。G1收集器是一个并行的、并发的和增量式压缩短暂停顿的垃圾收集器。G1收集器和其他的收集器运行方式不一样，不区分年轻代和年老代空间。它把堆空间划分为多个大小相等的区域。当进行垃圾收集时，它会优先收集存活对象较少的区域，因此叫“Garbage First”。你可以在Oracle Garbage-FIrst收集器文档找到更多详细信息。
+2. Parallel GC（-XX:+UseParallelGC）：除了会产生N个线程来进行年轻代的垃圾回收外，Parallel GC和Serial GC几乎一样。这里的N是系统CPU的核数。我们可以使用 -XX:ParallelGCThreads=n 这个JVM选项来控制线程数量。并行垃圾回收器也叫throughput回收器。因为它使用了多CPU加快垃圾回收性能。Parallel GC在进行年老代垃圾回收时使用单线程。
+3. Parallel Old GC（-XX:+UseParallelOldGC）：和Parallel GC一样。不同之处，Parallel Old GC在年轻代垃圾回收和年老代垃圾回收时都使用多线程回收。
+4. 并发标记清除（CMS）回收器（-XX:+UseConcMarkSweepGC)：CMS回收器也被称为短暂停顿并发回收器。它是对年老代进行垃圾回收的。CMS回收器通过多线程并发进行垃圾回收，尽量减少垃圾回收造成的停顿。CMS回收器对年轻代进行垃圾回收使用的算法和Parallel回收器一样。这个垃圾回收器适用于不能忍受长时间停顿要求快速响应的应用。可使用 -XX:ParallelCMSThreads=n JVM选项来限制CMS回收器的线程数量。
+5. G1垃圾回收器（-XX:+UseG1GC) G1（Garbage First）：垃圾回收器是在Java 7后才可以使用的特性，它的长远目标时代替CMS回收器。G1回收器是一个并行的、并发的和增量式压缩短暂停顿的垃圾回收器。G1回收器和其他的回收器运行方式不一样，不区分年轻代和年老代空间。它把堆空间划分为多个大小相等的区域。当进行垃圾回收时，它会优先回收存活对象较少的区域，因此叫“Garbage First”。你可以在Oracle Garbage-FIrst回收器文档找到更多详细信息。
 
 ### Java中的内存管理 - Java垃圾回收监控
 
@@ -160,7 +160,7 @@ Java垃圾回收会找出没用的对象，把它从内存中移除并释放出�
  1024.0 1024.0 48.7 0.0 8192.0 106.7 42108.0 23401.3 20480.0 19990.9 158 0.275 40 1.381 1.656
  1024.0 1024.0 48.7 0.0 8192.0 145.8 42108.0 23401.3 20480.0 19990.9 158 0.275 40 1.381 1.656
 
-jstat命令的最后一个参数是每个输出的时间间隔。每隔一秒就会打印出内存和垃圾收集数据。
+jstat命令的最后一个参数是每个输出的时间间隔。每隔一秒就会打印出内存和垃圾回收数据。
 
 让我们一起来对每一列的意义进行逐一了解：
 
@@ -183,20 +183,20 @@ jstat的优点，我们同样可以在没有GUI的远程服务器上运行jstat�
 
 ![VisualVM](/gallery/VisualVM-Visual-GC-Plugin.png "VisualVM")
 
-安装完Visual GC插件后，从左边栏打开应用并把视角转到Visual GC部分。你将会得到关于JVM内存和垃圾收集详情，如下图所示。
+安装完Visual GC插件后，从左边栏打开应用并把视角转到Visual GC部分。你将会得到关于JVM内存和垃圾回收详情，如下图所示。
 ![VisualGC](/gallery/Serial-GC-VisualGC.png "VisualGC")
 
 ### Java垃圾回收调优
 
-Java垃圾回收调优应该是提升应用吞吐量的最后一个选择。在你发现应用由于长时间垃圾回收导致了应用性能下降、出现超时的时候，应该考虑Java垃圾收集调优。
+Java垃圾回收调优应该是提升应用吞吐量的最后一个选择。在你发现应用由于长时间垃圾回收导致了应用性能下降、出现超时的时候，应该考虑Java垃圾回收调优。
 
-如果你在日志里看到 java.lang.OutOfMemoryError: PermGen space错误，那么可以尝试使用 -XX:PermGen 和 -XX:MaxPermGen JVM选项去监控并增加Perm Gen内存空间。你也可以尝试使用-XX:+CMSClassUnloadingEnabled并查看使用CMS垃圾收集器的执行性能。
+如果你在日志里看到 java.lang.OutOfMemoryError: PermGen space错误，那么可以尝试使用 -XX:PermGen 和 -XX:MaxPermGen JVM选项去监控并增加Perm Gen内存空间。你也可以尝试使用-XX:+CMSClassUnloadingEnabled并查看使用CMS垃圾回收器的执行性能。
 
 如果你看到了大量的Full GC操作，那么你应该尝试增大老年代的内存空间。
 
-全面垃圾收集调优要花费大量的努力和时间，这里没有一尘不变的硬性调优规则。你需要去尝试不同的选项并且对这些选项进行对比，从而找出最适合自己应用的方案。
+全面垃圾回收调优要花费大量的努力和时间，这里没有一尘不变的硬性调优规则。你需要去尝试不同的选项并且对这些选项进行对比，从而找出最适合自己应用的方案。
 
-这就是所有的Java内存模型和垃圾回收内容。希望对你理解JVM内存和垃圾收集过程有所帮助。
+这就是所有的Java内存模型和垃圾回收内容。希望对你理解JVM内存和垃圾回收过程有所帮助。
 
 ## 引用
 1. [原文](https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java#java-jvm-memory-model)
