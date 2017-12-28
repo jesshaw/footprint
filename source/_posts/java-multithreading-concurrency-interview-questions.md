@@ -7,7 +7,7 @@ categories:
 thumbnail: /gallery/blue-water12.jpg
 ---
 
-今天我们将通过J研究java多线程面试问题同时也研究并发面试问题，因为多线程和并发密不可分。 线程是Java面试中的热门话题之一。 在这里我从面试的角度列出了大部分重要的java多线程面试问题，不过您应该对java线程有很好的了解，才能应付以下问题。
+今天我们将通过研究java多线程面试问题同时也研究并发面试问题，因为多线程和并发密不可分。线程是Java面试中的热门话题之一。在这里我从面试的角度列出了大部分重要的java多线程面试问题，不过您应该对java线程有很好的了解，才能应付以下问题。
 
 <!-- more -->
 
@@ -30,7 +30,7 @@ thumbnail: /gallery/blue-water12.jpg
 15. 为什么线程sleep()和yield()方法是静态的？
 16. 我们如何在Java中实现线程安全？
 17. 在Java中的volatile关键字是什么？
-18. 哪个是更优选的 - 同步方法或同步块？
+18. 同步方法或同步块哪个是更优选择？
 19. 如何在Java中创建守护进程线程？
 20. 什么是ThreadLocal？
 21. 什么是线程组？ 为什么建议不要使用它？
@@ -77,7 +77,7 @@ thumbnail: /gallery/blue-water12.jpg
 
 ### 6. 我们可以调用Thread类的run()方法吗？
 
-可以，我们可以调用Thread类的run()方法，但它的行为就像一个普通的方法。 要在一个线程中实际执行它，我们需要使用**Thread.start()**方法启动它。
+可以，我们可以调用Thread类的run()方法，但它的行为就像一个普通的方法。 要在一个线程中执行它时，我们需要先使用**Thread.start()**方法启动它。
 
 ### 7. 我们如何在特定时间暂停线程执行？
 
@@ -97,25 +97,25 @@ thumbnail: /gallery/blue-water12.jpg
 
 ### 11. 我们如何确保main()是Java程序中完成的最后一个线程？
 
-我们可以使用线程join()方法来确保程序创建的所有线程在完成主函数之前都已经死了。 这是一篇关于[线程join方法](https://www.journaldev.com/1024/java-thread-join-example)的文章。
+我们可以使用线程`join()`方法来确保程序创建的所有线程在完成主函数之前都已经结束。`join()`方法用于指定指定的线程结束后，才执行当前线程。这是一篇关于[线程join方法](https://www.journaldev.com/1024/java-thread-join-example)的文章。
 
-### 12. 线程如何相互通信？
+### 12. 线程间如何通信？
 
-当线程共享资源时，线程之间的通信对协调其工作很重要。 对象类wait()，notify()和notifyAll()方法允许线程通信资源的锁定状态。 查看这篇文章了解更多关于[线程wait()，notify()和notifyAll()](https://www.journaldev.com/1037/java-thread-wait-notify-and-notifyall-example) 。
+当线程共享资源时，线程之间的通信对协调其工作很重要。 Object类中的`wait()`，`notify()`和`notifyAll()`方法允许线程通过资源的锁进行通信。 查看这篇文章了解更多关于 {% post_link java-thread-wait-notify-and-notifyall-example 线程wait()，notify()和notifyAll() %}。
 
 ### 13. 为什么线程通信方法wait()，notify()和notifyAll()都在Object类中？
 
-在Java中，每个对象都有一个监视器和等待，通知方法用于等待对象监视器，或通知其他线程对象监视器现在是空闲的。 在java中没有线程监视器，同步可以与任何Object一起使用，这就是为什么它是Object类的一部分原因，所以java中的每个类都有这些线程间通信的基本方法。
+在Java中，每个对象都有一个监视器和wait，notify方法用于等待对象监视器或通知其他线程对象监视器现在是空闲的。 java中的线程没有监视器，同步可以用于任何对象，这就是为什么它是Object类的一部分的原因，所以java中的每个类都有这些线程间通信的基本方法。
 
 ### 14. 为什么wait()，notify()和notifyAll()方法必须从synchronized方法或块调用？
 
-当一个线程在任何Object上调用wait()时，它必须在Object上具有它将要离开的监视器，并进入等待状态，直到任何其他线程在此Object上调用notify()。 类似地，当一个线程在任何Object上调用notify()时，它将使对象上的监视器等待，并且其他等待的线程可以获取对象上的监视器。 由于所有这些方法都需要Thread拥有对象监视器，只能通过同步来实现，因此需要从synchronized方法或块调用。
+当一个线程在任何对象上调用wait（）时，它必须在该对象上有监视器，它将离开并进入等待状态，直到任何其他线程调用该对象的notify（）为止。 
 
-
+同样，当一个线程在任何对象上调用notify（）时，它将把该监视器留在该对象上，其他等待的线程可以获得该对象上的监视器。 由于所有这些方法都要求线程具有对象监视器，这只能通过同步来实现，所以它们需要从同步方法或块中调用。
 
 ### 15. 为什么线程sleep()和yield()方法是静态的？
 
-线程sleep()和yield()方法工作在当前正在执行的线程。 因此，在等待状态的其他线程上调用这些方法没有意义。 这就是为什么这些方法是静态的，所以当这种方法被静态调用时，它可以在当前执行的线程上运行，并避免混淆程序员，他们可能认为他们可以在一些非运行的线程上调用这些方法。
+线程sleep()和yield()方法工作在当前正在执行的线程。 因此，在等待状态的其他线程上调用这些方法没有意义。 这就是为什么这些方法是静态的，所以当这种方法被静态调用时，它可以在当前执行的线程上运行，并可避免混淆程序员，否则他们可能认为他们可以在一些非运行的线程上调用这些方法。
 
 ### 16. 我们如何在Java中实现线程安全？
 
@@ -123,19 +123,20 @@ thumbnail: /gallery/blue-water12.jpg
 
 ### 17. 在Java中的volatile关键字是什么？
 
-当我们将volatile关键字与变量一起使用时，所有的线程都直接从内存中读取它的值，并且不缓存它。 这将确保读取的值与内存中的值相同。
+当我们将volatile关键字与变量一起使用时，所有的线程都直接从内存中读取它的值，并且不缓存它。这可确保读取的值与内存中的值相同。
 
-### 18. 哪个是更优选的 - 同步方法或同步块？
+### 18. 同步方法或同步块哪个是更优选择？
 
-同步块是更优选的方式，因为它不锁定对象，同步方法锁定对象，并且如果类中有多个同步块，即使它们不相关，它将阻止它们执行并将其置于等待状态获取对象上的锁定。
+同步块是更优选择，因为它不锁定对象，同步方法锁定对象，并且如果类中有多个同步块，即使它们不相关，为了获取对象锁，也会阻止它们执行并使它们处于等待状态。
 
 ### 19. 如何在Java中创建守护进程线程？
 
-线程类setDaemon(true)可用于在java中创建守护线程 。 在调用start()方法之前，我们需要调用这个方法，否则它将抛出IllegalThreadStateException。
+在调用start()方法之前，使用Thread类setDaemon(true)方法创建守护线程。否则它将抛出IllegalThreadStateException。
 
 ### 20. 什么是ThreadLocal？
 
 Java ThreadLocal用于创建线程局部变量。 我们知道一个对象的所有线程都共享它的变量，所以如果变量不是线程安全的，我们可以使用同步，但如果我们想避免同步，我们可以使用ThreadLocal变量。 
+
 每个线程都有自己的ThreadLocal变量，它们可以使用它的get()和set()方法来获取默认值，或者将它的本地值更改为Thread。 ThreadLocal实例通常是希望将状态与线程关联的类中的私有静态字段。 查看小示例程序[ThreadLocal示例](https://www.journaldev.com/1076/java-threadlocal-example)。
 
 ### 21. 什么是线程组？ 为什么建议不要使用它？
@@ -154,17 +155,17 @@ public void uncaughtException(Thread t, Throwable e) {
 
 ### 22. 什么是Java线程Dump，我们如何获得程序的Java线程Dump？
 
-线程Dump是JVM中活动的所有线程的列表，线程Dump非常有助于分析应用程序中的瓶颈并分析死锁情况。 有很多方法可以使用我们可以生成线程Dump - 使用Profiler，Kill -3命令，jstack工具等。我喜欢jstack工具来生成程序的线程Dump，因为它易于使用，并附带JDK安装。 由于它是一个基于终端的工具，我们可以创建脚本来定期生成线程Dump，以便稍后进行分析。 阅读这篇文章了解更多关于[在java中生成线程Dump](https://www.journaldev.com/1053/java-thread-dump-visualvm-jstack-kill-3-jcmd)。
+线程Dump是JVM中活动的所有线程的列表，线程Dump非常有助于分析应用程序中的瓶颈并分析死锁情况。有很多方法可以为我们生成线程Dump - 使用Profiler，Kill -3命令，jstack工具等。我喜欢jstack工具来生成程序的线程Dump，因为它易于使用，并附带JDK安装。由于它是一个基于终端的工具，我们可以创建脚本来定期生成线程Dump，以便稍后进行分析。 阅读这篇文章了解更多关于[在java中生成线程Dump](https://www.journaldev.com/1053/java-thread-dump-visualvm-jstack-kill-3-jcmd)。
 
 ### 23. 什么是死锁？ 如何分析和避免死锁的情形？
 
-死锁是一种编程情况，其中两个或多个线程被永久阻止，这种情况出现在至少两个线程和两个或更多资源中。
+死锁是一种编程情况，其中两个或多个线程被永久阻塞，这种情况出现在至少两个线程和两个或更多资源中。
 
 为了分析一个死锁，我们需要查看应用程序的java线程Dump，我们需要注意线程的状态为BLOCKED，然后是资源等待锁定，每个资源都有一个唯一的ID，我们可以找到哪个线程已经在对象上保持锁定。
 
 避免嵌套锁定，仅需要锁定什么是必需的，并且避免无限期地等待是避免死锁情况的常见方法，请阅读本文以了解如何使用示例程序[分析java中的死锁](https://www.journaldev.com/1058/deadlock-in-java-example)。
 
-### 24. 什么是Java时间类？ 如何安排任务在特定间隔时间后运行？
+### 24. Java Timer类是什么？ 如何安排任务在特定间隔时间后运行？
 
 java.util.Timer是一个实用工具类，可用于安排在将来某个特定时间执行的线程。 Java Timer类可用于计划一次运行的任务或定期运行的任务。
 
@@ -174,9 +175,9 @@ java.util.TimerTask是一个实现Runnable接口的抽象类 ，我们需要扩�
 
 ### 25. 什么是线程池？ 我们如何在Java中创建线程池？
 
-线程池管理工作线程池，它包含一个队列，可以让任务等待执行。
+线程池是管理工作线程的池子，它包含一个队列，可以让任务等待执行。
 
-线程池管理Runnable线程的集合，并且工作线程从队列中执行Runnable。
+线程池是管理Runnable线程和从队列中执行Runnable的工作线程。
 
 java.util.concurrent.Executors提供java.util.concurrent.Executor接口的实现，用以在java中创建线程池。 [线程池示例](https://www.journaldev.com/1069/threadpoolexecutor-java-thread-pool-example-executorservice)程序显示如何在java中创建和使用Thread Pool。 或者读取[ScheduledThreadPoolExecutor示例](https://www.journaldev.com/2340/java-scheduler-scheduledexecutorservice-scheduledthreadpoolexecutor-example)来了解如何在一定的延迟之后执行任务。
 
