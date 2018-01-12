@@ -1,5 +1,5 @@
 ---
-title: Java Thread wait, notify and notifyAll Example
+title: Java Thread wait, notify and notifyAll 示例
 tags: java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有
 categories: 
   - java
