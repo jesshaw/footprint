@@ -18,7 +18,7 @@ VirtualBox VS VMware
 ## 2 安装步骤
 
 ### 2.1 下载VirtualBox
-打开[virtualbox官网]((https://www.virtualbox.org/wiki/Downloads) ，选择windows hosts下载到本地，安装完成进行到下一步。
+打开[virtualbox官网](https://www.virtualbox.org/wiki/Downloads) ，选择windows hosts下载到本地，安装完成进行到下一步。
 
 ### 2.2 下载Linux镜像
 
