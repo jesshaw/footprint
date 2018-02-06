@@ -17,18 +17,18 @@ VirtualBox VS VMware
 
 ## 2 安装步骤
 
-### 到下载VirtualBox
-打开https://www.virtualbox.org/wiki/Downloads，选择windows hosts下载到本地，安装完成进行到下一步。
+### 2.1 下载VirtualBox
+打开[virtualbox官网]((https://www.virtualbox.org/wiki/Downloads) ，选择windows hosts下载到本地，安装完成进行到下一步。
 
-### 下载Linux镜像
+### 2.2 下载Linux镜像
 
-打开https://www.osboxes.org/virtualbox-images/,打开CentOS链接，找到linux 32bit下载。也可以下载64bit据自身机器情况而定。
+打开[osboxes官网](https://www.osboxes.org/virtualbox-images/) ,打开CentOS链接，找到linux 32bit下载。也可以下载64bit据自身机器情况而定。
 
-### 创建虚拟电脑
+### 2.3 创建虚拟电脑
 
 打开VirtualBox->新建->CentOS->...->使用已有虚拟硬盘->选择已下载的Linux镜像*.vdi文件->..->直到完成。
 
-### 系统初始化设置
+### 2.4 系统初始化设置
 
 按提示进行系统设置，最后输入osboxes.org作为用户密码，登入Linux系统即完成搭建。
 
