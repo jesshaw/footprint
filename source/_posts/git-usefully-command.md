@@ -10,6 +10,28 @@ thumbnail: /gallery/blue-water9.jpg
 收集平时常用的一些maven命令。
 <!-- more -->
 
+## 设置提交的用户名和邮箱
+
+##### 列出所有配置
+```bash
+git config [--local|--global|--system] -l
+```
+
+##### 设置某个配置项的值
+```bash
+git config [--local|--global|--system] section.key value
+
+git config --local user.name "lexiangmiao"
+```
+
+##### 查看某项的当前值
+
+```bash
+git config name
+
+git config user.name
+```
+
 ## 回滚
 
 回滚前两次提交
