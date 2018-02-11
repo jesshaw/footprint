@@ -1,0 +1,1062 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dev",
+				"devtool	(webpack.config.js)"
+			],
+			[
+				"co",
+				"commonjs"
+			],
+			[
+				"s",
+				"src/"
+			],
+			[
+				"webpack",
+				"webpack.prod.js"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"pri",
+				"printMe"
+			],
+			[
+				"web",
+				"webpack"
+			],
+			[
+				"bui",
+				"build	(bundle.js)"
+			],
+			[
+				"l",
+				"lexiangmiao"
+			],
+			[
+				"le",
+				"lexiangmiao	(java-classloader.md)"
+			],
+			[
+				"Java",
+				"Java类加载器"
+			],
+			[
+				"等",
+				"等待通知测试"
+			],
+			[
+				"inpu",
+				"inp:submit	HTML - Input:submit"
+			],
+			[
+				"inp",
+				"inp:text	HTML - Input:text"
+			],
+			[
+				"print",
+				"println"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"mi",
+				"main	method (main)"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"select",
+				"selectedDoctor"
+			],
+			[
+				"tim",
+				"timeStamp"
+			],
+			[
+				"sele",
+				"select	(grabOrder.js)"
+			],
+			[
+				"getmi",
+				"getMinutes〔function〕"
+			],
+			[
+				"geth",
+				"getHours〔function〕"
+			],
+			[
+				"Ti",
+				"TimeTargetPM"
+			],
+			[
+				"Tim",
+				"TimeTargetAM"
+			],
+			[
+				"ti",
+				"timeList"
+			],
+			[
+				"k",
+				"keyword2〔variable〕"
+			],
+			[
+				"主",
+				"主任医师	(list.json)"
+			],
+			[
+				"De",
+				"Description	(list.json)"
+			],
+			[
+				"user",
+				"userConfig"
+			],
+			[
+				"fi",
+				"filter"
+			],
+			[
+				"get",
+				"getTime〔function〕"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"vesrion",
+				"versionAppend"
+			],
+			[
+				"the",
+				"then"
+			],
+			[
+				"re",
+				"resetPassword	method"
+			],
+			[
+				"h",
+				"handler"
+			],
+			[
+				"rou",
+				"routes"
+			],
+			[
+				"cl",
+				"classes"
+			],
+			[
+				"update",
+				"updateUsername	(users.controller.js)"
+			],
+			[
+				"fin",
+				"find"
+			],
+			[
+				"homewors",
+				"homeworks.controller.js"
+			],
+			[
+				"find",
+				"findOne"
+			],
+			[
+				"swi",
+				"switch〔keyword〕"
+			],
+			[
+				"hom",
+				"homework"
+			],
+			[
+				"bo",
+				"boolean	(homeworks.ts)"
+			],
+			[
+				"json",
+				"jsonArray"
+			],
+			[
+				"homeworks",
+				"homeworks	parameter"
+			],
+			[
+				"auth",
+				"autHttp	property"
+			],
+			[
+				"ca",
+				"catgory"
+			],
+			[
+				"getHomeworkSummariesB",
+				"getHomeworkSummariesByCategory	method"
+			],
+			[
+				"ho",
+				"homeworksUrlTest"
+			],
+			[
+				"head",
+				"headers"
+			],
+			[
+				"res",
+				"resolve"
+			],
+			[
+				"Ho",
+				"HomeworkSummary"
+			],
+			[
+				"usernam",
+				"username"
+			],
+			[
+				"profi",
+				"ProfilePage	alias"
+			],
+			[
+				"conte",
+				"contentHeader"
+			],
+			[
+				"to",
+				"toPromise"
+			],
+			[
+				"tok",
+				"token1"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"homw",
+				"homeworks"
+			],
+			[
+				"ra",
+				"random"
+			],
+			[
+				"wx",
+				"wxusername"
+			],
+			[
+				"in",
+				"indexOf	method"
+			],
+			[
+				"su",
+				"substring	method"
+			],
+			[
+				"url",
+				"url2json	(util.ts)"
+			],
+			[
+				"gep",
+				"getParameterByName	(util.ts)"
+			],
+			[
+				"nu",
+				"null	(profile.ts)"
+			],
+			[
+				"form",
+				"FORM_DIRECTIVES	alias"
+			],
+			[
+				"dire",
+				"directives	property"
+			],
+			[
+				"au",
+				"auth.service.ts"
+			],
+			[
+				"th",
+				"the-class.ts"
+			],
+			[
+				"impo",
+				"import	keyword"
+			],
+			[
+				"imop",
+				"import	keyword"
+			],
+			[
+				"ruote",
+				"Routes	alias"
+			],
+			[
+				"routes",
+				"Routes	alias"
+			],
+			[
+				"router",
+				"provideRouter	alias"
+			],
+			[
+				"route",
+				"ROUTES	const"
+			],
+			[
+				"routerc",
+				"RouterConfig	alias"
+			],
+			[
+				"Route",
+				"RouterConfig	alias"
+			],
+			[
+				"in-m",
+				"in-memory-data.service.ts"
+			],
+			[
+				"ng2",
+				"ng2-import	Angular 2 Import Snippet"
+			],
+			[
+				"ng2-bo",
+				"ng2-bootstrap-prod	Angular 2 Production Bootstrap Snippet"
+			],
+			[
+				"comp",
+				"component	property"
+			],
+			[
+				"imp",
+				"import	imports a module …"
+			],
+			[
+				"js",
+				"json"
+			],
+			[
+				"Imme",
+				"InMemoryDataService	alias"
+			],
+			[
+				"imme",
+				"InMemoryBackendService	alias"
+			],
+			[
+				"Xhr",
+				"XHRBackend	alias"
+			],
+			[
+				"style",
+				"styleUrls	property"
+			],
+			[
+				"temp",
+				"templateUrl	(hero-detail.component.ts)"
+			],
+			[
+				"ro",
+				"router	(app.routes.ts)"
+			],
+			[
+				"hero",
+				"hero	parameter"
+			],
+			[
+				"her",
+				"hero"
+			],
+			[
+				"gether",
+				"getHeroes	method"
+			],
+			[
+				"Onde",
+				"OnDestroy	alias"
+			],
+			[
+				"impl",
+				"implements	keyword"
+			],
+			[
+				"active",
+				"ActivatedRoute	alias"
+			],
+			[
+				"heroser",
+				"HeroService	alias"
+			],
+			[
+				"tem",
+				"templateUrl	property"
+			],
+			[
+				"da",
+				"dashboard.component.ts"
+			],
+			[
+				"provider",
+				"provideRouter	alias"
+			],
+			[
+				"Heroes",
+				"HeroesComponent	alias"
+			],
+			[
+				"com",
+				"component"
+			],
+			[
+				"c",
+				"heroes.component.js.map"
+			],
+			[
+				"ge",
+				"getHeroesSlowly	method"
+			],
+			[
+				"Her",
+				"HEROES	alias"
+			],
+			[
+				"prom",
+				"Promise	interface"
+			],
+			[
+				"Hero",
+				"Hero	alias"
+			],
+			[
+				"Heroser",
+				"HeroService	alias"
+			],
+			[
+				"mo",
+				"mock-heroes.ts"
+			],
+			[
+				"from",
+				"from	keyword"
+			],
+			[
+				"im",
+				"import	keyword"
+			],
+			[
+				"export",
+				"export	keyword"
+			],
+			[
+				"cla",
+				"class〔keyword〕"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "mark",
+		"selected_items":
+		[
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"de",
+				"ANF: Delete File"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ssj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"view",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"vie",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"sss",
+				"Set Syntax: SQL"
+			],
+			[
+				"m",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ssh",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss",
+				"Set Syntax: SQL"
+			],
+			[
+				"pcis",
+				"Package Control: Install Package"
+			],
+			[
+				"pcl",
+				"Package Control: List Packages"
+			],
+			[
+				"pcr",
+				"Package Control: Remove Package"
+			],
+			[
+				"pci",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+				"pc",
+				"Package Control: Remove Package"
+			],
+			[
+				"dis",
+				"Package Control: Discover Packages"
+			],
+			[
+				"ssx",
+				"Set Syntax: XML"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"alig",
+				"Preferences: Alignment File Settings – User"
+			],
+			[
+				"pce",
+				"Package Control: Enable Package"
+			],
+			[
+				"setj",
+				"Set Syntax: JSON"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"sst",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"pid",
+				"Package Control: Discover Packages"
+			],
+			[
+				"ssty",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"ty",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"pcd",
+				"Package Control: Discover Packages"
+			],
+			[
+				"npi",
+				"Nodejs::NPM::Install"
+			],
+			[
+				"ter",
+				"Terminal: Open in project folder"
+			],
+			[
+				"term",
+				"Preferences: Terminality Settings – Default"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"pace",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 965.0
+	},
+	"console":
+	{
+		"height": 347.0,
+		"history":
+		[
+			"git status",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Projects/sb/footprint"
+	],
+	"file_history":
+	[
+		"/D/Users/mzxiao.CN1/Desktop/开具发票.txt",
+		"/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/git-cookbook.md",
+		"/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/CentOS7_ftp_nodejs_install.md",
+		"/D/Users/mzxiao.CN1/Desktop/esSample.txt",
+		"/D/Users/mzxiao.CN1/.IntelliJIdea2016.2/idea.exe.vmoptions",
+		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/bin/idea64.exe.vmoptions",
+		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/bin/idea.exe.vmoptions",
+		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/bin/idea.properties",
+		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/build.txt",
+		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/bin/log.xml",
+		"/D/me/lxm/lexiangmiao-site/package.json",
+		"/D/me/lxm/lexiangmiao-site/src/main/webapp/i18n/zh-cn/affair.json",
+		"/D/me/lxm/lexiangmiao-site/src/main/resources/config/liquibase/changelog/00000000000000_initial_schema.xml",
+		"/D/me/lxm/lexiangmiao-site/src/main/webapp/i18n/zh-cn/global.json",
+		"/D/me/lxm/lexiangmiao-site/src/model/Model.jdl",
+		"/D/me/lxm/lexiangmiao-site/src/main/webapp/i18n/zh-cn/user-management.json",
+		"/D/me/lxm/lexiangmiao-site/src/main/webapp/app/layouts/navbar/navbar.component.html",
+		"/D/me/lxm/lexiangmiao-site/target/www/i18n/zh-cn.json",
+		"/D/me/lxm/lexiangmiao-site/src/main/webapp/i18n/en/global.json",
+		"/D/me/lxm/lexiangmiao-site/src/main/java/com/lexiangmiao/site/domain/Affair.java",
+		"/D/me/lxm/lexiangmiao-site/README.md",
+		"/D/me/lxm/lexiangmiao-site/src/main/java/com/lexiangmiao/site/domain/AffairAddressTime.java",
+		"/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/linux-cookbook.md",
+		"/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/README.md",
+		"/D/me/lxm/lexiangmiao-site/target/stats.html",
+		"/D/me/lxm/lexiangmiao-site/mvnw",
+		"/D/Projects/sb/footprint/source/_posts/quickly-set-up-linux-in-virtualbox.md",
+		"/D/Projects/sb/footprint/source/_posts/git-usefully-command.md",
+		"/D/Projects/sb/footprint/source/_posts/jvm-jre-jdk.md",
+		"/D/Users/mzxiao.CN1/eclipse-workspace/lexiangmao-site/package.json",
+		"/D/me/lxm/lexiangmiao-site-test/package.json",
+		"/D/Projects/sb/webpack/webpack-typescript-demo/src/custom.d.ts",
+		"/D/Users/mzxiao.CN1/eclipse-workspace/MyApp1/package.json",
+		"/D/Users/mzxiao.CN1/eclipse-workspace/MyApp1/src/main/docker/app.yml",
+		"/D/Projects/sb/webpack/webpack-typescript-demo/src/index.js",
+		"/D/Projects/sb/webpack/webpack-demo/webpack.config.js",
+		"/D/Projects/sb/webpack/webpack-demo/webpack.common.js",
+		"/D/Projects/sb/webpack/webpack-demo/src/print.js",
+		"/D/Projects/sb/webpack/webpack-library-demo/src/ref.json",
+		"/D/Projects/sb/webpack/webpack-library-demo/package.json",
+		"/D/Projects/sb/webpack/webpack-library-demo/webpack.config.js",
+		"/D/Projects/sb/webpack/webpack-library-demo/src/globals.js",
+		"/D/Projects/sb/webpack/webpack-library-demo/dist/index.html",
+		"/D/Projects/sb/webpack/webpack-library-demo/src/index.js",
+		"/D/Projects/sb/webpack/webpack-typescript-demo/tsconfig.json",
+		"/D/Projects/sb/webpack/webpack-typescript-demo/webpack.config.js",
+		"/D/Projects/sb/webpack/webpack-typescript-demo/package.json",
+		"/D/Projects/sb/webpack/webpack-typescript-demo/src/index.ts",
+		"/D/Projects/sb/webpack/webpack-library-demo/src/polyfills.js",
+		"/D/Projects/sb/webpack/webpack-library-demo/dist/bundle.js",
+		"/D/Projects/sb/webpack/webpack-library-demo/webapck.config.js",
+		"/D/Projects/sb/webpack/webpack-demo/src/index.js",
+		"/D/Projects/sb/webpack/webpack-library-demo/dist/webpack-numbers.js",
+		"/D/WebSites/CtripAppData/Database.config",
+		"/D/Projects/sb/webpack/webpack-demo/webpack.dev.js",
+		"/D/Projects/sb/webpack/webpack-demo/webpack.prod.js",
+		"/D/Projects/sb/webpack/webpack-demo/src/another-module.js",
+		"/D/Projects/sb/webpack/webpack-demo/src/style.css",
+		"/D/Projects/sb/webpack/webpack-demo/src/math.js",
+		"/D/Projects/sb/webpack/webpack-demo/package.json",
+		"/D/Projects/sb/webpack/webpack-demo/server.js",
+		"/D/Users/mzxiao.CN1/Desktop/error.log",
+		"/D/Projects/sb/webpack/webpack-demo/dist/index.html",
+		"/D/Projects/sb/webpack/webpack-demo/dist/print.bundle.js",
+		"/D/Projects/sb/webpack/webpack-demo/dist/app.bundle.js",
+		"/D/Projects/sb/yeoman/my-webapp/app/index.html",
+		"/D/Projects/sb/webpack/webpack-demo/node_modules/css-loader/README.md",
+		"/D/Projects/sb/webpack/webpack-demo/style.css",
+		"/D/Projects/sb/webpack/webpack-demo/package-lock.json",
+		"/D/Projects/sb/webpack/webpack-demo/node_modules/style-loader/README.md",
+		"/D/Projects/sb/webpack/webpack-demo/index.html",
+		"/D/Projects/sb/webpack/webpack-demo/node_modules/style-loader/package.json",
+		"/D/Projects/sb/webpack/webpackSample/app/main.js",
+		"/D/Projects/sb/index.html",
+		"/D/Projects/sb/webpack/webpack-demo/dist/bundle.js",
+		"/D/Projects/sb/format.json",
+		"/D/Projects/sb/test.html",
+		"/C/opt/settings/server.properties",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/Projects/sb/kt_freebie_corporate/theme/index-header-fix.html",
+		"/D/Projects/sb/format1.json",
+		"/D/Projects/sb/kt_freebie_corporate/license.txt",
+		"/D/Projects/sb/myapplication/README.md",
+		"/D/Projects/sb/myapplication/target/www/swagger-ui/index.html",
+		"/D/Projects/sb/myapplication/webpack/webpack.dev.js",
+		"/D/Projects/sb/myapplication/src/main/resources/config/application-dev.yml",
+		"/D/Projects/sb/myapplication/mvnw.cmd",
+		"/D/Projects/sb/myapplication/.editorconfig",
+		"/D/Projects/sb/myapplication/webpack/webpack.prod.js",
+		"/D/Projects/sb/myapplication/target/classes/config/liquibase/changelog/20180122075215_added_entity_Author.xml",
+		"/D/Projects/sb/myapplication/target/classes/com/mycompany/myapp/aop/logging/LoggingAspect.class",
+		"/D/Projects/sb/myapplication/target/www/app/manifest.bundle.js",
+		"/D/Projects/sb/myapplication/src/main/java/com/mycompany/myapp/service/UserService.java",
+		"/D/Projects/sb/footprint/source/_posts/nodejs-usefully-command.md",
+		"/D/Projects/sb/myapplication/src/main/java/com/mycompany/myapp/ApplicationWebXml.java",
+		"/D/Projects/sb/footprint/source/_posts/maven-usefully-command.md",
+		"/D/Projects/sb/footprint/source/_posts/java-classloader.md",
+		"/D/Users/mzxiao.CN1/Pingendo/New Site/theme.scss",
+		"/D/Users/mzxiao.CN1/Desktop/s/aa.css",
+		"/D/Users/mzxiao.CN1/Desktop/s/aa.scss",
+		"/D/Users/mzxiao.CN1/Pingendo/New Site/theme.css",
+		"/D/Users/mzxiao.CN1/Pingendo/New Site/js/animate-in.js",
+		"/D/Projects/sb/footprint/source/_posts/research-and-development-personnel-performance-appraisal.md",
+		"/D/Projects/sb/footprint/source/_posts/java-exception-interview-questions.md",
+		"/D/Projects/sb/footprint/_config.yml",
+		"/D/Projects/sb/footprint/source/about/index.md",
+		"/D/Projects/sb/footprint/source/gallery/hydric-hammock.jpg",
+		"/D/Projects/sb/footprint/source/_posts/java-jvm-memory-model-memory-management.md",
+		"/D/Projects/sb/footprint/source/_posts/spring-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/orm-common-pattern.md",
+		"/D/Projects/sb/footprint/source/_posts/spring-hot-deploy.md",
+		"/D/Projects/sb/footprint/source/_posts/mybatis-columns-mapping.md",
+		"/D/Projects/sb/footprint/source/_posts/java-thread-wait-notify-and-notifyall-example.md",
+		"/D/Users/mzxiao.CN1/Desktop/staff_hotel.sql",
+		"/D/Users/mzxiao.CN1/Desktop/java-htl-hotelguanwang-service-1514285/hotelguanwang-service-1.0.0/META-INF/maven/com.ctrip.hotel.hotelguanwang/hotelguanwang-service/pom.xml",
+		"/D/me/lxm/站酷快乐体.txt",
+		"/D/Projects/sb/CasperJS/ruijin/grabOrder.js",
+		"/D/Projects/sb/footprint/source/_posts/java-multithreading-concurrency-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/java-collections-interview-questions.md",
+		"/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/jzf.md",
+		"/D/Projects/sb/footprint/source/_posts/java-programming-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/java-8-period-and-duration.md",
+		"/D/Projects/sb/footprint/source/_posts/js-object-creation-patterns-best-practises.md",
+		"/D/Projects/sb/footprint/source/_posts/start.md",
+		"/D/Users/mzxiao.CN1/Desktop/lodash-lodash-3.10.1-0-gdfbd78f/lodash-lodash-ef20b42/lodash.js",
+		"/D/Projects/sb/footprint/source/_posts/java-heap-space-vs-stack-memory.md",
+		"/D/Users/mzxiao.CN1/Desktop/lodash-lodash-3.10.1-0-gdfbd78f/lodash-lodash-ef20b42/lodash.src.js",
+		"/D/Users/mzxiao.CN1/Downloads/MP_verify_4Vi3Td0XPQdHC77W.txt"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"src,<open folders>",
+			"src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"* ",
+			"*/",
+			"/**",
+			"java",
+			"git",
+			";",
+			"String",
+			"private ",
+			";",
+			"String",
+			"private ",
+			"+",
+			"+ ",
+			"+",
+			"+ ",
+			"+",
+			"host",
+			"journaldev",
+			"抛出和抛出",
+			"， ",
+			"。 ",
+			"Java中的异常处理关键字是什么？",
+			"Java ClassLoader",
+			"spring-mvc-architecture",
+			"Java集合框架的基本接口是什么",
+			"所以",
+			"[",
+			"收集",
+			"&nbsp;",
+			"HtlHotelGuanWangDB_W",
+			"HtlRevenueMgmtDB_W",
+			"host",
+			"100",
+			" ",
+			"java 8",
+			" nano",
+			" milis",
+			" minutes",
+			" hours",
+			" weeks",
+			" days",
+			" months",
+			" years",
+			" seconds",
+			" years",
+			" seconds",
+			"\" seconds\"",
+			"com.sanfor.",
+			"mkyong.",
+			"seconds",
+			"55",
+			"萧",
+			"肖",
+			"JavaScript",
+			"@Column",
+			"order2",
+			"order1",
+			"host",
+			"34.",
+			"HotelPubDB_SELECT_1",
+			"ProductDB_SELECT_3",
+			"eBookingDB_SELECT_1",
+			"ProductDB_SELECT_3",
+			"eBookingDB_SELECT_1",
+			"VALUES ('",
+			"`ctrip_cancel_orddetail_id`,",
+			"status",
+			"requestid",
+			"tracelogid",
+			")).append(",
+			"sb.append(item",
+			"Less",
+			"timestampEnd:",
+			"15timestampEnd",
+			"checkout:",
+			"checkIn:",
+			"room:",
+			"smarthotel",
+			"该机器同线程日志 Tags 分享",
+			"\"@timestamp\"",
+			"@timestamp",
+			"INSERT INTO",
+			"VALUES (",
+			"ctrip_cancel_orddetail_id",
+			"VALUES (",
+			"`ctrip_cancel_orddetail_id`,",
+			"htlsmarthoteldb ctrip_cancel_orddetail",
+			"ctrip_cancel_orddetail",
+			"ctrip_cancel_orddetail.",
+			"@Type(",
+			"@Column",
+			"*/",
+			"//",
+			"BigDecimal ",
+			"Timestamp ",
+			"Integer ",
+			"Long ",
+			"String ",
+			"private",
+			"@Type(",
+			"@GeneratedValue",
+			"@Column",
+			"me",
+			"</li>",
+			"<li class=\"J_suffixItem\" type=\"zh,en\">",
+			"ctrip_cancel_orddetail.",
+			"ctrip_cancel_orddetail",
+			"max",
+			"host",
+			"面向方面",
+			"\"Hello\"",
+			"swicth",
+			"swicth case",
+			"2015/01/16",
+			"位元码",
+			"档案",
+			"实作",
+			"撰写",
+			"程式",
+			"Java",
+			"解释",
+			"语句的输出",
+			"description",
+			"=",
+			"&",
+			"sidebar",
+			"repeatCount",
+			"selectedDates"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 120.0
+	},
+	"pinned_build_system": "",
+	"project": "footprint.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"user",
+				"user.js"
+			],
+			[
+				"main.ts",
+				"D:\\Projects\\sb\\angular2-tour-of-heroes\\app\\main.ts"
+			],
+			[
+				"",
+				"node-sample-project\\ionic\\mls-assistant\\app\\shared\\homework.service.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
