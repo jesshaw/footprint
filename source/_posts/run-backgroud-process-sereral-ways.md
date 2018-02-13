@@ -1,11 +1,13 @@
 ---
-title:在Linux中后台运行进程的几种方法
+title: 在Linux中后台运行进程的几种方法
 tags: linux,process,后台运行
 categories: 
   - linux
 
-thumbnail: /gallery/blue-water1.jpg
+thumbnail: /gallery/blue-water10.jpg
+
 ---
+
 第二次碰到需要在后台运行进程，主要解决用telnet/ssh登录Linux服务器后，让一些程序一直运行，不受关闭终端/网络断开连接影响而不能使用。以下给出了多种方法，分别适用于不同场景。
 
 <!-- more -->
@@ -75,8 +77,5 @@ pstree -H 9488
 综上所述，nohup/setsid 无疑是临时需要时最方便的方法，disown 能帮助我们来事后补救当前已经在运行了的作业，而 screen 则是在大批量操作时不二的选择了。
 
 [ref](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
-
-
-
 
 

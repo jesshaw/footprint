@@ -9,6 +9,23 @@ thumbnail: /gallery/blue-water9.jpg
 
 收集平时常用的一些maven命令。
 <!-- more -->
+## 箭头键不能工作
+
+经常碰到在bash中执行命名后需要使用上下箭头键来完成选择，但是偏偏在win7中不能使用。(当然换到cmd中是可以的，不使用此方式的原因你懂的)
+
+实际上我们是实现选择的工作，虽然体验上是差了一些，但以下方法是行的
+
+即使用输入"数字+回车"实现选择的功能，如下示例
+```bash
+yo generate
+what would you like to do? (Use arrow keys)
+Run a generator
+Bootstrap
+Loopback
+exit
+## 输入2+回车即选择了Bootstrap
+```
+
 
 ## 设置提交的用户名和邮箱
 
