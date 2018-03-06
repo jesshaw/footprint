@@ -4,7 +4,7 @@ tags: liquibase,db upgrade,数据库升级
 categories: 
   - db
 
-thumbnail: /gallery/gree-water1.jpg
+thumbnail: /gallery/green-water1.jpg
 
 ---
 
