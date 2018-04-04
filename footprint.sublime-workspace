@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"desc",
+				"description	(_config.yml)"
+			],
+			[
 				"dev",
 				"devtool	(webpack.config.js)"
 			],
@@ -480,14 +484,6 @@
 	"buffers":
 	[
 		{
-			"file": "/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/jzf.md",
-			"settings":
-			{
-				"buffer_size": 6761,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "README.md",
 			"settings":
 			{
@@ -496,19 +492,95 @@
 			}
 		},
 		{
-			"file": "source/_posts/liquibase-upgrade-db-step.md",
+			"file": "source/_posts/docker-install.md",
 			"settings":
 			{
-				"buffer_size": 1635,
+				"buffer_size": 2195,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "themes/hueman/_config.yml",
+			"file": "source/_drafts/docker-auto-deploy.md",
 			"settings":
 			{
-				"buffer_size": 1923,
+				"buffer_size": 1499,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/_posts/git-usefully-command.md",
+			"settings":
+			{
+				"buffer_size": 3361,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/_posts/docker-usefully-command.md",
+			"settings":
+			{
+				"buffer_size": 251,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Users/mzxiao.CN1/Desktop/test.xml",
+			"settings":
+			{
+				"buffer_size": 3015,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/_drafts/famous-enterprises-interview-questions.md",
+			"settings":
+			{
+				"buffer_size": 17201,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/_posts/linux-usefully-command.md",
+			"settings":
+			{
+				"buffer_size": 170,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/linux-cookbook.md",
+			"settings":
+			{
+				"buffer_size": 4280,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n\n",
+			"settings":
+			{
+				"buffer_size": 2,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "env\n-------------------------\nC:\\opt\\settings\n\nhttp://axure.release.ctripcorp.com/project/axure/%E9%85%92%E5%BA%97%E8%B4%B4%E5%A3%AB_ino/#g=1&p=plan_v2_0\n\nhttp://axure.release.ctripcorp.com/project/axure/%E9%85%92%E5%BA%97%E5%B0%8F%E7%A8%8B%E5%BA%8F/#g=1&p=订单管理\n-------------------------------------------------------------------------------------------------------------------------------------\n\nPWA\n\n1. 下单\n2. 查看订单列表\n3. 查看订单详情\n\ncreate database trainmall CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;  \n\n大数据\n----------------------------------------------------------------------------------------------------------------\n\n\nselect masterresource,codefrom,count(1) from ods_htl_htlcommdb.comm_hotel_writing_comment  WHERE d='${zdt.format(\"yyyy-MM-dd\")}'\nand writingdate>='2018-02-28' and writingdate<'2018-03-01'\ngroup by masterresource,codefrom\n\n\nselect masterresource,codefrom,avg(ratingposit+ratingroom+ratingservice+ratingcostbenefit)/4 from ods_htl_htlcommdb.comm_hotel_ratinglog  WHERE d='${zdt.format(\"yyyy-MM-dd\")}'\ngroup by masterresource,codefrom\n\n\nselect * from ods_htl_htlcommdb.comm_hotel_ratinglog  WHERE d='${zdt.format(\"yyyy-MM-dd\")}'\nlimit 10\n\nselect count(*) from ods_htl_htlcommdb.comm_hotel_writing_comment  WHERE d='${zdt.format(\"yyyy-MM-dd\")}'\nand writingdate>='2018-02-28' and writingdate<'2018-03-01'\n----------------------------------------------------------------------------------------------------------------\n生产公众号 wewebsite@ctrip.com ctrip2017\n测试公众号 yujy@ctrip.com ctripeasy2017  \n\n小程序 shanghaituling@163.com \n开发平台 weiguanwang@ctrip.com \n\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbedcb1eddcf3fb36&redirect_uri=http%3A%2F%2Fhotelguanwang.fat.ctripqa.com%2Fmp%2Foauth2&response_type=code&scope=snsapi_base&state=1#wechat_redirect\n\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7f2003b503d7f4e1&redirect_uri=http%3A%2F%2Fhotelguanwang.ctrip.com%2Fmp%2Foauth2&response_type=code&scope=snsapi_base&state=1#wechat_redirect\n\n\n微信或小程序提醒，需发布站点，服务和job\n\nfat \nappid wxbedcb1eddcf3fb36\nappsecret 4eb5f79caa5dc8b466593f45feb1a192\n\n25d6b216204ba141e7de6909379eae5a\n\n\n\n替代，查相似中间工具的网站\n\nhttps://alternativeto.net\n\n\n1.  研发同学（包括我共7人）每人写自己心目中的绩效排名，前两名3分，中间两名2分，最后两名1分  一共是84分\n(3*7+2*7+1*7)*2=84\n\n2.  产品和测试 我就让他们选他们感觉最靠谱的0-2人，每人得1.5分，产品测试包含坡、陈敏、一颖、赵佳、一枚、洪艳 共是18分左右，他们如果觉得谁都看不上，可以弃权\n\n3.  工时，我就按10-11月以及12月前几天总工时算了，从最高到最低依次 3、2.5、2、1.5…..0.5分   一共10.5分\n\n\n开发投票（共83票）：1.刘景元、2.朱京京、汪继伍（并列）\n产品测试（共16.5票）：1.刘景元、景军锋（并列）、3.朱京京\n工时（共10.5票）：1.景军锋、2.刘景元、3.朱京京\n\n\n----------------------------------------------------------------------------------------------------------------\n收益通\n\n433115aa\n123qaz\n\n官网通 \n13800000001\nadmin123\n官网通 FAT\n18516312548  abc123\n\nstaffSalt = \"ujfrolvv5s\"\nstaffPassword = \"ba9f35493c5102ab21129b7f4b4d029f\"\n\n1   1383cTC0001 c460d2390304b181e71b3638452622f0    谢远  n7hq7j8mwr  2017-11-15 22:26:48 2017-11-20 13:28:37.679\n\n----------------------------------------------------------------------------------------------------------------\n\n\n绿云帐号\n\nhttp://183.129.215.114:7310\n\n建立连接\n\n登录\n测试酒店代码: GCBZ\n测试账号:ADMIN 密码:1234\n\nhttp://183.129.215.114:7310/ipms/hep/WebConnector\n\nv=1&n=&f=3041&q=,,GCBZ,,7173,0938,&c=&s=&sessionId=1B925F51AF3A48628C232F7EDA0B4C70&appKey=10003&sign=D10621BD6AD519BC23744DCA629EC62C0B12A107\n\n\n{\"R\":\"1\",\"S\":\"\",\"T\":\"0\",\"M\":[{\"c00\":\"For input string: \\\"\\\"\"}]}\n\n\n从无到有，从前端到后端，从业务到技术全方位细致的设计了智能酒店云端管理系统。系统基本达到了高内聚，低偶合目标。项目应用了单元测试，js版本自动管理，数据访问优化等技术极大的提高了代码的可维护性和可测试性，本时工作中，善于总结，乐于分享。\n\n\n-----------------------------------------------------------------------------------------------------------------------------------\n\nhive到mysql方案\n\n1. hive中创建json临时表\nhttp://webui.adhoc.ops.ctripcorp.com/#/query\n\nUSE tmp_htlproductinput;\nDROP TABLE IF EXISTS tmp_xiaomouzhi_reason_01;\nCreate Table tmp_xiaomouzhi_reason_01\nAS\nSELECT \n\nnamed_struct( \"orderid\", orderid ,\n            \"canceltime\", canceltime,\n            \"reason\", Concat('#取消原因#cancelreason:',cancelreason,',modifyreason:',modifyreason) ) as json \nFROM tmp_sunwuqiang_cancel_orddetail\nWHERE (upper(cancelreason) = 'NOROOM' OR upper(modifyreason) = 'NOROOM'); \n\n2. 创建datax任务，生成导入数据到mysql库中的shell脚本\nhttp://datax.ops.ctripcorp.com/#/page/create\n\n\n3. 创建shell脚本执行即可。\nhttp://zeus.bi.ctripcorp.com/zeus-web/#!/dispatch/job/128296\n\n\n-----------------------------------------------------------------------------------------------------------------------------------\noffline站点\n\nhttp://service.testp.sh.ctriptravel.com/Cii/order/offline_internal.asp\ntestp \n用户 s29910 紧急入口\n\ncy陈尧 17:48\n16719\n\n\n郭婵 13089\n\n浦软汇智  https://www.sgs.gov.cn/notice/notice/view?uuid=faLkJuo3BePCeduj2t42SjM5OPMBQ_au&tab=01 \n浦软      https://www.sgs.gov.cn/notice/notice/view?uuid=mrrCIHJ5f4SORg7Wyta3dWw7xJk_JFmH&tab=01 \n仲博      https://www.sgs.gov.cn/notice/notice/view?uuid=YueKBFLXXkwnpPGv28Gifjobl7lUXUjp&tab=01\n\n红兴花园A栋第2单元602\n\nmvn archetype:generate -B -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DgroupId=com.company -DartifactId=project -Dversion=1.0-SNAPSHOT -Dpackage=com.company.project -DarchetypeCatalog=local\n\n18717925612\n\n艺龙： HaiYun          hyfl123456\n去哪儿：  15606009910   2511018\n\nEBK:  tsj_xyf tsj123\n\nfilewsupload\nsaveorderclient\n\npms_acceptqorder\n\nfileWSSoa.cs\n\n\"<script>alert('a');</script>\n\nroomtypecontroller\n request.RoomTypeName = request.RoomTypeName.FilterHtml();\n\n set list.js\n\n 15173447767 李洪飞\n\n\nEVERCNDJSHE\n\n                var ispost = comCensor.censorEmpty(els.$updateRoomsBox.find('#J_roomTypeName'), '请输入房型名称')\n                    && comCensor.censorIllegal(els.$updateRoomsBox.find('#J_roomTypeName'), '房型名称包含非法字符串');\n\nC:\\Projects\\Hotel\\Common\\HotelDLL\\Soa2.0\\Hotel.MIP.ServiceClient.dll\n\nyimei_tester01\na111111\n\nhttp://logging.fws.qa.nt.ctripcorp.com/;jsessionid=21ECD6F2AF0316428102DE6A482EEE60#?fromDate=2016-06-19_10:33:40~curlist=log-and-exception-list~app=900410~visibility=1,1,1,1,1,1,-1,-1,-1,-1,-1~tags=JobId%3D9636\n\n总的来说，按要求较好的较高效的完成了工作任务。结合领导制定的目标，就个人而言，在代码质量方面严格全面覆盖单元测试，仅可能的提高代码可读性，持续重构现有代码；在性能优化方面，学习领导的sql优化经验，且应用到实际工作当中去；在知识分享方面，谈了自己对代码维护的几点可行的建议，似乎有点成效；在团队合作方面，积极跟同事探讨技术问题，在提高自己的同时，也增进了团队凝聚力；在业务实现方面，主要完成了机票分销，房价同步，常量重构，风控安全，自动入住和离店，接拒单，第三方房券、分销嵌入app、团购等业务模块开发。\n------------------------------------------------------------------------------------------------------\n\n同步次数   SEQ RatePlanID  ActiveStatus  DataChange_LastTime RatePlanType  RateCodeID  RatePlanName  HotelID RoomTypeID  CreateTime  MapToRatePlanID\n2   1 412231  T 2016-06-07 14:24:25.057 2 130250  温馨家庭房 7740  233985  2016-05-30 19:02:00.000 17170856\n1   2 306194  T 2016-06-07 14:24:29.157 2 130250  简欧大床房 7740  11268 2016-02-29 13:56:00.000 4999466\n1   3 306193  T 2016-06-07 14:24:31.863 2 130250  蓝色简约大床房 7740  11271 2016-02-29 13:56:00.000 4999463\n1   4 306192  T 2016-06-07 14:24:30.547 2 130250  紫色回忆大床房 7740  11272 2016-02-29 13:56:00.000 4999460\n\n\nhttp://hfdoc.qa.nt.ctripcorp.com/offline/cpms/h5_flights.php?r=dev.20160413 <http://hfdoc.qa.nt.ctripcorp.com/offline/cpms/h5_flights.php?r=dev.20160413> \n分销联盟，新增三个入口好了\n图片到时一起发布\n\n\n\n生产的测试账号wwwwww,密码good08\n\n测试环境 \n\nwwwwww\n\n密码是www\n\nwwwwww\n\n密码是www\n\nwwwwww\n\n密码是www\n\nwwwwww\n\n密码是www\n\n密码是 \n\nwwwwww\n\n密码是www\n\n\nsmarthotel\n------------------------------------------------------------------------------------------------------\n阿里云跳板机账号：\n106.15.93.179\nadministrator\n12345abC!@#\n\n西软teamview\nID:631435303  \n密码:88231154 \n\n------------------------------------------------------------------------------------------------------\n\n编译发布\n\n------------------------------------------------------------------------------------------------------\nmvn install:install-file -DgroupId=com.alipay.api -DartifactId=alipay-sdk-java -Dversion=20161226110022 -Dpackaging=jar -Dfile=./lib/alipay-sdk-java20161226110022.jar\nmvn versions:set -DnewVersion=1.0.30.RELEASE\n-f ./pom.xml clean install -Dmaven.test.skip=true\n-f ./smarthotel-service/pom.xml clean install -Dmaven.test.skip=true\n可dev指定env=fat来访问fat库\n------------------------------------------------------------------------------------------------------\n1. api接口未考虑安全问题\n2. api路径问题\n3. 前后端分离问题\n4. 各上下层的命名问题\n5. soa2.0契约未细究，大部分未加注释\n6. 公司规范问题(一旦统一就可能使用spring boot)\n7. 前端版本问题\n8. 前端统一数据验证\n9. 前端风格问题\n10.pom.xml风格问题\n11.迁移gitlab\n12.api日期格式读取和保存的问题\n13.jar包日常升级问题\n---\n14. 密码加密问题\n15. soa统一异常处理的问题\n16. soa baiji升级\n\n------------------------------------------------------------------------------------------------------\n1. 契约实体Dto重构\n2. 契约请求方法重构\n3. 自助机用户前端管理实现\n4. Vo,Bo,Po重构\n5. 前端html缓存处理\n6. 酒店增加用户\n7. 用户管理\n8. 显示用户酒店和名称\n\n根因分析\n------------------------------------------------------------------------------------------------------\n起因:登录失败，表像说是没有获取到token\n1. 发布路径选择问题，未先自查原因，碰到问题先推卸责任\n起因:登录成功，未获取酒店id等盯关信息\n2. 提交代码，未自检查，那些是自己修改的，那些是工具生成的，直接推到代码库，影响代码质量。修改或新增代码未考虑对现有业务的影响，太随意，导致返工率高。\n\n\n分销联盟生产测试账号\n\n------------------------------------------------------------------------------------------------------\n\n\n查机票token生成情况\nhttp://logging.fws.qa.nt.ctripcorp.com/#/?fromDate=2016-01-20_10:02:00~toDate=2016-01-20_11:39:27~as=11092~changed=title,message,hostSearch,source,logType,chartEx,logEx,app,tags,fromDate,toDate,navigatorFromDate,navigatorToDate,visibility,ts~app=110923~pool=-999~bu=119~navigatorFromDate=2016-01-20_10:54:59~navigatorToDate=2016-01-20_11:39:27~visibility=0,1,0,1,1,1,-1,-1,-1,-1,-1,-1,-1~ts=1453259910801~tags=param%3Dcreatetoken\n \n------------------------------------------------------------------------------------------------------\n反爬参考\n  http://10.2.24.241:8080/captcha \n\nvswq孙武强 14:20\nMobileObfuscate\n混淆手机号码的方法\nhttp://www.kztpms.com/Pms/AdminDoor/ForbiddenIP\n这个是人工识别爬虫的界面\nNeedObfuscate 页面识别爬虫的方法\n还有就是 现在 WebSignIn 登陆的时候，我直接把登陆是的ip地址保存到cookie里边了\npublic PmsUserDetailModel WebSignIn(string userName, bool createPersistentCookie, string clientIp, long specifyHotelId = 0)\nvswq孙武强 14:28\nAutoSetPageRecordJobBusiness 页面访问量保存至数据库的 Job\npublic class PmsPageRecordAttribute : ActionFilterAttribute 记录页面访问量的Attribute\nvxmz肖谋芝 14:33\nhttp://www.kztpms.com/Pms/AdminDoor/ObfuscateSwitch\n这个只要一打开页面状态就变了\n？\n是要打开还是要关闭呀？\nvswq孙武强 14:34\n现在打开吧\nvswq孙武强 14:42\nhttp://cdataportal.sh.ctripcorp.com/fx/dashboard/#report/796524\nvxmz肖谋芝 14:44\ndashboard怎么用？\nvswq孙武强 14:45\nQueryOrders\nctrip.cpms.common\n此对话将保存在 Lync 中的“对话”选项卡上和 Outlook 的“对话历史记录”文件夹中。\n------------------------------------------------------------------------------------------------------\n\n\n\\\\cn1\\ctrip\\工具区\\Restrained\\技术研发中心\\\n\n6217-0012-1001-0242-863 \n\n较高质量完成了智能酒店云端管理架设及前后端大部分功能实现，软件基本达到了高内聚，低偶合的要求，前端完全实现了前后端分离，引入了前端验证模块和前端设计（bootstrap）模块，极大的提高了前端的开发效率。另参与自助机端发票模块和打扫印模块的实现。\n平时工作中，善于总结，乐于分享。如通过归纳总结找出更适合且更彻底的js版本管理方案，权根管理方案，服务通信方式，数据访问方案等。对于平时使用到的技术方案做较高质量的分享，如代码最佳实践，restful方案结合权限管理，js版本升级等等。\n\nHotelOpen 72621\n\ndump\n------------------------------------------------------------------------------------------------------\nhttp://www.kztpms.com:80/PmsMobileApi/api/SyncHubwisdomQunarOrder\n\n!dumpheap -stat\n\n!dumpheap -type\n!dumpheap -type System.Web.HttpRequestWrapper\n000000ee106402e0 00007fffeed6f8a0       24     \n000000ee10640358 00007fffeed6f8a0       24     \n000000ee106408d8 00007fffeed6f8a0       24     \n000000ee106408f0 00007fffeed6f8a0       24     \n000000ee10653d10 00007fffeed6f8a0       24     \n000000ee10653dc0 00007fffeed6f8a0       24     \n000000ee10653e38 00007fffeed6f8a0       24     \n000000ee10654438 00007fffeed6f8a0       24     \n\n!do\n\n1001\n\n000000ee10547880 00007ffffb3d0e08     2966     \n000000ee10548418 00007ffffb3d0e08     3312     \n000000ee10549188 00007ffffad19418       80     \n000000ee10549210 00007ffffb3f0dc0      192     \n000000ee105492d0 00007ffffb3c99e0       56     \n000000ee10549308 00007ffffb3d0e08       28     \n000000ee10549328 00007ffffb3d0e08     3308\n\n\n1415\n\n000000ee107f4538 00007ffffb3d0e08     3086     \n000000ee107f5148 00007ffffb3d0e08     3432     \n000000ee107f5f30 00007ffffad19418       80     \n000000ee107f5fb8 00007ffffb3f0dc0      192     \n000000ee107f6078 00007ffffb3c99e0       56     \n000000ee107f60b0 00007ffffb3d0e08       28     \n000000ee107f60d0 00007ffffb3d0e08     3428  \n\n\n000000ea8e6d2b30 00007fffeed6f8a0       24     \nhttp://www.kztpms.com:80/PmsMobileApi/api/SyncHubwisdomQunarOrder\n\n000000ea8e6d2cd0 00007fffeed6f8a0       24\nhttp://www.kztpms.com:80/PmsMobileApi/api/SyncHubwisdomQunarOrder\n\n00000eb0e90b208 00007fffeed6f8a0       24    \nhttp://www.kztpms.com:80/pmsmobileapi/API/SyncQunarOrder \n\n000000eb0e90b220 00007fffeed6f8a0       24\nhttp://www.kztpms.com:80/pmsmobileapi/API/SyncQunarOrder\n\n000000ee10653e38 00007fffeed6f8a0       24     \nhttp://www.kztpms.com:80/PmsMobileApi/api/SyncHubwisdomQunarOrder\n\n000000ee10654438 00007fffeed6f8a0       24 \nhttp://www.kztpms.com:80/PmsMobileApi/api/SyncHubwisdomQunarOrder\n\n000000ec0ede1858 00007fffeed6f8a0       24\nhttp://www.kztpms.com:80/pmsmobileapi/API/SyncQunarOrder\n\n000000eb0f71da30 00007fffeed6f8a0       24\nhttp://www.kztpms.com:80/PmsMobileApi/api/SyncHubwisdomQunarOrder\n\n\n000000ee107f42d8 00007ffffb3d0e08       76     \n000000ee107f4388 00007ffffb3f0dc0      432     \n000000ee107f4538 00007ffffb3d0e08     3086     \n000000ee107f5148 00007ffffb3d0e08     3432     \n000000ee107f5f30 00007ffffad19418       80     \n000000ee107f5fb8 00007ffffb3f0dc0      192     \n000000ee107f6078 00007ffffb3c99e0       56     \n000000ee107f60b0 00007ffffb3d0e08       28     \n000000ee107f60d0 00007ffffb3d0e08     3428     \n000000ee107f6e38 00007ffffad18b20       40     \n000000ee107f6e60 00007ffffad14e80       24     \n000000ee107f6e78 00007ffffad19418       80     \n000000ee107f6ef0 00007ffffb3f0dc0       96     \n000000ee107f6f88 00007ffffb3f0dc0      192   \n\n\njob\n开发环境发fat42，手动执行地址在配置时可查看\n------------------------------------------------------------------------------------------------------\n\n\nhost配置\n\nC:\\Windows\\System32\\drivers\\etc\\hosts\nD:\\Users\\mzxiao.CN1\\Documents\\IISExpress\\config\\applicationhost.config\n--------------------------------------------------------------------------------------------------------------------------\n\nhttp://ebooking.fat45.qa.nt.ctripcorp.com/hotel-supplier-ebookinglogin/EbookingLogin.aspx\nwwy110\ntb123456\n\n46363 上海天禧嘉福璞缇客酒店\n----------------------------------------------------------------------\n删除超长文件夹\n\n假如超长文件夹的路径是 D:\\MIS\\abc\\abc\\abc...\n1.在D:\\MIS下新建一个空的文件夹:t1 \n2.cmd，更换盘符到D:\\MIS \n3.输入:c:\\Windows\\System32\\Robocopy.exe /MIR t1 abc\n\nrmdir /s 目录名\n----------------------------------------------------------------------\n人力资源部居住证相关信息\n\ngc郭婵\n13089\n\n--------------------------------------------------------------------------------------------------------------------------\n消耗积分项目相关\n\n\n数据库 55828\n\n--------------------------------------------------------------------------------------------------------------------------\n生产：http://www.kztpms.com/PMS/StaffHome/Logon\n\nS44414 /13917055012\n\nhttp://www.kztpms.uat.qa.nt.ctripcorp.com/PMS/StaffHome/Logon\njanely\n111111\n\n客栈访问\n1. 无ID不导入。\n2. 无员工名称不导入。\n3. 开始拜访时间和结束拜访时间为同一天相同？11月，12月，12月前，统一为2014年的访问日期。11月为2014.11.1；12月为2014.12.1。这个时间建议先把此规则修改好之后再给我。\n4. 地址不更新。原因：一般都有\n5. 客栈老板手机不更新。原因：一般都有\n6. 是否金银牌不更新。原因：没有该字段\n7. 其他OTA月订单量只有数据的形式才可以插入。\n8. 所有的导入数据为上门拜访\n9. 每一行的数据，以逗号分隔的形式存放在内容字段中。\n\n\n--------------------------------------------------------------------------------------------------------------------------\n\n\n33550\n---------------\nsunwq b8ll8o2cnC\n-----------------\n我们现在resultcode 目前只有三个状态位 0 验证通过，1验证失败，2其他错误\n-------------------------------------\npacificcoast派赛菲特旗舰\n\n-----------------\n1109001002/0961575938 \n\n客栈通：ontheroad88 密码zlsjd5386868\nebk:丽江在路上籍邸   密码： Ontheroad7113\n\n\n\n1109001003/1950066147\n\n\n---------------\n\nwww.kztpms.fat2.qa.nt.ctripcorp.com/PMS\n \n\nhttp://www.cnblogs.com/fiteg/archive/2012/02/21/2361783.html\n\n?xhow=1 查日志\n +review hotel-pms-cs\n +review static-js\n \n /D/Projects/Hotel/Supplier/MainLine/Publish/Product\n refs/for/master%r=sunwq,r=li_jj\n --------------------------------------\n 生产环境提事件DBA操作，清理完需要刷新相应的SP，如果别的SP里面有用到这些字段，也要做相应的清理\n\nUAT_NT,FAT,LPT,DEV这个请找葛睿璇，她可以处理. \n\n--------------------------------------------\n -- 更改订单明细的佣金值\nUPDATE  OrderDetail\nSET     CommissionAmount = CASE c.CommissionType\n                             WHEN 'PCT'\n                             THEN od.RoomFee * c.CommissionValue * 0.01\n                             ELSE c.CommissionValue*DATEDIFF(d,od.StayIN,od.StayOut)\n                           END\nFROM    dbo.PMSOrder o\n        INNER JOIN OrderDetail od ON o.PMSOrderID = od.PMSOrderID\n                                     AND o.HotelID = od.HotelID\n        INNER JOIN HotelChannel c ON o.ChannelID = c.ChannelID\n                                     AND o.HotelID = c.HotelID\nWHERE   o.HotelID IN ( 6107, 6110 )\n\n--更改订单总佣金值\nUPDATE  PMSOrder\nSET     TotalCommission = od.CommissionAmount\nFROM    PMSOrder o\n        INNER JOIN ( SELECT PMSOrderID ,\n                            SUM(CommissionAmount) CommissionAmount\n                     FROM   OrderDetail\n                     GROUP BY PMSOrderID\n                   ) od ON o.PMSOrderID = od.PMSOrderID\nWHERE   o.HotelID IN ( 6107, 6110 )\n----------------------------------------------\n\n\n http://tongji.baidu.com\n百度统计\n用户名cpms\n密码 zhaojianhong123\n\n \n wx13476543670 nrMu6d\n\n\n下面是各PMS竞品的账号密码\n\n住哲客：pms.zhuzher.com/   \n账号：zhaojianhong \n密码：zhao19830228\n\n\n好栈友： http://www.hzypms.com/\n账号：	zhaojianhong\n密码：	zhao19830228\n\n\n青芒果：http://pms.qmango.com/ \n账号：zhaojianhong\n密码：zhao19830228\n\n云掌柜：http://yunzhanggui.net/  \n账号：18899\n密码：953555\n\n松果：\n账号：wfwang\n密码：1qaz2wsx\n\n番茄来了:http://www.fanqiele.com\n用户名：13564353406\n密码：111111\n\n阿溢灿：http://www.a.ayican.com\n账号：XM001\n密码：test1324\n------------------------------------\n\n\nhosts路径：C:\\Windows\\System32\\drivers\\etc\\hosts\n签出编辑：\n\"C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\Common7\\IDE\\tf.exe\" checkout \"D:\\Projects\\Hotel\\Booking\\Branch\\branch_0724_0806_OrderIdUpgrade\\HotelReservationService\\Common\\Hotel.Reservation.Common.Business\\HtlOrderID.cs\"\n------------------------------------------------------------------------------------------\n静态工厂+自导自演的构造者模式\n------------------------------------------------------------------------------------------\n酒店业务专有DB列表: http://conf/pages/viewpage.action?pageId=10420851\n酒店全部应用和所采用.NET版本对照表（截至2013/1/28）: http://conf/pages/viewpage.action?pageId=10426504\n测试数据大全 海外酒店：http://conf.ctripcorp.com/pages/viewpage.action?pageId=13612573\n测试数据大全 国内酒店：http://conf.ctripcorp.com/pages/viewpage.action?pageId=19336521\n酒店Offline模块号: http://conf/pages/viewpage.action?pageId=12651629\n常用链接: http://conf/pages/viewpage.action?pageId=16581534\n查询服务器地址：http://ws.product.hotel.sh.ctriptravel.com/Hotel.product.SearchService/SearchServiceEntrance.asmx\n\n------------------------------------------------------------------------------------------\nlog 生产地址：\nhttp://192.168.82.57:9090/browser/main#log-search\n\nhttp://browser.logging.sh.ctriptravel.com/main\n\n生产预定服务地址：\nhttp://ws.reservation.hotel.sh.ctriptravel.com/Hotel-Booking-ReservationWS/ReservationService.asmx\n\nlog 测试地址：\n\n南通offline登陆地址和用户名密码有吗?\nszfeng\npass:fsz123456\nhttp://service.fat2.qa.nt.ctripcorp.com/cii/cii.asp\n\n------------------------------------------------------------------------------------------\n\n\n\n------------------------------------------------------------------------------------------\n发布版本号：	25209\n\nOrderdb Ord_AllianceOrder  AllianceBook  $/SP/RD/Release/125_1112/OrderDB/procedures/dbo.sp1_Ord_Booking_ModifyOrder.sql\nhtlOnlineOrderdb Ord_AllianceOrder AllianceBook\nhtlOfflineOrderdb Ord_AllianceOrder AllianceBook\nfush   4rfv5tgb!\nhaoqian 1qaz2wsx!\nhuyf  Hyf12345678\n\n\n------------------------------------------------------------------------------------------\njavascript:ShowDiv('(others)PD提交错误:<br>请使用DBTICKER系统进行提交<br><br>DBTicket入口：<br>http://dbticket<![CDATA[&amp;nbsp;]]>建议使用FF<br><br>DBTicket操作手册：<br>http://conf/pages/viewpage.action?pageId=21505322<br><br><br>');\n\n-- 查场景xml数据\nUSE HtlBusinessLogDB\nGO\nDECLARE @orderid INT \nSET @orderid= 1004167419\n-- 1004131239 vcc订单\n-- 1004131408 立即确认订单\n\nSELECT TOP 100  * FROM HtlBusinessLogDB.dbo.CreateOrder_RQTrans_Detail WITH(NOLOCK)  WHERE OrderID = @orderid\nSELECT TOP 100  * FROM HtlBusinessLogDB.dbo.Payment_RQTrans_Detail WITH(NOLOCK) WHERE OrderID = @orderid\nSELECT TOP 100  * FROM HtlBusinessLogDB.dbo.SubmitOrder_RQTrans_Detail WITH(NOLOCK) WHERE OrderID = @orderid\n\nDECLARE @roomid INT \nSET @roomid= 15362\nSELECT TOP 10 o.OrderID,o.Status,ro.Room FROM orderdb.dbo.ORD_RoomOrder ro,orderdb.dbo.ORD_Orders o WITH (NOLOCK) \nWHERE o.OrderID=ro.OrderID AND Room=@roomid AND o.Status&1=1 ORDER BY OrderID DESC\n\nDECLARE @transID VARCHAR(30) \nSET @transID= '1004043896'\nSELECT TOP 100  * FROM dbo.CreateOrder_RQTrans_Detail WITH(NOLOCK)  WHERE ClientRequestTransID = @transID\nSELECT TOP 100  * FROM dbo.Payment_RQTrans_Detail WITH(NOLOCK) WHERE ClientRequestTransID = @transID\nSELECT TOP 100  * FROM dbo.SubmitOrder_RQTrans_Detail WITH(NOLOCK) WHERE ClientRequestTransID = @transID\n\n--判断　是否是我们服务生成的订单\nUSE OrderDB\nGO\nSELECT TOP 10  * FROM dbo.Ord_OrderVersion WHERE OrderId= 1004043896\nAND ServerType IS NOT NULL\n\n100个直接可以拿来用的JavaScript实用功能代码片段  http://www.cnblogs.com/wxydigua/p/3314274.html\nxunit:\nhttp://www.infoq.com/cn/news/2007/09/xunit-net\nhttp://www.cnblogs.com/fengxing/archive/2012/04/08/2438285.html\nhttp://xunit.codeplex.com/wikipage?title=Comparisons&referringTitle=Home\n------------------------------------------------------------------------------------------\nJS库：http://www.cnblogs.com/newton/p/3328058.html\nhttp://www.google.com.hk/#newwindow=1&q=KnockoutJS&safe=strict\n------------------------------------------------------------------------------------------\n21743\n如何区分酒店是否为子母酒店\n主要根据masterhotelid来区分。\n\nUSE ProductDB\nSELECT masterhotelid,* FROM hotel WHERE hotel=423289   -- 子母酒店之 母酒店\nmasterhotelid\n0\n\nSELECT masterhotelid,* FROM hotel WHERE hotel=421200   -- 子母酒店之 子酒店\nmasterhotelid\n423289\n\nSELECT masterhotelid,* FROM hotel WHERE hotel=421447   -- 普通酒店\nmasterhotelid\n-1\n------------------------------------------------------------------------------------------\n增加供应商ID和担保支付方式（收款方标识：携程，酒店，VCC）\n\nwy汪艳 [10:13]: \n\n\n房价下载接口输出 供应商ID、收款方标识(预付到酒店， 担保到酒店 ，到携程 ) 找到了没？\n\n加一下契约\n------------------------------------------------------------------------------------------\n\n\n保留房数值读取出错\n\n超过保留房数值下的订单仍然显示“房型保留”，并且保留房“日志”无记录，并且不扣保留房数量\n\n酒店ID： 56747 ，相关订单号： 178140701 ，详情见截图，请尽快核查原因\n\n目前发现其他酒店也有类似情况，详情如下：\n\n178272442 ，保留房“日志”无记录，不扣除保留房数值\n1034 按照房型ID却能查到这个订单\n\n酒店ID： 439230 ，房型ID： 2181350 ，相关订单： 178318761 \n------------------------------------------------------------------------------------------\norderid升级\n\n <add name=\"HtlorderIDDB_INSERT\" connectionString=\"Tpfa4xR5POd2CEzFcVwae6dpo+fECIe9FkU9KLjW0EkxyRokTpOpMd/jYrDpL/V4wSAB+Lg9/q/hB8/CXHQgEL8JbYasBiKsep454h85F2l/Gir4LvEEh6faHbGFlzvZNRdDyXEwXDN7WVC2FFOJxLIo/jkxwlwe3fX5uas6DOV2hGrhrAoxKt3M00JPjqgRul2IWHQnGTtHXp6US0VndsCrdCPnF/836rfe8zGOOhlmkMXvDIi6bxKW1zjBhcH8Vpn2EYmgD5poxd43FpkTp8LSgK2GAf1+KL68ATJwNS7HOrMKEroKqg==\" providerName=\"System.Data.SqlClient\" />\n  <add name=\"HtlorderIDDB_SELECT\" connectionString=\"Tpfa4xR5POd2CEzFcVwae6dpo+fECIe9FkU9KLjW0EkxyRokTpOpMd/jYrDpL/V4wSAB+Lg9/q/hB8/CXHQgEL8JbYasBiKsep454h85F2l/Gir4LvEEh6faHbGFlzvZNRdDyXEwXDN7WVC2FFOJxLIo/jkxwlwe3fX5uas6DOV2hGrhrAoxKt3M00JPjqgRul2IWHQnGTtHXp6US0VndsCrdCPnF/836rfe8zGOOhlmkMXvDIi6bxKW1zjBhcH8Vpn2EYmgD5poxd43FpkTp8LSgK2GAf1+KL68ATJwNS7HOrMKEroKqg==\" providerName=\"System.Data.SqlClient\" />\n  \n------------------------------------------------------------------------------------------\n1 orderID升级 老傅\n2 关于订单号163894716，163892841，联系电话区域出现黑色的字体，修改订单时需要手动删除，原来是灰色的字体，无需删除的 杨峰\n3 HOTEL .NET代码升级4.0_预订组改引用(预订站点)20130806 老傅\n4 订单号：168881300发送金额与订单中实际不符。杨峰\n5 【7/19-7/23完成开发】【预订】ESB非直连改造遗漏点 引用新版 SOA dll  \n 已修改过一次 （目前大部分引用Base2下的Ctrip.SOA.Comm.dll。\n也有小部分引用\\Common\\Lib\\SOA\\Ctrip.SOA.Comm\\2.4.0.0\\Ctrip.SOA.Comm.dll\n还有小部分引用\\Common\\Lib\\SOA\\Ctrip.SOA.Comm\\1.0.2.3\\Ctrip.SOA.Comm.dll）\n\ndev-酒店-HTL13154B2-1308系统外订单优化 \n\n海外：178000005\n国内：178000007\n系统外订单：176939704  \n------------------------------------------------------------------------------------------\n	\nD:\\Projects\\Common\\SOAEntity\\4\\Hotel\\OTA.Data.Entites.dll  OTA_CancelRQTransactionStatusCode 4.0无此类\n------------------------------------------------------------------------------------------\n峰时担保金额问题\n测试url: http://hotels.testp.sh.ctriptravel.com/international/422792.html#ctm_ref=hi_0_0_0_0_lst_sr_1_df_ls_1_q_bk_0_0_0\n------------------------------------------------------------------------------------------\n\ndashboard生产：http://engine.dashboard.sh.ctriptravel.com:10000/dashboard-ui/common/dashboard.html\ndashboard UAT: http://192.168.82.83:10000/dashboard-ui/common/dashboard.html\nDash Board指标值配置到框架部统一的页面中：http://192.168.83.32/dashboard/\n\nonline海外\n预定总数: ctrip.hotel.online.intlhotelsearchonlinesite.hotelbookedcount\n预订成功数: ctrip.hotel.online.intlhotelsearchonlinesite.hotelbooedsuccesscount\n\nonline国内\n预定总数: ctrip.ui.hoteldomestic.hotelbookedcount\n预订成功数: ctrip.ui.hoteldomestic.hotelbooedsuccesscount\n\noffline\n预定总数: ctrip.hotel.off.domestichotelbookoffsite.hotelbookedcount\n预订成功数: ctrip.hotel.off.domestichotelbookoffsite.hotelbooedsuccesscount\n\n------------------------------------------------------------------------------------------------\nMockRepository\nhttp://www.cnblogs.com/Mainz/archive/2010/05/21/1740816.html\nhttp://www.cnblogs.com/nuaalfm/archive/2009/11/25/1610755.html\n------------------------------------------------------------------------------------------------\n签名： http://www.cnblogs.com/yangecnu/archive/2013/01/01/2841235.html\n------------------------------------------------------------------------------------------------\n\n5058\n\n170474903\n\nyangyt\n\n\nwwwwww  \n\n192.168.83.70\n\n5780: 取消订单\n1574模块：酒店信息\n1235模块：大户室\n1408模块：保留房\n2699模块：房价\n1034模块:订单查询   5780\n1424     下订单\n1426：取消改定候补城市和酒店\n1308：系统外订单\n礼品卡支付密码：123456或111111\n\\\\cn1\\ctrip\\工具区\n\n$/Booking/Branch/Change0509-0522\n\n\nhttp://hotels.testp.sh.ctriptravel.com/international/\nwwwwww \nwww\n\n\nsp_helptext sp1_Ord_Hotel_NewOrder\nsp_helptext sp3_ord_orders_i\n\n15619\n\nhttp://hotels.testx.sh.ctriptravel.com/international/147702.html\n\nHotel.Product.Entity.BasicInfoEntity.Room\n\n\nhttp://192.168.86.21/sh_service/default.htm 首页\nhttp://service.test.sh.ctriptravel.com/CII/share/home.asp offline\nhttp://report.test.sh.ctriptravel.com/CII/share/home.asp  offline\n\nhttps://secure.testp.sh.ctriptravel.com/EBookingLogin/EbookingLogin.aspx ebooking\n\nhttp://doc.ui.sh.ctriptravel.com/uig/%E9%A6%96%E9%A1%B5  wiki \nhttp://hotels.test.sh.ctriptravel.com/international_test/Tool/CacheManage.aspx 缓存清理\nhttp://soa.dev.sh.ctriptravel.com/SOA.TESTTOOL/default.aspx (接口测试)\nhttp://htlint.test.sh.ctriptravel.com/HtlToolsPresent/SearchHotelCitiesNew.aspx  (js生成)\nhttp://webresource.ui.sh.ctriptravel.com/code/js/resource/xsl/addressRelations_hotel120220.xml (js结构)\nhttp://apptools.sh.ctriptravel.com/dbobjects/ (数据库字典)\nhttp://e.ctrip.com/HotelDemostic/EHotelDemosticOnline/SearchHotel.aspx?&SID=1&ALLIANCEID=1&OUID= 分销联盟\nhttp://service.test.sh.ctriptravel.com/CII/order/paymonthly/orderStatus_BitDesc_Henry.asp 查看订单状态\nsvn://192.168.83.56/sozhen/management  资源服务器地址\n192.168.83.62  TFS地址\n192.168.83.52  DB备份地址\n\\\\192.168.83.45\\youhu2k5 asp服务器\n开发环境：\ndevdb.dev.sh.ctriptravel.com,28747\n测试环境\nhoteldb.test.sh.ctriptravel.com,55888\nHtlProductDB.test.sh.ctriptravel.com,55555\nmisdb.test.sh.ctriptravel.com,55777\nreportdb.test.sh.ctriptravel.com,55999\nRepldb.test.sh.ctriptravel.com,55111\nDataentryDB.test.sh.ctriptravel.com,55999\n\n\n\n\n\n\\\\192.168.83.48\\Prog\\酒店任务(预订)\\发布任务\n\nweb服务\nhttp://soa.dev.sh.ctriptravel.com/SOA.TESTTOOL/default.aspx\n------------------------------------------------------------------------------------------------\n1. 分享经验（比如扫码），提交开发效率\n2. 指导其他程序员开发，比如soa2.0开发问题时\n3. 开发任务时，顺便把相关代码或附近的代码重构掉，让代码清晰，易阅读。\n4. 发现问题，彻查到底，究其根本\n\n------------------------------------------------------------------------------------------------\n\n\n\n",
+			"file": "/D/Works/日常.txt",
+			"file_size": 31192,
+			"file_write_time": 131643722222275483,
+			"settings":
+			{
+				"buffer_size": 27446,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": " //主键\n	private Long productOrderId;\n\n    //酒店ID\n	private Integer hotelId;\n\n    //订单日期\n	private Timestamp orderTime;\n\n    //商品订单状态\n	private String productOrderStatus;\n\n    //订单总金额\n	private BigDecimal totalAmount;\n\n    //退款总金额\n	private BigDecimal totalRefund;\n\n    //退款状态\n	private String refundStatus;\n\n    //券码\n	private String certCode;\n\n    //券到期时间\n	private Timestamp certExpireTime;\n\n    //客人ID\n	private Long consumerId;\n\n    //联系方式\n	private String phone;\n\n    //备注\n	private String remark;\n\n    //操作人\n	private String lastOperator;\n\n    //操作时间\n	private Timestamp lastOperatingTime;\n\n    //创建时间\n	private Timestamp datachangeCreatetime;\n\n    //时间戳\n	private Timestamp datachangeLasttime;",
+			"settings":
+			{
+				"buffer_size": 684,
+				"line_ending": "Windows",
+				"name": "//主键"
 			}
 		}
 	],
@@ -684,15 +756,53 @@
 	[
 		"/D/Projects/sb/footprint",
 		"/D/Projects/sb/footprint/source",
-		"/D/Projects/sb/footprint/themes",
-		"/D/Projects/sb/footprint/themes/hueman"
+		"/D/Projects/sb/footprint/source/_drafts",
+		"/D/Projects/sb/footprint/source/_posts"
 	],
 	"file_history":
 	[
-		"/D/me/lxm/lexiangmiao-site/src/main/java/com/lexiangmiao/site/domain/User.java",
+		"/C/opt/settings/server.properties",
+		"/D/me/trainmall/src/main/resources/config/application-prod.yml",
+		"/D/me/trainmall/package.json",
+		"/D/me/trainmall/README.md",
+		"/D/me/trainmall/yarn.lock",
+		"/D/me/lxm/lexiangmiao-site/package.json",
+		"/D/me/lxm/lexiangmiao-site-test/package.json",
+		"/D/me/trainmall/webpack/webpack.prod.js",
+		"/D/Users/mzxiao.CN1/Desktop/trainmall.sql",
+		"/d/Users/mzxiao.CN1/Desktop/common.sql",
+		"/d/Users/mzxiao.CN1/Desktop/mall.sql",
+		"/D/Users/mzxiao.CN1/Desktop/Model.jdl",
+		"/D/Users/mzxiao.CN1/Desktop/jhipster-jdl .jh",
 		"/D/me/lxm/lexiangmiao-site/.yo-rc.json",
-		"/D/Projects/sb/footprint/source/_posts/run-backgroud-process-sereral-ways.md",
+		"/D/me/trainmall/src/main/java/com/trainmall/site/security/SpringSecurityAuditorAware.java",
+		"/D/Projects/sb/footprint/_config.yml",
+		"/D/me/trainmall/src/main/java/com/trainmall/site/domain/Authority.java",
+		"/D/me/lxm/lexiangmiao-site/src/main/java/com/lexiangmiao/site/security/DomainUserDetailsService.java",
+		"/D/me/lxm/lexiangmiao-site/src/main/java/com/lexiangmiao/site/domain/User.java",
+		"/D/me/lxm/lexiangmiao-site/src/main/resources/config/application-dev.yml",
+		"/D/Users/mzxiao.CN1/Downloads/Dockerfile",
+		"/C/projects/test-project/.gitignore",
+		"/C/projects/gs-spring-boot/.gitignore",
+		"/D/Users/mzxiao.CN1/.m2/settings.xml",
+		"/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/jzf.md",
+		"/D/Projects/sb/footprint/source/_posts/hibernate-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/famous-enterprises-interview-questions.md",
+		"/D/me/lxm/lexiangmiao-site/src/main/docker/Dockerfile",
+		"/D/me/lxm/lexiangmiao-site/src/main/docker/app.yml",
+		"/D/me/lxm/lexiangmiao-site/src/main/docker/mysql.yml",
+		"/D/me/lxm/lexiangmiao-site/src/main/docker/sonar.yml",
+		"/D/Users/mzxiao.CN1/Downloads/表脚本 (6).txt",
+		"/D/Users/mzxiao.CN1/Desktop/test.sql",
+		"/D/Users/mzxiao.CN1/Desktop/product.sql",
+		"/D/Users/mzxiao.CN1/Downloads/表脚本 (3).txt",
+		"/D/Projects/sb/footprint/source/gallery/hibernate-entity-status.png",
+		"/D/Projects/sb/footprint/source/_posts/java-collections-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/java-exception-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/core-java-interview-questions.md",
 		"/D/Projects/sb/footprint/source/_posts/liquibase-upgrade-db-step.md",
+		"/D/Projects/sb/footprint/themes/hueman/_config.yml",
+		"/D/Projects/sb/footprint/source/_posts/run-backgroud-process-sereral-ways.md",
 		"/D/me/lxm/lexiangmiao-site/src/main/resources/config/liquibase/changelog/00000000000000_initial_schema.xml",
 		"/C/Program Files/PuTTY/README.txt",
 		"/D/Projects/sb/footprint/source/_posts/git-usefully-command.md",
@@ -714,7 +824,6 @@
 		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/bin/idea.properties",
 		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/build.txt",
 		"/C/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.2.4/bin/log.xml",
-		"/D/me/lxm/lexiangmiao-site/package.json",
 		"/D/me/lxm/lexiangmiao-site/src/main/webapp/i18n/zh-cn/affair.json",
 		"/D/me/lxm/lexiangmiao-site/src/main/webapp/i18n/zh-cn/global.json",
 		"/D/me/lxm/lexiangmiao-site/src/main/webapp/i18n/zh-cn/user-management.json",
@@ -730,7 +839,6 @@
 		"/D/me/lxm/lexiangmiao-site/mvnw",
 		"/D/Projects/sb/footprint/source/_posts/jvm-jre-jdk.md",
 		"/D/Users/mzxiao.CN1/eclipse-workspace/lexiangmao-site/package.json",
-		"/D/me/lxm/lexiangmiao-site-test/package.json",
 		"/D/Projects/sb/webpack/webpack-typescript-demo/src/custom.d.ts",
 		"/D/Users/mzxiao.CN1/eclipse-workspace/MyApp1/package.json",
 		"/D/Users/mzxiao.CN1/eclipse-workspace/MyApp1/src/main/docker/app.yml",
@@ -777,46 +885,10 @@
 		"/D/Projects/sb/webpack/webpack-demo/dist/bundle.js",
 		"/D/Projects/sb/format.json",
 		"/D/Projects/sb/test.html",
-		"/C/opt/settings/server.properties",
 		"/C/Windows/System32/drivers/etc/hosts",
 		"/D/Projects/sb/kt_freebie_corporate/theme/index-header-fix.html",
 		"/D/Projects/sb/format1.json",
-		"/D/Projects/sb/kt_freebie_corporate/license.txt",
-		"/D/Projects/sb/myapplication/README.md",
-		"/D/Projects/sb/myapplication/target/www/swagger-ui/index.html",
-		"/D/Projects/sb/myapplication/webpack/webpack.dev.js",
-		"/D/Projects/sb/myapplication/src/main/resources/config/application-dev.yml",
-		"/D/Projects/sb/myapplication/mvnw.cmd",
-		"/D/Projects/sb/myapplication/.editorconfig",
-		"/D/Projects/sb/myapplication/webpack/webpack.prod.js",
-		"/D/Projects/sb/myapplication/target/classes/config/liquibase/changelog/20180122075215_added_entity_Author.xml",
-		"/D/Projects/sb/myapplication/target/classes/com/mycompany/myapp/aop/logging/LoggingAspect.class",
-		"/D/Projects/sb/myapplication/target/www/app/manifest.bundle.js",
-		"/D/Projects/sb/myapplication/src/main/java/com/mycompany/myapp/service/UserService.java",
-		"/D/Projects/sb/footprint/source/_posts/nodejs-usefully-command.md",
-		"/D/Projects/sb/myapplication/src/main/java/com/mycompany/myapp/ApplicationWebXml.java",
-		"/D/Projects/sb/footprint/source/_posts/maven-usefully-command.md",
-		"/D/Projects/sb/footprint/source/_posts/java-classloader.md",
-		"/D/Users/mzxiao.CN1/Pingendo/New Site/theme.scss",
-		"/D/Users/mzxiao.CN1/Desktop/s/aa.css",
-		"/D/Users/mzxiao.CN1/Desktop/s/aa.scss",
-		"/D/Users/mzxiao.CN1/Pingendo/New Site/theme.css",
-		"/D/Users/mzxiao.CN1/Pingendo/New Site/js/animate-in.js",
-		"/D/Projects/sb/footprint/source/_posts/java-exception-interview-questions.md",
-		"/D/Projects/sb/footprint/_config.yml",
-		"/D/Projects/sb/footprint/source/about/index.md",
-		"/D/Projects/sb/footprint/source/gallery/hydric-hammock.jpg",
-		"/D/Projects/sb/footprint/source/_posts/java-jvm-memory-model-memory-management.md",
-		"/D/Projects/sb/footprint/source/_posts/spring-interview-questions.md",
-		"/D/Projects/sb/footprint/source/_posts/orm-common-pattern.md",
-		"/D/Projects/sb/footprint/source/_posts/spring-hot-deploy.md",
-		"/D/Projects/sb/footprint/source/_posts/mybatis-columns-mapping.md",
-		"/D/Projects/sb/footprint/source/_posts/java-thread-wait-notify-and-notifyall-example.md",
-		"/D/Users/mzxiao.CN1/Desktop/staff_hotel.sql",
-		"/D/Users/mzxiao.CN1/Desktop/java-htl-hotelguanwang-service-1514285/hotelguanwang-service-1.0.0/META-INF/maven/com.ctrip.hotel.hotelguanwang/hotelguanwang-service/pom.xml",
-		"/D/me/lxm/站酷快乐体.txt",
-		"/D/Projects/sb/CasperJS/ruijin/grabOrder.js",
-		"/D/Projects/sb/footprint/source/_posts/java-multithreading-concurrency-interview-questions.md"
+		"/D/Projects/sb/kt_freebie_corporate/license.txt"
 	],
 	"find":
 	{
@@ -836,6 +908,36 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"jenkins",
+			"docker",
+			"@Column",
+			"**",
+			"product_order_detail",
+			"product_photo",
+			"product_inventory",
+			"product_category",
+			"product_order",
+			"order",
+			"product",
+			"如何在Hibernate中实现关系",
+			"最终",
+			"连接",
+			"Hibernate中的集合类型是什么",
+			"21",
+			"收集",
+			"17",
+			"18.",
+			" Second Level Cache",
+			"Hibernate会话是线程安全的",
+			"Hibernate会话是线程安全的？",
+			"重要优势",
+			"重要好处",
+			"注释",
+			"Java持久性API",
+			"hibernate",
+			"什么是Hibernate框架？",
+			"。 ",
+			"休眠",
 			"jhi_",
 			"jhi_user",
 			"* ",
@@ -933,37 +1035,7 @@
 			"//",
 			"BigDecimal ",
 			"Timestamp ",
-			"Integer ",
-			"Long ",
-			"String ",
-			"private",
-			"@Type(",
-			"@GeneratedValue",
-			"@Column",
-			"me",
-			"</li>",
-			"<li class=\"J_suffixItem\" type=\"zh,en\">",
-			"ctrip_cancel_orddetail.",
-			"ctrip_cancel_orddetail",
-			"max",
-			"host",
-			"面向方面",
-			"\"Hello\"",
-			"swicth",
-			"swicth case",
-			"2015/01/16",
-			"位元码",
-			"档案",
-			"实作",
-			"撰写",
-			"程式",
-			"Java",
-			"解释",
-			"语句的输出",
-			"description",
-			"=",
-			"&",
-			"sidebar"
+			"Integer "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -983,100 +1055,11 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 11,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/jzf.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6761,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6760,
-								6760
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"auto_complete": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3510.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "README.md",
 					"semi_transient": false,
 					"settings":
@@ -1098,61 +1081,61 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
 							"origin_encoding": "ASCII",
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
@@ -1161,24 +1144,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "source/_posts/liquibase-upgrade-db-step.md",
+					"buffer": 1,
+					"file": "source/_posts/docker-install.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1635,
+						"buffer_size": 2195,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1268,
-								1268
+								1758,
+								1758
 							]
 						],
 						"settings":
@@ -1187,62 +1170,334 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1512.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/_drafts/docker-auto-deploy.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1499,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								924,
+								924
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
 							],
+							"open_with_edit": true,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 828.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/_posts/git-usefully-command.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "source/_posts/docker-usefully-command.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"open_with_edit": true,
 							"origin_encoding": "UTF-8",
 							"syntax": "Packages/Markdown/Markdown.tmLanguage",
 							"translate_tabs_to_spaces": false
@@ -1255,20 +1510,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "themes/hueman/_config.yml",
+					"buffer": 5,
+					"file": "/D/Users/mzxiao.CN1/Desktop/test.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1923,
+						"buffer_size": 3015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								759,
-								759
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1276,11 +1531,470 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "source/_drafts/famous-enterprises-interview-questions.md",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 17201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "source/_posts/linux-usefully-command.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 170,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/D/Users/mzxiao.CN1/AppData/Roaming/Sublime Text 3/Packages/User/linux-cookbook.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								139
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2,
+								2
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "",
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"default_dir": "D:\\Projects\\sb\\footprint",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/D/Works/日常.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27446,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								429
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1291,57 +2005,130 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"in_converting": true,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 684,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								491
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "//主键",
+							"bh_regions":
+							[
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/YAML/YAML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"default_dir": "D:\\Projects\\sb\\footprint",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 648.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1448,7 +2235,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 424.0,
+	"side_bar_width": 498.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
