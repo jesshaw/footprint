@@ -1,0 +1,1268 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"blo",
+				"block\tdisplay"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"ali",
+				"align-content\tproperty"
+			],
+			[
+				"te",
+				"text-align\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"style",
+				"style\tAttr"
+			],
+			[
+				"h",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"a",
+				"action\tAttr"
+			],
+			[
+				"fi",
+				"file"
+			],
+			[
+				"sty",
+				"style\tTag"
+			],
+			[
+				"tri",
+				"trainmall\t(git-usefully-command.md)"
+			],
+			[
+				"page",
+				"page_1"
+			],
+			[
+				"j",
+				"jhipster"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"同前",
+				"同前所述"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"desc",
+				"description\t(_config.yml)"
+			],
+			[
+				"dev",
+				"devtool\t(webpack.config.js)"
+			],
+			[
+				"co",
+				"commonjs"
+			],
+			[
+				"s",
+				"src/"
+			],
+			[
+				"webpack",
+				"webpack.prod.js"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"pri",
+				"printMe"
+			],
+			[
+				"web",
+				"webpack"
+			],
+			[
+				"bui",
+				"build\t(bundle.js)"
+			],
+			[
+				"l",
+				"lexiangmiao"
+			],
+			[
+				"Java",
+				"Java类加载器"
+			],
+			[
+				"等",
+				"等待通知测试"
+			],
+			[
+				"inpu",
+				"inp:submit\tHTML - Input:submit"
+			],
+			[
+				"inp",
+				"inp:text\tHTML - Input:text"
+			],
+			[
+				"print",
+				"println"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"mi",
+				"main\tmethod (main)"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"select",
+				"selectedDoctor"
+			],
+			[
+				"tim",
+				"timeStamp"
+			],
+			[
+				"sele",
+				"select\t(grabOrder.js)"
+			],
+			[
+				"getmi",
+				"getMinutes〔function〕"
+			],
+			[
+				"geth",
+				"getHours〔function〕"
+			],
+			[
+				"Ti",
+				"TimeTargetPM"
+			],
+			[
+				"Tim",
+				"TimeTargetAM"
+			],
+			[
+				"ti",
+				"timeList"
+			],
+			[
+				"k",
+				"keyword2〔variable〕"
+			],
+			[
+				"主",
+				"主任医师\t(list.json)"
+			],
+			[
+				"De",
+				"Description\t(list.json)"
+			],
+			[
+				"user",
+				"userConfig"
+			],
+			[
+				"get",
+				"getTime〔function〕"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"vesrion",
+				"versionAppend"
+			],
+			[
+				"the",
+				"then"
+			],
+			[
+				"re",
+				"resetPassword\tmethod"
+			],
+			[
+				"rou",
+				"routes"
+			],
+			[
+				"cl",
+				"classes"
+			],
+			[
+				"update",
+				"updateUsername\t(users.controller.js)"
+			],
+			[
+				"fin",
+				"find"
+			],
+			[
+				"homewors",
+				"homeworks.controller.js"
+			],
+			[
+				"find",
+				"findOne"
+			],
+			[
+				"swi",
+				"switch〔keyword〕"
+			],
+			[
+				"hom",
+				"homework"
+			],
+			[
+				"bo",
+				"boolean\t(homeworks.ts)"
+			],
+			[
+				"json",
+				"jsonArray"
+			],
+			[
+				"homeworks",
+				"homeworks\tparameter"
+			],
+			[
+				"auth",
+				"autHttp\tproperty"
+			],
+			[
+				"ca",
+				"catgory"
+			],
+			[
+				"getHomeworkSummariesB",
+				"getHomeworkSummariesByCategory\tmethod"
+			],
+			[
+				"ho",
+				"homeworksUrlTest"
+			],
+			[
+				"head",
+				"headers"
+			],
+			[
+				"res",
+				"resolve"
+			],
+			[
+				"Ho",
+				"HomeworkSummary"
+			],
+			[
+				"usernam",
+				"username"
+			],
+			[
+				"profi",
+				"ProfilePage\talias"
+			],
+			[
+				"conte",
+				"contentHeader"
+			],
+			[
+				"to",
+				"toPromise"
+			],
+			[
+				"tok",
+				"token1"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"homw",
+				"homeworks"
+			],
+			[
+				"ra",
+				"random"
+			],
+			[
+				"wx",
+				"wxusername"
+			],
+			[
+				"in",
+				"indexOf\tmethod"
+			],
+			[
+				"su",
+				"substring\tmethod"
+			],
+			[
+				"url",
+				"url2json\t(util.ts)"
+			],
+			[
+				"gep",
+				"getParameterByName\t(util.ts)"
+			],
+			[
+				"nu",
+				"null\t(profile.ts)"
+			],
+			[
+				"form",
+				"FORM_DIRECTIVES\talias"
+			],
+			[
+				"dire",
+				"directives\tproperty"
+			],
+			[
+				"au",
+				"auth.service.ts"
+			],
+			[
+				"th",
+				"the-class.ts"
+			],
+			[
+				"impo",
+				"import\tkeyword"
+			],
+			[
+				"imop",
+				"import\tkeyword"
+			],
+			[
+				"ruote",
+				"Routes\talias"
+			],
+			[
+				"routes",
+				"Routes\talias"
+			],
+			[
+				"router",
+				"provideRouter\talias"
+			],
+			[
+				"route",
+				"ROUTES\tconst"
+			],
+			[
+				"routerc",
+				"RouterConfig\talias"
+			],
+			[
+				"Route",
+				"RouterConfig\talias"
+			],
+			[
+				"in-m",
+				"in-memory-data.service.ts"
+			],
+			[
+				"ng2",
+				"ng2-import\tAngular 2 Import Snippet"
+			],
+			[
+				"ng2-bo",
+				"ng2-bootstrap-prod\tAngular 2 Production Bootstrap Snippet"
+			],
+			[
+				"comp",
+				"component\tproperty"
+			],
+			[
+				"imp",
+				"import\timports a module …"
+			],
+			[
+				"js",
+				"json"
+			],
+			[
+				"Imme",
+				"InMemoryDataService\talias"
+			],
+			[
+				"imme",
+				"InMemoryBackendService\talias"
+			],
+			[
+				"Xhr",
+				"XHRBackend\talias"
+			],
+			[
+				"temp",
+				"templateUrl\t(hero-detail.component.ts)"
+			],
+			[
+				"ro",
+				"router\t(app.routes.ts)"
+			],
+			[
+				"hero",
+				"hero\tparameter"
+			],
+			[
+				"her",
+				"hero"
+			],
+			[
+				"gether",
+				"getHeroes\tmethod"
+			],
+			[
+				"Onde",
+				"OnDestroy\talias"
+			],
+			[
+				"impl",
+				"implements\tkeyword"
+			],
+			[
+				"active",
+				"ActivatedRoute\talias"
+			],
+			[
+				"heroser",
+				"HeroService\talias"
+			],
+			[
+				"tem",
+				"templateUrl\tproperty"
+			],
+			[
+				"da",
+				"dashboard.component.ts"
+			],
+			[
+				"provider",
+				"provideRouter\talias"
+			],
+			[
+				"Heroes",
+				"HeroesComponent\talias"
+			],
+			[
+				"com",
+				"component"
+			],
+			[
+				"c",
+				"heroes.component.js.map"
+			],
+			[
+				"ge",
+				"getHeroesSlowly\tmethod"
+			],
+			[
+				"Her",
+				"HEROES\talias"
+			],
+			[
+				"prom",
+				"Promise\tinterface"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/F/Works/日常.md",
+			"settings":
+			{
+				"buffer_size": 5820,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/_posts/git-usefully-command.md",
+			"settings":
+			{
+				"buffer_size": 5974,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 137.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ssj",
+				"Set Syntax: JSON"
+			],
+			[
+				"ssejs",
+				"Set Syntax: JSON"
+			],
+			[
+				"ssh",
+				"Set Syntax: HTML"
+			],
+			[
+				"html5",
+				"Snippet: Simple HTML5 Boilerplate"
+			],
+			[
+				"ss",
+				"Set Syntax: SQL"
+			],
+			[
+				"sssq",
+				"Set Syntax: SQL"
+			],
+			[
+				"sssl",
+				"Set Syntax: SQL"
+			],
+			[
+				"pcin",
+				"Package Control: Install Package"
+			],
+			[
+				"ssq",
+				"Set Syntax: SQL"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mar",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"pcd",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pcb",
+				"Preferences: Browse Packages"
+			],
+			[
+				"markdo",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pcs",
+				"Preferences: Settings"
+			],
+			[
+				"pcr",
+				"Package Control: Remove Package"
+			],
+			[
+				"pcinsta",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"pce",
+				"Package Control: Disable Package"
+			],
+			[
+				"pc",
+				"Package Control: List Packages"
+			],
+			[
+				"markd",
+				"Build With: Markdown"
+			],
+			[
+				"pcen",
+				"Package Control: Enable Package"
+			],
+			[
+				"di",
+				"Package Control: Disable Package"
+			],
+			[
+				"pcis",
+				"Package Control: Install Package"
+			],
+			[
+				"pcre",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssm",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markde",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pagek",
+				"Package Control: Discover Packages"
+			],
+			[
+				"browe",
+				"Preferences: Browse Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"de",
+				"ANF: Delete File"
+			],
+			[
+				"view",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"vie",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"sss",
+				"Set Syntax: SQL"
+			],
+			[
+				"m",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pcl",
+				"Package Control: List Packages"
+			],
+			[
+				"pci",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+				"dis",
+				"Package Control: Discover Packages"
+			],
+			[
+				"ssx",
+				"Set Syntax: XML"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"alig",
+				"Preferences: Alignment File Settings – User"
+			],
+			[
+				"setj",
+				"Set Syntax: JSON"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"sst",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"pid",
+				"Package Control: Discover Packages"
+			],
+			[
+				"ssty",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"ty",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"npi",
+				"Nodejs::NPM::Install"
+			],
+			[
+				"ter",
+				"Terminal: Open in project folder"
+			],
+			[
+				"term",
+				"Preferences: Terminality Settings – Default"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"pace",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 540.0
+	},
+	"console":
+	{
+		"height": 347.0,
+		"history":
+		[
+			"git status",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/projects/sample/footprint",
+		"/D/projects/sample/footprint/source",
+		"/D/projects/sample/footprint/source/_posts"
+	],
+	"file_history":
+	[
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/projects/sample/footprint/source/_drafts/docker-auto-deploy.md",
+		"/D/projects/sample/footprint/source/_posts/docker-install.md",
+		"/C/opt/settings/server.properties",
+		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/uidphone.txt",
+		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/phoneuid.txt",
+		"/D/projects/sample/footprint/source/_posts/git-usefully-command.md",
+		"/D/projects/sample/footprint/source/_posts/linux-usefully-command.md",
+		"/D/projects/sample/footprint/source/_posts/docker-usefully-command.md",
+		"/D/projects/sample/footprint/source/_drafts/automatically-generate-table-of-contents-using-jquery.md",
+		"/D/projects/github/mydocker/frp/frp_0.27.0_windows_amd64/systemd/frpc.service",
+		"/D/projects/github/frp/gitlab_chuantou.ini",
+		"/D/projects/github/frp/README.md",
+		"/D/projects/github/mydocker/nginx/docker-compose.yml",
+		"/D/projects/github/mydocker/nginx/static-html-directory/index.html",
+		"/G/DevTools/frp_0.27.0_windows_amd64/frps.ini",
+		"/G/DevTools/frp_0.27.0_windows_amd64/frpc.ini",
+		"/D/projects/github/puppeteer/sample/example.js",
+		"/D/Users/mzxiao/Desktop/open_hotel_qr_code_wifi.txt",
+		"/D/Users/mzxiao/Desktop/open_hotel_qr_code_wifi.sql",
+		"/D/projects/sample/footprint/source/_drafts/jhipster-usefully-cmd.md",
+		"/D/projects/github/Flutter-UI-Kit-master/lib/logic/bloc/cart_bloc.dart",
+		"/D/Users/mzxiao/Downloads/contract/UserProfileService.bjsc",
+		"/D/Users/mzxiao/Downloads/contract/GetUserProperty.bjsc",
+		"/F/me/徐汇学区/对口小区.txt",
+		"/F/me/徐汇学区/新建文本文档.txt",
+		"/D/Users/mzxiao/Desktop/破独酒店模板.csv",
+		"/D/Users/mzxiao/Desktop/扫码住黑名单模板test.csv",
+		"/D/Users/mzxiao/Desktop/扫码住黑名单模板.csv",
+		"/D/Users/mzxiao/Desktop/xf.txt",
+		"/G/DevTools/BaijiEditor/BaijiEditor.exe.config",
+		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchBySqlService.class",
+		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchByOrderIdService.class",
+		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchByOrderIdService$1.class",
+		"/F/Works/酒店前端/酒店运营/图文秀/preview.html",
+		"/D/Users/mzxiao/Desktop/乐享喵.html",
+		"/F/me/lxm/站酷快乐体.txt",
+		"/F/Works/酒店前端/酒店运营/图文秀/test.html",
+		"/D/Users/mzxiao/Desktop/a.html",
+		"/D/Users/mzxiao/Desktop/aa.html",
+		"/D/projects/sample/footprint/source/_drafts/running-docker-in-jenkins-in-docker.md",
+		"/D/Users/mzxiao/Desktop/帐号.txt",
+		"/D/Users/mzxiao/Documents/WeChat Files/Wwammwwamm/FileStorage/File/2019-03/帐号.txt",
+		"/D/projects/sample/footprint/source/_drafts/docker-nginx.md",
+		"/D/projects/sample/footprint/source/_posts/nodejs-usefully-command.md",
+		"/D/projects/sample/footprint/source/_posts/maven-usefully-command.md",
+		"/D/Users/mzxiao/.ssh/config",
+		"/D/Users/mzxiao/.ssh/id_rsa.github.pub",
+		"/D/Users/mzxiao/.ssh/id_rsa.github",
+		"/D/Users/mzxiao/.ssh/known_hosts",
+		"/D/projects/jhipster/testapp/src/main/webapp/app/index.tsx",
+		"/D/Users/mzxiao/Desktop/WrapQRCodeForMaterials.bjsc",
+		"/F/Works/酒店前端/酒店运营/节日氛围传图接入/节日切图规范/节日切图规范/蜂鸟+查询/26.蜂鸟入口字色.txt",
+		"/D/Users/mzxiao/Desktop/a.json",
+		"/D/Users/mzxiao/Desktop/扫码住黑名单模板 - 副本.csv",
+		"/F/me/pjd/新建文本文档.txt",
+		"/D/Users/mzxiao/Desktop/图文秀/test.html",
+		"/D/Users/mzxiao/Desktop/加黑模板.csv",
+		"/D/WebSites/CtripAppData/Database.Config",
+		"/D/Users/mzxiao/.ssh/id_rsa.aliyun",
+		"/D/Users/mzxiao/Desktop/黑名单导入.csv",
+		"/D/projects/hoteloperation/operation-core/src/main/java/com/ctrip/hotel/operation/core/util/StringUtils.java",
+		"/F/me/filmlist.txt",
+		"/D/Users/mzxiao/Documents/我接收到的文件/checksum.go",
+		"/D/Users/mzxiao/Downloads/HotelOperationService/Hotel/Operation/Soa/V1/FetchHotelInfoRequestType.cs",
+		"/D/Users/mzxiao/Documents/WXWork/1688851031412968/Cache/File/2018-12/元旦特惠酒店.csv",
+		"/D/Users/mzxiao/Downloads/LogDemo.java",
+		"/D/Users/mzxiao/Downloads/user.xls",
+		"/D/projects/sample/footprint/source/_posts/maven-duplicate-classes.md",
+		"/F/Works/酒店前端/酒店运营/金池项目/job.txt",
+		"/D/Users/mzxiao/Desktop/黑名单11.29.csv",
+		"/D/Users/mzxiao/Desktop/黑名单11.29 - 副本.csv",
+		"/D/Users/mzxiao/Desktop/hotel_info.sql",
+		"/F/Works/日常.md",
+		"/D/projects/github/vue-lexiangmiao/.eslintrc.js",
+		"/D/projects/github/vue-lexiangmiao/package.json",
+		"/D/Users/mzxiao/Desktop/aa.txt",
+		"/D/Users/mzxiao/Desktop/黑名单1129 - 副本.csv",
+		"/D/Users/mzxiao/Desktop/黑名单1129.csv",
+		"/D/projects/github/lexiangmiao-style/README.md",
+		"/D/projects/github/vue-lexiangmiao/tests/unit/example.spec.js",
+		"/D/projects/github/vue-lexiangmiao/tests/unit/.eslintrc.js",
+		"/D/Users/mzxiao/AppData/Roaming/npm-cache/_logs/2018-11-27T08_21_12_438Z-debug.log",
+		"/C/Program Files (x86)/Yarn/bin/yarn",
+		"/D/Users/mzxiao/Desktop/deduct_detail.sql",
+		"/D/projects/sample/footprint/README.md",
+		"/D/projects/sample/footprint/package.json",
+		"/D/projects/sample/footprint/source/_drafts/telephone-interview.md",
+		"/F/Projects/Readme.txt",
+		"/C/projects/tm/up.sql",
+		"/D/Projects/sb/footprint/source/_posts/core-java-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/spring-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/java-string-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/java-collections-interview-questions.md",
+		"/D/Works/日常.md",
+		"/D/Users/mzxiao.CN1/Downloads/install_docker.sh",
+		"/D/Users/mzxiao.CN1/Downloads/start.sh",
+		"/D/Projects/sb/footprint/source/_posts/maven-usefully-command.md",
+		"/D/Projects/sb/footprint/source/_posts/maven-duplicate-classes.md",
+		"/C/projects/tm/trainmall-backendsite/prodstart.sh",
+		"/D/Projects/sb/footprint/source/_posts/java-8-period-and-duration.md",
+		"/D/Projects/sb/footprint/source/_posts/spring-hot-deploy.md",
+		"/D/Projects/sb/footprint/source/_posts/java-thread-wait-notify-and-notifyall-example.md",
+		"/C/projects/hoteloperation/operation-web/target/operation-web-1.0/WEB-INF/classes/templates/common/header.ftl",
+		"/C/projects/tm/trainmall/prodstart.sh",
+		"/D/Projects/sb/footprint/source/_posts/git-usefully-command.md",
+		"/D/me/ts/doc/resetadmin.sql",
+		"/D/Projects/sb/footprint/source/_posts/docker-usefully-command.md",
+		"/D/Projects/sb/footprint/source/_drafts/running-docker-in-jenkins-in-docker.md",
+		"/D/me/ts/trainmall/src/main/docker/mysql.yml",
+		"/D/me/ts/trainmall/src/main/docker/app.yml",
+		"/D/Users/mzxiao.CN1/Downloads/Dockerfile (2)",
+		"/D/Projects/sb/footprint/source/_drafts/docker-auto-deploy.md",
+		"/D/Projects/sb/footprint/source/_drafts/docker-nginx.md",
+		"/D/Projects/sb/footprint/source/_posts/linux-usefully-command.md",
+		"/D/Users/mzxiao.CN1/Desktop/新建文件夹/test.html",
+		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-plugins.md",
+		"/D/Projects/sb/footprint/source/_drafts/shortcuts.html",
+		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-shortcuts.html",
+		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-shortcuts1.html",
+		"/D/Projects/sb/footprint/source/_drafts/resources-optimizer-with-maven.md",
+		"/D/Projects/sb/footprint/source/_drafts/net-architecture-analyze.md",
+		"/D/Projects/sb/footprint/source/_drafts/jhipster-usefully-cmd.md",
+		"/C/projects/Pres.Static/Pres.Static/BuildTools/cdntool/README.md",
+		"/C/projects/Domesticsearch/DomesticSearch/Present/HotelDomestic/Config/urlrewrite.config",
+		"/D/Projects/sb/footprint/source/_posts/hibernate-interview-questions.md",
+		"/D/me/ts/trainmall/src/model/Model.jdl",
+		"/D/Users/mzxiao.CN1/.m2/settings.xml"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"src,<open folders>",
+			"src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"host",
+			"\n4.7W  10000 164s",
+			"\n4.7W  5000 195s",
+			"195s",
+			"UPDATE",
+			"^",
+			"<img",
+			"src",
+			" <img",
+			"<img",
+			"width",
+			"\"width\"",
+			"\n\t\t.cut{\n\t\t\twidth: 759;\t\t\t\n\t\t}",
+			"\"width\": 750",
+			"^",
+			"470083",
+			"^",
+			"${currentdate}",
+			"^",
+			"cost_guarantee_amount",
+			"FALSE",
+			" ",
+			"a.",
+			",",
+			" ",
+			"  `",
+			"\t",
+			"htlbookingeventdb_W",
+			"..\\",
+			"WalletStatus",
+			"Column",
+			"//",
+			" //重",
+			"/",
+			"**",
+			"/*",
+			"/**",
+			",",
+			"domestic/hotel",
+			"domestic",
+			"host",
+			" \n",
+			"显示意向操作和 快速修复",
+			"ft10",
+			"background: #333333;",
+			"background",
+			"英语原文",
+			"_tipoff",
+			"_tipon",
+			"onmouseover=\"_tipon(this)\"",
+			"google",
+			"$",
+			"^",
+			"$",
+			"^",
+			"jes1",
+			"aliyun",
+			"/*\t",
+			"*/",
+			"/*\t\t*/\t",
+			"*/",
+			"/*\t\t*/",
+			"返点",
+			"返利",
+			" ",
+			"*/",
+			"/*\t\t*/\t\t",
+			"* ",
+			"*/",
+			"*/\t",
+			"*",
+			"/*\t\t*/",
+			"*/",
+			"/*\t\t*/\t",
+			"/*\t\t*/",
+			"/* */",
+			"^",
+			"OVERFLOW",
+			"toc",
+			"订单编号",
+			"0.5元/盒",
+			"* 历史记录",
+			"toc",
+			"###",
+			"管理",
+			"/*  */",
+			"'",
+			"<GoogleTransProxyUrl>",
+			"2.60.3-alpine",
+			"jenkins",
+			"docker",
+			"@Column",
+			"**",
+			"product_order_detail",
+			"product_photo",
+			"product_inventory",
+			"product_category",
+			"product_order",
+			"order",
+			"product",
+			"如何在Hibernate中实现关系",
+			"最终",
+			"连接",
+			"Hibernate中的集合类型是什么",
+			"21",
+			"收集",
+			"17",
+			"18.",
+			" Second Level Cache",
+			"Hibernate会话是线程安全的",
+			"Hibernate会话是线程安全的？",
+			"重要优势",
+			"重要好处",
+			"注释",
+			"Java持久性API",
+			"hibernate",
+			"什么是Hibernate框架？",
+			"。 ",
+			"休眠",
+			"jhi_",
+			"jhi_user",
+			"* ",
+			"*/",
+			"/**",
+			"java",
+			"git",
+			";",
+			"String"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			"\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/F/Works/日常.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5820,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5625,
+								5588
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3965.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/_posts/git-usefully-command.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2472,
+								2472
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2268.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 120.0
+	},
+	"output.mde":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "Packages/Markdown Preview/Markdown.sublime-build",
+	"project": "footprint.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"user",
+				"user.js"
+			],
+			[
+				"main.ts",
+				"D:\\Projects\\sb\\angular2-tour-of-heroes\\app\\main.ts"
+			],
+			[
+				"",
+				"node-sample-project\\ionic\\mls-assistant\\app\\shared\\homework.service.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 389.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
