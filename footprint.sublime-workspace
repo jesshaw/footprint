@@ -527,15 +527,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "source/_posts/git-usefully-command.md",
-			"settings":
-			{
-				"buffer_size": 5974,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -549,6 +540,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inp",
+				"Package Control: Install Package"
+			],
 			[
 				"ssj",
 				"Set Syntax: JSON"
@@ -670,10 +673,6 @@
 				"Preferences: Browse Packages"
 			],
 			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
 				"de",
 				"ANF: Delete File"
 			],
@@ -792,19 +791,26 @@
 	},
 	"expanded_folders":
 	[
-		"/D/projects/sample/footprint",
-		"/D/projects/sample/footprint/source",
-		"/D/projects/sample/footprint/source/_posts"
 	],
 	"file_history":
 	[
 		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/projects/sample/footprint/README.md",
+		"/D/projects/sample/footprint/package.json",
+		"/D/projects/sample/footprint/public/CNAME",
+		"/D/projects/sample/footprint/source/_drafts/running-docker-in-jenkins-in-docker.md",
+		"/D/projects/sample/footprint/_config.yml",
+		"/D/projects/sample/footprint/placeholder",
+		"/D/projects/sample/footprint/package-lock.json",
+		"/D/projects/sample/footprint/source/CNAME",
+		"/D/Users/mzxiao/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/D/Users/mzxiao/AppData/Roaming/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/D/projects/sample/footprint/source/_posts/git-usefully-command.md",
 		"/D/projects/sample/footprint/source/_drafts/docker-auto-deploy.md",
 		"/D/projects/sample/footprint/source/_posts/docker-install.md",
 		"/C/opt/settings/server.properties",
 		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/uidphone.txt",
 		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/phoneuid.txt",
-		"/D/projects/sample/footprint/source/_posts/git-usefully-command.md",
 		"/D/projects/sample/footprint/source/_posts/linux-usefully-command.md",
 		"/D/projects/sample/footprint/source/_posts/docker-usefully-command.md",
 		"/D/projects/sample/footprint/source/_drafts/automatically-generate-table-of-contents-using-jquery.md",
@@ -838,7 +844,6 @@
 		"/F/Works/酒店前端/酒店运营/图文秀/test.html",
 		"/D/Users/mzxiao/Desktop/a.html",
 		"/D/Users/mzxiao/Desktop/aa.html",
-		"/D/projects/sample/footprint/source/_drafts/running-docker-in-jenkins-in-docker.md",
 		"/D/Users/mzxiao/Desktop/帐号.txt",
 		"/D/Users/mzxiao/Documents/WeChat Files/Wwammwwamm/FileStorage/File/2019-03/帐号.txt",
 		"/D/projects/sample/footprint/source/_drafts/docker-nginx.md",
@@ -883,8 +888,6 @@
 		"/D/Users/mzxiao/AppData/Roaming/npm-cache/_logs/2018-11-27T08_21_12_438Z-debug.log",
 		"/C/Program Files (x86)/Yarn/bin/yarn",
 		"/D/Users/mzxiao/Desktop/deduct_detail.sql",
-		"/D/projects/sample/footprint/README.md",
-		"/D/projects/sample/footprint/package.json",
 		"/D/projects/sample/footprint/source/_drafts/telephone-interview.md",
 		"/F/Projects/Readme.txt",
 		"/C/projects/tm/up.sql",
@@ -918,14 +921,7 @@
 		"/D/Projects/sb/footprint/source/_drafts/shortcuts.html",
 		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-shortcuts.html",
 		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-shortcuts1.html",
-		"/D/Projects/sb/footprint/source/_drafts/resources-optimizer-with-maven.md",
-		"/D/Projects/sb/footprint/source/_drafts/net-architecture-analyze.md",
-		"/D/Projects/sb/footprint/source/_drafts/jhipster-usefully-cmd.md",
-		"/C/projects/Pres.Static/Pres.Static/BuildTools/cdntool/README.md",
-		"/C/projects/Domesticsearch/DomesticSearch/Present/HotelDomestic/Config/urlrewrite.config",
-		"/D/Projects/sb/footprint/source/_posts/hibernate-interview-questions.md",
-		"/D/me/ts/trainmall/src/model/Model.jdl",
-		"/D/Users/mzxiao.CN1/.m2/settings.xml"
+		"/D/Projects/sb/footprint/source/_drafts/resources-optimizer-with-maven.md"
 	],
 	"find":
 	{
@@ -1092,7 +1088,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1118,35 +1114,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 3965.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "source/_posts/git-usefully-command.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5974,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2472,
-								2472
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2268.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
