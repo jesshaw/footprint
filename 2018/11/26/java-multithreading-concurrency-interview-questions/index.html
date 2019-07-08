@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>java多线程、并发常见面试问题 | Footprint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="java, Multithreading, Concurrency, interview,多线程, 并发, 面试">
+    
+    <meta name="description" content="今天我们将通过研究java多线程面试问题同时也研究并发面试问题，因为多线程和并发密不可分。线程是Java面试中的热门话题之一。在这里我从面试的角度列出了大部分重要的java多线程面试问题，不过您应该对java线程有很好的了解，才能应付以下问题。">
+<meta name="keywords" content="java, Multithreading, Concurrency, interview,多线程, 并发, 面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java多线程、并发常见面试问题">
+<meta property="og:url" content="/2018/11/26/java-multithreading-concurrency-interview-questions/index.html">
+<meta property="og:site_name" content="Footprint">
+<meta property="og:description" content="今天我们将通过研究java多线程面试问题同时也研究并发面试问题，因为多线程和并发密不可分。线程是Java面试中的热门话题之一。在这里我从面试的角度列出了大部分重要的java多线程面试问题，不过您应该对java线程有很好的了解，才能应付以下问题。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/gallery/blue-water12.jpg">
+<meta property="og:updated_time" content="2017-12-28T07:19:42.045Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java多线程、并发常见面试问题">
+<meta name="twitter:description" content="今天我们将通过研究java多线程面试问题同时也研究并发面试问题，因为多线程和并发密不可分。线程是Java面试中的热门话题之一。在这里我从面试的角度列出了大部分重要的java多线程面试问题，不过您应该对java线程有很好的了解，才能应付以下问题。">
+<meta name="twitter:image" content="/gallery/blue-water12.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Footprint" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jes&#39; footprint</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/java/">java</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-java-multithreading-concurrency-interview-questions" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        java多线程、并发常见面试问题
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/26/java-multithreading-concurrency-interview-questions/" class="article-date">
+            <time datetime="2018-11-26T05:54:44.568Z" itemprop="datePublished">2018-11-26</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>今天我们将通过研究java多线程面试问题同时也研究并发面试问题，因为多线程和并发密不可分。线程是Java面试中的热门话题之一。在这里我从面试的角度列出了大部分重要的java多线程面试问题，不过您应该对java线程有很好的了解，才能应付以下问题。</p>
+<a id="more"></a>
+<h2 id="Java多线程面试问题"><a href="#Java多线程面试问题" class="headerlink" title="Java多线程面试问题"></a>Java多线程面试问题</h2><ol>
+<li>进程和线程有什么区别？</li>
+<li>多线程编程有哪些好处？</li>
+<li>用户线程和守护线程有什么区别？</li>
+<li>我们如何在Java中创建一个线程？</li>
+<li>线程生命周期中有什么不同的状态？</li>
+<li>我们可以调用Thread类的run()方法吗？</li>
+<li>我们如何在特定时间暂停线程执行？</li>
+<li>你对线程优先级有什么了解？</li>
+<li>什么是线程计划和时间切片？</li>
+<li>什么是多线程中的上下文切换？</li>
+<li>我们如何确保main()是Java程序中完成的最后一个线程？</li>
+<li>线程如何相互通信？</li>
+<li>为什么线程通信方法wait()，notify()和notifyAll()都在Object类中？</li>
+<li>为什么wait()，notify()和notifyAll()方法必须从synchronized方法或块调用？</li>
+<li>为什么线程sleep()和yield()方法是静态的？</li>
+<li>我们如何在Java中实现线程安全？</li>
+<li>在Java中的volatile关键字是什么？</li>
+<li>同步方法或同步块哪个是更优选择？</li>
+<li>如何在Java中创建守护进程线程？</li>
+<li>什么是ThreadLocal？</li>
+<li>什么是线程组？ 为什么建议不要使用它？</li>
+<li>什么是Java线程Dump，我们如何获得程序的Java线程Dump？</li>
+<li>什么是死锁？ 如何分析和避免死锁的情形？</li>
+<li>什么是Java时间类？ 如何安排任务在特定间隔时间后运行？</li>
+<li>什么是线程池？ 我们如何在Java中创建线程池？</li>
+<li>如果我们不覆盖线程类run()方法，会发生什么？</li>
+</ol>
+<h2 id="Java并发访问问题"><a href="#Java并发访问问题" class="headerlink" title="Java并发访问问题"></a>Java并发访问问题</h2><ol>
+<li>什么是原子操作？ Java并发API中的原子类是什么？</li>
+<li>什么是Java并发API中的锁接口？ 与同步相比有什么好处？</li>
+<li>什么是Executors框架？</li>
+<li>什么是阻塞队列？ 我们如何使用阻塞队列实现生产者-消费者问题？</li>
+<li>什么是Callable和Future？</li>
+<li>什么是FutureTask类？</li>
+<li>什么是Concurrent Collection类？</li>
+<li>什么是Executors类？</li>
+<li>Java 8中的并发API的一些改进是什么？</li>
+</ol>
+<h2 id="Java多线程面试问题答案"><a href="#Java多线程面试问题答案" class="headerlink" title="Java多线程面试问题答案"></a>Java多线程面试问题答案</h2><h3 id="1-进程和线程有什么区别？"><a href="#1-进程和线程有什么区别？" class="headerlink" title="1. 进程和线程有什么区别？"></a>1. 进程和线程有什么区别？</h3><p>进程是一个自包含的执行环境，它可以被看作一个程序或应用程序，而线程是一个单独的执行任务。 Java运行时环境作为单个进程运行，它包含不同的类和作为进程运行的程序。线程可以称为轻量级进程。 线程需要较少的资源来创建并存在于进程中，线程共享进程资源。</p>
+<h3 id="2-多线程编程有哪些好处？"><a href="#2-多线程编程有哪些好处？" class="headerlink" title="2. 多线程编程有哪些好处？"></a>2. 多线程编程有哪些好处？</h3><p>在多线程编程中，多个线程同时执行，提高了性能，是因为CPU不空闲，一些线程正在等待获取一些资源。 多个线程共享堆内存，因此创建多个线程来执行某些任务比创建多个进程更好。 例如，Servlet的性能比CGI更好，因为Servlet支持多线程，但CGI不支持。</p>
+<h3 id="3-用户线程和守护线程有什么区别？"><a href="#3-用户线程和守护线程有什么区别？" class="headerlink" title="3. 用户线程和守护线程有什么区别？"></a>3. 用户线程和守护线程有什么区别？</h3><p>当我们在java程序中创建一个线程时，它被称为用户线程。 守护线程在后台运行，不会阻止JVM终止。 当没有用户线程运行时，JVM关闭程序并退出。 从守护线程创建的子线程也是一个守护线程。</p>
+<h3 id="4-我们如何在Java中创建一个线程？"><a href="#4-我们如何在Java中创建一个线程？" class="headerlink" title="4. 我们如何在Java中创建一个线程？"></a>4. 我们如何在Java中创建一个线程？</h3><p>在Java中创建线程有两种方法 - 第一种方式是实现Runnable接口，然后从中创建线程对象，第二种方法是扩展Thread类。 阅读这篇文章了解更多关于<a href="https://www.journaldev.com/1016/java-thread-example" target="_blank" rel="noopener">在java中创建线程</a> 。</p>
+<h3 id="5-线程生命周期中有什么不同的状态？"><a href="#5-线程生命周期中有什么不同的状态？" class="headerlink" title="5. 线程生命周期中有什么不同的状态？"></a>5. 线程生命周期中有什么不同的状态？</h3><p>当我们在java程序中创建一个线程时，它的状态是New。 然后我们启动将其状态更改为Runnable的线程。 线程调度器负责将CPU分配给Runnable线程池中的线程，并将其状态更改为Running。 其他线程状态是 Waiting, Blocked和Dead。 阅读这篇文章，了解<a href="https://www.journaldev.com/1044/thread-life-cycle-in-java-thread-states-in-java" target="_blank" rel="noopener">线程生命周期</a>的更多信息。</p>
+<h3 id="6-我们可以调用Thread类的run-方法吗？"><a href="#6-我们可以调用Thread类的run-方法吗？" class="headerlink" title="6. 我们可以调用Thread类的run()方法吗？"></a>6. 我们可以调用Thread类的run()方法吗？</h3><p>可以，我们可以调用Thread类的run()方法，但它的行为就像一个普通的方法。 要在一个线程中执行它时，我们需要先使用<strong>Thread.start()</strong>方法启动它。</p>
+<h3 id="7-我们如何在特定时间暂停线程执行？"><a href="#7-我们如何在特定时间暂停线程执行？" class="headerlink" title="7. 我们如何在特定时间暂停线程执行？"></a>7. 我们如何在特定时间暂停线程执行？</h3><p>我们可以使用Thread类sleep()方法暂停执行线程一段时间。 请注意，线程在特定时间内不会停止处理，一旦线程从睡眠状态唤醒，状态变为可运行，并且基于线程调度计划，它将被执行。</p>
+<h3 id="8-你对线程优先级有什么了解？"><a href="#8-你对线程优先级有什么了解？" class="headerlink" title="8. 你对线程优先级有什么了解？"></a>8. 你对线程优先级有什么了解？</h3><p>每个线程都有一个优先级，通常较高优先级的线程在执行时优先，但这取决于依赖于操作系统的Thread Scheduler实现。 我们可以指定线程的优先级，但不能保证较高优先级的线程在低优先级线程之前被执行。 线程优先级是一个int，其值从1到10，其中1是最低优先级线程，10是最高优先级线程。</p>
+<h3 id="9-什么是线程计划和时间切片？"><a href="#9-什么是线程计划和时间切片？" class="headerlink" title="9. 什么是线程计划和时间切片？"></a>9. 什么是线程计划和时间切片？</h3><p>线程调度程序（Thread Scheduler）是将CPU时间分配给可用的可运行线程的操作系统服务。 一旦我们创建和启动一个线程，它的执行取决于Thread Scheduler的实现。时间切片是将可用CPU时间划分为可用的可运行线程的过程。 CPU时间到线程的分配可以基于线程优先级，或线程等待更长时间将获得CPU时间的优先级。 线程调度不能由java控制，因此从应用程序本身控制它总是更好。</p>
+<h3 id="10-什么是多线程中的上下文切换？"><a href="#10-什么是多线程中的上下文切换？" class="headerlink" title="10. 什么是多线程中的上下文切换？"></a>10. 什么是多线程中的上下文切换？</h3><p>上下文切换（Context Switching）是存储和恢复CPU状态的过程，以便可以在稍后时间点从同一点恢复线程执行。 上下文切换（Context Switching）是多任务操作系统的基本特性，并支持多线程环境。</p>
+<h3 id="11-我们如何确保main-是Java程序中完成的最后一个线程？"><a href="#11-我们如何确保main-是Java程序中完成的最后一个线程？" class="headerlink" title="11. 我们如何确保main()是Java程序中完成的最后一个线程？"></a>11. 我们如何确保main()是Java程序中完成的最后一个线程？</h3><p>我们可以使用线程<code>join()</code>方法来确保程序创建的所有线程在完成主函数之前都已经结束。<code>join()</code>方法用于指定指定的线程结束后，才执行当前线程。这是一篇关于<a href="https://www.journaldev.com/1024/java-thread-join-example" target="_blank" rel="noopener">线程join方法</a>的文章。</p>
+<h3 id="12-线程间如何通信？"><a href="#12-线程间如何通信？" class="headerlink" title="12. 线程间如何通信？"></a>12. 线程间如何通信？</h3><p>当线程共享资源时，线程之间的通信对协调其工作很重要。 Object类中的<code>wait()</code>，<code>notify()</code>和<code>notifyAll()</code>方法允许线程通过资源的锁进行通信。 查看这篇文章了解更多关于 <a href="/2018/11/26/java-thread-wait-notify-and-notifyall-example/" title="线程wait()，notify()和notifyAll()">线程wait()，notify()和notifyAll()</a>。</p>
+<h3 id="13-为什么线程通信方法wait-，notify-和notifyAll-都在Object类中？"><a href="#13-为什么线程通信方法wait-，notify-和notifyAll-都在Object类中？" class="headerlink" title="13. 为什么线程通信方法wait()，notify()和notifyAll()都在Object类中？"></a>13. 为什么线程通信方法wait()，notify()和notifyAll()都在Object类中？</h3><p>在Java中，每个对象都有一个监视器和wait，notify方法用于等待对象监视器或通知其他线程对象监视器现在是空闲的。 java中的线程没有监视器，同步可以用于任何对象，这就是为什么它是Object类的一部分的原因，所以java中的每个类都有这些线程间通信的基本方法。</p>
+<h3 id="14-为什么wait-，notify-和notifyAll-方法必须从synchronized方法或块调用？"><a href="#14-为什么wait-，notify-和notifyAll-方法必须从synchronized方法或块调用？" class="headerlink" title="14. 为什么wait()，notify()和notifyAll()方法必须从synchronized方法或块调用？"></a>14. 为什么wait()，notify()和notifyAll()方法必须从synchronized方法或块调用？</h3><p>当一个线程在任何对象上调用wait（）时，它必须在该对象上有监视器，它将离开并进入等待状态，直到任何其他线程调用该对象的notify（）为止。 </p>
+<p>同样，当一个线程在任何对象上调用notify（）时，它将把该监视器留在该对象上，其他等待的线程可以获得该对象上的监视器。 由于所有这些方法都要求线程具有对象监视器，这只能通过同步来实现，所以它们需要从同步方法或块中调用。</p>
+<h3 id="15-为什么线程sleep-和yield-方法是静态的？"><a href="#15-为什么线程sleep-和yield-方法是静态的？" class="headerlink" title="15. 为什么线程sleep()和yield()方法是静态的？"></a>15. 为什么线程sleep()和yield()方法是静态的？</h3><p>线程sleep()和yield()方法工作在当前正在执行的线程。 因此，在等待状态的其他线程上调用这些方法没有意义。 这就是为什么这些方法是静态的，所以当这种方法被静态调用时，它可以在当前执行的线程上运行，并可避免混淆程序员，否则他们可能认为他们可以在一些非运行的线程上调用这些方法。</p>
+<h3 id="16-我们如何在Java中实现线程安全？"><a href="#16-我们如何在Java中实现线程安全？" class="headerlink" title="16. 我们如何在Java中实现线程安全？"></a>16. 我们如何在Java中实现线程安全？</h3><p>有几种方法可以实现java中的线程安全 - 同步，原子并发类，实现并发Lock接口，使用volatile关键字，使用不可变类和线程安全类。 了解更多<a href="https://www.journaldev.com/1061/thread-safety-in-java" target="_blank" rel="noopener">线程安全教程</a>。</p>
+<h3 id="17-在Java中的volatile关键字是什么？"><a href="#17-在Java中的volatile关键字是什么？" class="headerlink" title="17. 在Java中的volatile关键字是什么？"></a>17. 在Java中的volatile关键字是什么？</h3><p>当我们将volatile关键字与变量一起使用时，所有的线程都直接从内存中读取它的值，并且不缓存它。这可确保读取的值与内存中的值相同。</p>
+<h3 id="18-同步方法或同步块哪个是更优选择？"><a href="#18-同步方法或同步块哪个是更优选择？" class="headerlink" title="18. 同步方法或同步块哪个是更优选择？"></a>18. 同步方法或同步块哪个是更优选择？</h3><p>同步块是更优选择，因为它不锁定对象，同步方法锁定对象，并且如果类中有多个同步块，即使它们不相关，为了获取对象锁，也会阻止它们执行并使它们处于等待状态。</p>
+<h3 id="19-如何在Java中创建守护进程线程？"><a href="#19-如何在Java中创建守护进程线程？" class="headerlink" title="19. 如何在Java中创建守护进程线程？"></a>19. 如何在Java中创建守护进程线程？</h3><p>在调用start()方法之前，使用Thread类setDaemon(true)方法创建守护线程。否则它将抛出IllegalThreadStateException。</p>
+<h3 id="20-什么是ThreadLocal？"><a href="#20-什么是ThreadLocal？" class="headerlink" title="20. 什么是ThreadLocal？"></a>20. 什么是ThreadLocal？</h3><p>Java ThreadLocal用于创建线程局部变量。 我们知道一个对象的所有线程都共享它的变量，所以如果变量不是线程安全的，我们可以使用同步，但如果我们想避免同步，我们可以使用ThreadLocal变量。 </p>
+<p>每个线程都有自己的ThreadLocal变量，它们可以使用它的get()和set()方法来获取默认值，或者将它的本地值更改为Thread。 ThreadLocal实例通常是希望将状态与线程关联的类中的私有静态字段。 查看小示例程序<a href="https://www.journaldev.com/1076/java-threadlocal-example" target="_blank" rel="noopener">ThreadLocal示例</a>。</p>
+<h3 id="21-什么是线程组？-为什么建议不要使用它？"><a href="#21-什么是线程组？-为什么建议不要使用它？" class="headerlink" title="21. 什么是线程组？ 为什么建议不要使用它？"></a>21. 什么是线程组？ 为什么建议不要使用它？</h3><p>线程组(ThreadGroup)是一个类，旨在提供有关线程组的信息。 ThreadGroup API很弱，并没有任何Thread提供的功能。 它的主要特点是获取线程组中的活动线程列表，并为线程设置未捕获的异常处理程序。 但Java 1.5添加了setUncaughtExceptionHandler（UncaughtExceptionHandler eh）方法，我们可以向线程添加未捕获的异常处理程序。 所以ThreadGroup已经过时了，因此不建议再使用了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t1.setUncaughtExceptionHandler(<span class="keyword">new</span> UncaughtExceptionHandler()&#123;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">uncaughtException</span><span class="params">(Thread t, Throwable e)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"exception occured:"</span>+e.getMessage());</span><br><span class="line">&#125;</span><br><span class="line">            </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="22-什么是Java线程Dump，我们如何获得程序的Java线程Dump？"><a href="#22-什么是Java线程Dump，我们如何获得程序的Java线程Dump？" class="headerlink" title="22. 什么是Java线程Dump，我们如何获得程序的Java线程Dump？"></a>22. 什么是Java线程Dump，我们如何获得程序的Java线程Dump？</h3><p>线程Dump是JVM中活动的所有线程的列表，线程Dump非常有助于分析应用程序中的瓶颈并分析死锁情况。有很多方法可以为我们生成线程Dump - 使用Profiler，Kill -3命令，jstack工具等。我喜欢jstack工具来生成程序的线程Dump，因为它易于使用，并附带JDK安装。由于它是一个基于终端的工具，我们可以创建脚本来定期生成线程Dump，以便稍后进行分析。 阅读这篇文章了解更多关于<a href="https://www.journaldev.com/1053/java-thread-dump-visualvm-jstack-kill-3-jcmd" target="_blank" rel="noopener">在java中生成线程Dump</a>。</p>
+<h3 id="23-什么是死锁？-如何分析和避免死锁的情形？"><a href="#23-什么是死锁？-如何分析和避免死锁的情形？" class="headerlink" title="23. 什么是死锁？ 如何分析和避免死锁的情形？"></a>23. 什么是死锁？ 如何分析和避免死锁的情形？</h3><p>死锁是一种编程情况，其中两个或多个线程被永久阻塞，这种情况出现在至少两个线程和两个或更多资源中。</p>
+<p>为了分析一个死锁，我们需要查看应用程序的java线程Dump，我们需要注意线程的状态为BLOCKED，然后是资源等待锁定，每个资源都有一个唯一的ID，我们可以找到哪个线程已经在对象上保持锁定。</p>
+<p>避免嵌套锁定，仅需要锁定什么是必需的，并且避免无限期地等待是避免死锁情况的常见方法，请阅读本文以了解如何使用示例程序<a href="https://www.journaldev.com/1058/deadlock-in-java-example" target="_blank" rel="noopener">分析java中的死锁</a>。</p>
+<h3 id="24-Java-Timer类是什么？-如何安排任务在特定间隔时间后运行？"><a href="#24-Java-Timer类是什么？-如何安排任务在特定间隔时间后运行？" class="headerlink" title="24. Java Timer类是什么？ 如何安排任务在特定间隔时间后运行？"></a>24. Java Timer类是什么？ 如何安排任务在特定间隔时间后运行？</h3><p>java.util.Timer是一个实用工具类，可用于安排在将来某个特定时间执行的线程。 Java Timer类可用于计划一次运行的任务或定期运行的任务。</p>
+<p>java.util.TimerTask是一个实现Runnable接口的抽象类 ，我们需要扩展这个类来创建可以使用java Timer类调度的我们自己的TimerTask。</p>
+<p>查看这篇文章<a href="https://www.journaldev.com/1050/java-timer-timertask-example" target="_blank" rel="noopener">java定时器</a>的例子 。</p>
+<h3 id="25-什么是线程池？-我们如何在Java中创建线程池？"><a href="#25-什么是线程池？-我们如何在Java中创建线程池？" class="headerlink" title="25. 什么是线程池？ 我们如何在Java中创建线程池？"></a>25. 什么是线程池？ 我们如何在Java中创建线程池？</h3><p>线程池是管理工作线程的池子，它包含一个队列，可以让任务等待执行。</p>
+<p>线程池是管理Runnable线程和从队列中执行Runnable的工作线程。</p>
+<p>java.util.concurrent.Executors提供java.util.concurrent.Executor接口的实现，用以在java中创建线程池。 <a href="https://www.journaldev.com/1069/threadpoolexecutor-java-thread-pool-example-executorservice" target="_blank" rel="noopener">线程池示例</a>程序显示如何在java中创建和使用Thread Pool。 或者读取<a href="https://www.journaldev.com/2340/java-scheduler-scheduledexecutorservice-scheduledthreadpoolexecutor-example" target="_blank" rel="noopener">ScheduledThreadPoolExecutor示例</a>来了解如何在一定的延迟之后执行任务。</p>
+<h3 id="26-如果我们不覆盖线程类run-方法，会发生什么？"><a href="#26-如果我们不覆盖线程类run-方法，会发生什么？" class="headerlink" title="26. 如果我们不覆盖线程类run()方法，会发生什么？"></a>26. 如果我们不覆盖线程类run()方法，会发生什么？</h3><p>线程类run()方法的代码如下所示。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (target != <span class="keyword">null</span>) &#123;</span><br><span class="line">        target.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上目标设置在Thread类的init()方法中，如果我们创建一个Thread类的实例作为new TestThread() ，它设置为null。 所以如果我们不覆盖run()方法，就不会发生任何事情。 下面是一个简单的例子来说明这一点。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//not overriding Thread.run() method</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//main method, can be in other class too</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Thread t = <span class="keyword">new</span> TestThread();</span><br><span class="line">        System.out.println(<span class="string">"Before starting thread"</span>);</span><br><span class="line">        t.start();</span><br><span class="line">        System.out.println(<span class="string">"After starting thread"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>它将仅打印输出和终止。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Before starting thread</span><br><span class="line">After starting thread</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java并发访问问题答案"><a href="#Java并发访问问题答案" class="headerlink" title="Java并发访问问题答案"></a>Java并发访问问题答案</h2><h3 id="1-什么是原子操作？-Java并发API中的原子类是什么？"><a href="#1-什么是原子操作？-Java并发API中的原子类是什么？" class="headerlink" title="1. 什么是原子操作？ Java并发API中的原子类是什么？"></a>1. 什么是原子操作？ Java并发API中的原子类是什么？</h3><p>原子操作在单个任务单元中执行，而不受其他操作的干扰。 原子操作在多线程环境中是必需的，以避免数据不一致。</p>
+<p>int++不是原子操作。 所以当一个线程读取它的值并将其增加一个时，其他线程读取旧的值导致错误的结果。</p>
+<p>为了解决这个问题，我们必须确保在count上的增量操作是原子的，我们可以使用Synchronization来实现，但是Java 5 java.util.concurrent.atomic为int和long提供了可以用来实现这个原子的包装类不使用同步。 转到这篇文章了解更多关于<a href="https://www.journaldev.com/1095/atomicinteger-java" target="_blank" rel="noopener">原子并发类</a> 。</p>
+<h3 id="2-什么是Java并发API中的锁接口？-与同步相比有什么好处？"><a href="#2-什么是Java并发API中的锁接口？-与同步相比有什么好处？" class="headerlink" title="2. 什么是Java并发API中的锁接口？ 与同步相比有什么好处？"></a>2. 什么是Java并发API中的锁接口？ 与同步相比有什么好处？</h3><p>锁定界面提供比使用synchronized方法和语句可以获得的更广泛的锁定操作。 它们允许更灵活的结构化，可能具有完全不同的属性，并且可以支持多个相关联的Condition对象。<br>锁的优点是</p>
+<ul>
+<li>有可能使他们公平</li>
+<li>在等待Lock对象时，可以使线程响应中断。</li>
+<li>有可能尝试获取锁定，但如果无法获取锁定，则立即返回或超时后返回</li>
+<li>可以在不同的范围内以不同的顺序获取和释放锁<br>阅读更多<a href="https://www.journaldev.com/2377/java-lock-example-reentrantlock" target="_blank" rel="noopener">Java Lock示例</a> 。</li>
+</ul>
+<h3 id="3-什么是Executors框架？"><a href="#3-什么是Executors框架？" class="headerlink" title="3. 什么是Executors框架？"></a>3. 什么是Executors框架？</h3><p>在Java 5中，Executor框架被引入了java.util.concurrent.Executor接口。</p>
+<p>执行器框架是根据一组执行策略来标准化异步任务的调用，调度，执行和控制的框架。</p>
+<p>创建许多线程没有限制到最大阈值可能导致应用程序用尽堆内存。 所以，创建一个ThreadPool是一个更好的解决方案，因为有限数量的线程可以被汇集和重用。 执行器框架促进了在Java中创建线程池的过程。 查看这篇文章，学习使用Executors框架创建线程池的示例代码。</p>
+<h3 id="4-什么是阻塞队列？-我们如何使用阻塞队列实现生产者-消费者问题？"><a href="#4-什么是阻塞队列？-我们如何使用阻塞队列实现生产者-消费者问题？" class="headerlink" title="4. 什么是阻塞队列？ 我们如何使用阻塞队列实现生产者-消费者问题？"></a>4. 什么是阻塞队列？ 我们如何使用阻塞队列实现生产者-消费者问题？</h3><p>java.util.concurrent.BlockingQueue是一个队列，支持在检索和删除元素时等待队列变为非空的操作，并在添加元素时等待队列中的空间变得可用。</p>
+<p>如果尝试在队列中存储空值，BlockingQueue不接受空值并抛出NullPointerException。</p>
+<p>BlockingQueue实现是线程安全的。 所有排队方法本质上都是原子的，并使用内部锁或其他形式的并发控制。</p>
+<p>BlockingQueue接口是java集合框架的一部分，它主要用于实现生产者消费者问题。<br>使用BlockingQueue检查此帖子的生产者 - 消费者问题实现 。</p>
+<h3 id="5-什么是Callable和Future？"><a href="#5-什么是Callable和Future？" class="headerlink" title="5. 什么是Callable和Future？"></a>5. 什么是Callable和Future？</h3><p>Java 5在Concurrency包中引入了类似于Runnable接口的java.util.concurrent.Callable接口，但它可以返回任何Object并且能够抛出异常。</p>
+<p>可调用接口使用Generic来定义Object的返回类型。 执行器类提供了有用的方法来在线程池中执行Callable。 由于可调用任务并行运行，我们必须等待返回的对象。 可调用任务返回java.util.concurrent.Future对象。 使用未来，我们可以找到可调用任务的状态并获取返回的对象。 它提供可以等待Callable完成的get（）方法，然后返回结果。<br>检查这个帖子可以调用未来的例子 。</p>
+<h3 id="6-什么是FutureTask类？"><a href="#6-什么是FutureTask类？" class="headerlink" title="6. 什么是FutureTask类？"></a>6. 什么是FutureTask类？</h3><p>FutureTask是Future接口的基本实现类，我们可以使用Executors进行异步处理。 大多数情况下，我们不需要使用FutureTask类，但如果我们想覆盖Future接口的某些方法并希望保留大部分的基本实现，那么它将非常方便。 我们只能扩展这个类，并根据我们的要求重写方法。 查看Java FutureTask示例文章，了解如何使用它，以及其具有的不同方法。</p>
+<h3 id="7-什么是Concurrent-Collection类？"><a href="#7-什么是Concurrent-Collection类？" class="headerlink" title="7. 什么是Concurrent Collection类？"></a>7. 什么是Concurrent Collection类？</h3><p>Java集合类是故障快速的，这意味着如果在某些线程使用迭代器遍历它时，集合将被更改，则iterator.next（）将抛出ConcurrentModificationException。</p>
+<p>并发收集类支持检索的完全并发性和可更新的可预期并发性。<br>主要类是ConcurrentHashMap，CopyOnWriteArrayList和CopyOnWriteArraySet，请检查此帖子，以了解如何在使用迭代器时避免ConcurrentModificationException异常 。</p>
+<h3 id="8-什么是Executors类？"><a href="#8-什么是Executors类？" class="headerlink" title="8. 什么是Executors类？"></a>8. 什么是Executors类？</h3><p>Executors类为Executor，ExecutorService，ScheduledExecutorService，ThreadFactory和Callable类提供实用程序方法。</p>
+<p>执行器类可以用来轻松地在java中创建Thread Pool，这也是支持Callable实现的唯一类。</p>
+<h3 id="9-Java-8中的并发API的一些改进是什么？"><a href="#9-Java-8中的并发API的一些改进是什么？" class="headerlink" title="9. Java 8中的并发API的一些改进是什么？"></a>9. Java 8中的并发API的一些改进是什么？</h3><p>一些重要的并发API增强功能是：</p>
+<p>ConcurrentHashMap compute（），forEach（），forEachEntry（），forEachKey（），forEachValue（），merge（），reduce（）和search（）方法。<br>可以明确完成的CompletableFuture（设置其值和状态）。<br>执行者newWorkStealingPool（）方法创建使用所有可用处理器作为其目标并行级别的工作窃取线程池。</p>
+<p><a href="https://www.journaldev.com/1162/java-multithreading-concurrency-interview-questions-answers" target="_blank" rel="noopener">原文</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="/2018/11/26/java-multithreading-concurrency-interview-questions/" data-id="cjxu2c55r005a14f1ag5zn62c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jesshaw" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/11/26/java-programming-interview-questions/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            java编程面试问题
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/11/26/java-jvm-memory-model-memory-management/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Java（JVM）内存模型 - Java中的内存管理</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water7.jpg)" alt="为Spring设置restful基础路径" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="title">为Spring设置restful基础路径</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.936Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-penetrate-layers/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water13.jpg)" alt="spring中如何穿透多层共享公用信息" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-penetrate-layers/" class="title">spring中如何穿透多层共享公用信息</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.920Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-interview-questions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water6.jpg)" alt="Spring面试问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-interview-questions/" class="title">Spring面试问题</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.896Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-hot-deploy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water14.jpg)" alt="Spring Boot热部署：spring-boot-devtools" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-hot-deploy/" class="title">Spring Boot热部署：spring-boot-devtools</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.878Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water10.jpg)" alt="在Linux中后台运行进程的几种方法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="title">在Linux中后台运行进程的几种方法</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.871Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/">csharp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/db/">db</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/management/">management</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-docker-install-安装/">CentOS, docker, install,安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate-ORM/">Hibernate,ORM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asynchronous-wcf-castle-WcfFacility-异步/">asynchronous,wcf, castle, WcfFacility,异步.</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv-excel/">csv,excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/date-duration-period-ChronoUnit-java-time-java8/">date,duration,period,ChronoUnit,java.time,java8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-docker命令/">docker,docker命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-git命令/">git,git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-String-interview-字符串-面试/">java,String,interview,字符串,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-class-loader-类加载器/">java,class loader,类加载器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-core-interview-核心技术-编程-面试/">java,core,interview,核心技术,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-exception-interview-异常-面试/">java,exception,interview,异常,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-mybatis-columns-mapping-列映射/">java,mybatis,columns mapping,列映射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-programming-interview-编程-面试/">java,programming, interview,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-interview-面试/">java,spring,interview,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-restful-base-path-基础路径/">java,spring,restful,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-share-base-path-基础路径/">java,spring,share,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/">java,spring,spring boot,spring-boot-devtools,热部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-date-日期，格式化/">js,date,日期，格式化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-object-create-js对象创建-js类-最佳实践/">js,object create,js对象创建,js类,最佳实践</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-VirtualBox-win7/">linux,CentOS,VirtualBox,win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-java-jvm/">linux,CentOS,java,jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/">linux,VirtualBox,VirtualBox image,CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-linux/">linux,linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-process-后台运行/">linux,process,后台运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/liquibase-db-upgrade-数据库升级/">liquibase,db upgrade,数据库升级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven-mvn-maven命令/">maven,mvn,maven命令</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/model/">model</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs-nodejs命令/">nodejs,nodejs命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test-hexo/">test,hexo</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CentOS-docker-install-安装/" style="font-size: 10px;">CentOS, docker, install,安装</a> <a href="/tags/Hibernate-ORM/" style="font-size: 10px;">Hibernate,ORM</a> <a href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/" style="font-size: 10px;">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a> <a href="/tags/asynchronous-wcf-castle-WcfFacility-异步/" style="font-size: 10px;">asynchronous,wcf, castle, WcfFacility,异步.</a> <a href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/csv-excel/" style="font-size: 10px;">csv,excel</a> <a href="/tags/date-duration-period-ChronoUnit-java-time-java8/" style="font-size: 10px;">date,duration,period,ChronoUnit,java.time,java8</a> <a href="/tags/docker-docker命令/" style="font-size: 10px;">docker,docker命令</a> <a href="/tags/git-git命令/" style="font-size: 10px;">git,git命令</a> <a href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/" style="font-size: 10px;">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a> <a href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/" style="font-size: 10px;">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a> <a href="/tags/java-String-interview-字符串-面试/" style="font-size: 10px;">java,String,interview,字符串,面试</a> <a href="/tags/java-class-loader-类加载器/" style="font-size: 20px;">java,class loader,类加载器</a> <a href="/tags/java-core-interview-核心技术-编程-面试/" style="font-size: 10px;">java,core,interview,核心技术,编程,面试</a> <a href="/tags/java-exception-interview-异常-面试/" style="font-size: 10px;">java,exception,interview,异常,面试</a> <a href="/tags/java-mybatis-columns-mapping-列映射/" style="font-size: 10px;">java,mybatis,columns mapping,列映射</a> <a href="/tags/java-programming-interview-编程-面试/" style="font-size: 10px;">java,programming, interview,编程,面试</a> <a href="/tags/java-spring-interview-面试/" style="font-size: 10px;">java,spring,interview,面试</a> <a href="/tags/java-spring-restful-base-path-基础路径/" style="font-size: 10px;">java,spring,restful,base path,基础路径</a> <a href="/tags/java-spring-share-base-path-基础路径/" style="font-size: 10px;">java,spring,share,base path,基础路径</a> <a href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/" style="font-size: 10px;">java,spring,spring boot,spring-boot-devtools,热部署</a> <a href="/tags/js-date-日期，格式化/" style="font-size: 10px;">js,date,日期，格式化</a> <a href="/tags/js-object-create-js对象创建-js类-最佳实践/" style="font-size: 10px;">js,object create,js对象创建,js类,最佳实践</a> <a href="/tags/linux-CentOS-VirtualBox-win7/" style="font-size: 10px;">linux,CentOS,VirtualBox,win7</a> <a href="/tags/linux-CentOS-java-jvm/" style="font-size: 10px;">linux,CentOS,java,jvm</a> <a href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/" style="font-size: 10px;">linux,VirtualBox,VirtualBox image,CentOS</a> <a href="/tags/linux-linux/" style="font-size: 10px;">linux,linux</a> <a href="/tags/linux-process-后台运行/" style="font-size: 10px;">linux,process,后台运行</a> <a href="/tags/liquibase-db-upgrade-数据库升级/" style="font-size: 10px;">liquibase,db upgrade,数据库升级</a> <a href="/tags/maven-mvn-maven命令/" style="font-size: 20px;">maven,mvn,maven命令</a> <a href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/" style="font-size: 10px;">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a> <a href="/tags/model/" style="font-size: 10px;">model</a> <a href="/tags/nodejs-nodejs命令/" style="font-size: 10px;">nodejs,nodejs命令</a> <a href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/" style="font-size: 10px;">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a> <a href="/tags/test-hexo/" style="font-size: 10px;">test,hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 jes shaw</p>
+                <p>Powered by <a href="#//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="#//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

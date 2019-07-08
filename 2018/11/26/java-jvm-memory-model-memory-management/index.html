@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Java（JVM）内存模型 - Java中的内存管理 | Footprint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收">
+    
+    <meta name="description" content="了解JVM内存模型 ， Java内存管理是非常重要的，如果你想了解Java垃圾回收的工作。 今天，我们将研究java中的内存管理，JVM内存的不同部分以及如何监视和执行垃圾回收调优。">
+<meta name="keywords" content="memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java（JVM）内存模型 - Java中的内存管理">
+<meta property="og:url" content="/2018/11/26/java-jvm-memory-model-memory-management/index.html">
+<meta property="og:site_name" content="Footprint">
+<meta property="og:description" content="了解JVM内存模型 ， Java内存管理是非常重要的，如果你想了解Java垃圾回收的工作。 今天，我们将研究java中的内存管理，JVM内存的不同部分以及如何监视和执行垃圾回收调优。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/gallery/green-water2.jpg">
+<meta property="og:updated_time" content="2017-12-20T03:47:34.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java（JVM）内存模型 - Java中的内存管理">
+<meta name="twitter:description" content="了解JVM内存模型 ， Java内存管理是非常重要的，如果你想了解Java垃圾回收的工作。 今天，我们将研究java中的内存管理，JVM内存的不同部分以及如何监视和执行垃圾回收调优。">
+<meta name="twitter:image" content="/gallery/green-water2.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Footprint" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jes&#39; footprint</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/java/">java</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-java-jvm-memory-model-memory-management" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Java（JVM）内存模型 - Java中的内存管理
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/26/java-jvm-memory-model-memory-management/" class="article-date">
+            <time datetime="2018-11-26T05:54:44.549Z" itemprop="datePublished">2018-11-26</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>了解JVM内存模型 ， Java内存管理是非常重要的，如果你想了解Java垃圾回收的工作。 今天，我们将研究java中的内存管理，JVM内存的不同部分以及如何监视和执行垃圾回收调优。<br><a id="more"></a><br>本文目录</p>
+<ol>
+<li>Java（JVM）内存模型</li>
+<li>Java中的内存管理 - 年轻一代</li>
+<li>Java中的内存管理 - 老一代<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.1. Stop the World事件<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.2. Java内存模型 - 永久生成<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.3. Java内存模型 - 方法区域<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.4. Java内存模型 - 内存池<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.5. Java内存模型 - 运行时常量池<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.6. Java内存模型 - Java堆栈内存<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.7. Java中的内存管理 - Java堆内存开关<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.8. Java中的内存管理 - Java垃圾回收<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.9. Java中的内存管理 - Java垃圾回收类型<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.10. Java中的内存管理 - Java垃圾回收监控<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.10.1. jstat<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.10.2. 使用Visual GC的Java VisualVM<br>&nbsp;&nbsp;&nbsp;&nbsp; 3.11. Java垃圾回收调整</li>
+</ol>
+<h2 id="Java（JVM）内存模型"><a href="#Java（JVM）内存模型" class="headerlink" title="Java（JVM）内存模型"></a>Java（JVM）内存模型</h2><p><img src="/gallery/Java-Memory-Model.png" alt="Java内存模型" title="Java内存模型"></p>
+<p>如上图所示，JVM内存分为不同的部分。 从广义上讲，JVM堆内存在物理上分为两个部分 - 年轻一代和旧一代 。</p>
+<h2 id="Java中的内存管理-年轻一代"><a href="#Java中的内存管理-年轻一代" class="headerlink" title="Java中的内存管理 - 年轻一代"></a>Java中的内存管理 - 年轻一代</h2><p>年轻代是所有新对象产生的地方。当年轻代内存空间被用完时，就会触发垃圾回收。这个垃圾回收叫做Minor GC。年轻代被分为3个部分——Enden区和两个Survivor区。</p>
+<p>年轻代空间的要点：</p>
+<ul>
+<li>大多数新建的对象都位于Eden区。</li>
+<li>当Eden区被对象填满时，就会执行Minor GC。并把所有存活下来的对象转移到其中一个survivor区。</li>
+<li>Minor GC同样会检查存活下来的对象，并把它们转移到另一个survivor区。这样在一段时间内，总会有一个空的survivor区。</li>
+<li>经过多次GC周期后，仍然存活下来的对象会被转移到年老代内存空间。通常这是在年轻代有资格提升到年老代前通过设定年龄阈值来完成的。</li>
+</ul>
+<h2 id="Java中的内存管理-老一代"><a href="#Java中的内存管理-老一代" class="headerlink" title="Java中的内存管理 - 老一代"></a>Java中的内存管理 - 老一代</h2><p>年老代内存里包含了长期存活的对象和经过多次Minor GC后依然存活下来的对象。通常会在老年代内存被占满时进行垃圾回收。老年代的垃圾回收叫做Major GC。Major GC会花费更多的时间。</p>
+<h2 id="Stop-the-World事件"><a href="#Stop-the-World事件" class="headerlink" title="Stop the World事件"></a>Stop the World事件</h2><p>所有的垃圾回收都是“Stop the World”事件，因为所有的应用线程都会停下来直到操作完成（所以叫“Stop the World”）。</p>
+<p>因为年轻代里的对象都是一些临时（short-lived ）对象，执行Minor GC非常快，所以应用不会受到（“Stop the World”）影响。</p>
+<p>由于Major GC会检查所有存活的对象，因此会花费更长的时间。应该尽量减少Major GC。因为Major GC会在垃圾回收期间让你的应用反应迟钝，所以如果你有一个需要快速响应的应用发生多次Major GC，你会看到超时错误。</p>
+<p>垃圾回收时间取决于垃圾回收策略。这就是为什么有必要去监控垃圾回收和对垃圾回收进行调优。从而避免要求快速响应的应用出现超时错误。</p>
+<h3 id="Java内存模型-永久代"><a href="#Java内存模型-永久代" class="headerlink" title="Java内存模型 - 永久代"></a>Java内存模型 - 永久代</h3><p>永久代或者“Perm Gen”包含了JVM需要的应用元数据，这些元数据描述了在应用里使用的类和方法。注意，永久代不是Java堆内存的一部分。</p>
+<p>永久代存放JVM运行时使用的类。永久代同样包含了Java SE库的类和方法。永久代的对象在full GC时进行垃圾回收。</p>
+<h3 id="Java内存模型-方法区域"><a href="#Java内存模型-方法区域" class="headerlink" title="Java内存模型 - 方法区域"></a>Java内存模型 - 方法区域</h3><p>方法区是永久代空间的一部分，并用来存储类型信息（运行时常量和静态变量）和方法代码和构造函数代码。</p>
+<h3 id="Java内存模型-内存池"><a href="#Java内存模型-内存池" class="headerlink" title="Java内存模型 - 内存池"></a>Java内存模型 - 内存池</h3><p>如果JVM实现支持，JVM内存管理会为创建内存池，用来为不变对象创建对象池。字符串池就是内存池类型的一个很好的例子。内存池可以属于堆或者永久代，这取决于JVM内存管理的实现。</p>
+<h3 id="Java内存模型-运行时常量池"><a href="#Java内存模型-运行时常量池" class="headerlink" title="Java内存模型 - 运行时常量池"></a>Java内存模型 - 运行时常量池</h3><p>运行时常量池是每个类常量池的运行时代表。它包含了类的运行时常量和静态方法。运行时常量池是方法区的一部分。</p>
+<h3 id="Java内存模型-Java堆栈内存"><a href="#Java内存模型-Java堆栈内存" class="headerlink" title="Java内存模型 - Java堆栈内存"></a>Java内存模型 - Java堆栈内存</h3><p>Java栈内存用于运行线程。它们包含了方法里的临时数据、堆里其它对象引用的特定数据。你可以阅读栈内存和堆内存的区别。</p>
+<h3 id="Java内存管理-Java堆内存开关"><a href="#Java内存管理-Java堆内存开关" class="headerlink" title="Java内存管理 - Java堆内存开关"></a>Java内存管理 - Java堆内存开关</h3><p>Java提供了大量的内存开关（参数），我们可以用它来设置内存大小和它们的比例。下面是一些常用的开关：</p>
+<table>
+<thead>
+<tr>
+<th>VM 开关</th>
+<th>VM开关描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-Xms</td>
+<td>设置JVM启动时堆的初始化大小。</td>
+</tr>
+<tr>
+<td>-Xmx</td>
+<td>设置堆最大值。</td>
+</tr>
+<tr>
+<td>-Xmn</td>
+<td>设置年轻代的空间大小，剩下的为老年代的空间大小。</td>
+</tr>
+<tr>
+<td>-XX:PermGen</td>
+<td>设置永久代内存的初始化大小。</td>
+</tr>
+<tr>
+<td>-XX:MaxPermGen</td>
+<td>设置永久代的最大值。</td>
+</tr>
+<tr>
+<td>-XX:SurvivorRatio</td>
+<td>提供Eden区和survivor区的空间比例。比如，如果年轻代的大小为10m并且VM开关是-XX:SurvivorRatio=2，那么将会保留5m内存给Eden区和每个Survivor区分配2.5m内存。默认比例是8。</td>
+</tr>
+<tr>
+<td>-XX:NewRatio</td>
+<td>提供年老代和年轻代的比例大小。默认值是2。</td>
+</tr>
+</tbody>
+</table>
+<p>大多数时候，上面的选项已经足够使用了。但是如果你还想了解其他的选项，那么请查看JVM选项官方网页。</p>
+<h3 id="Java中的内存管理-Java垃圾回收"><a href="#Java中的内存管理-Java垃圾回收" class="headerlink" title="Java中的内存管理 - Java垃圾回收"></a>Java中的内存管理 - Java垃圾回收</h3><p>Java垃圾回收会找出没用的对象，把它从内存中移除并释放出内存给以后创建的对象使用。Java程序语言中的一个最大优点是自动垃圾回收，不像其他的程序语言那样需要手动分配和释放内存，比如C语言。</p>
+<p>垃圾回收器是一个后台运行程序。它管理着内存中的所有对象并找出没被引用的对象。所有的这些未引用的对象都会被删除，回收它们的空间并分配给其他对象。</p>
+<p>一个基本的垃圾回收过程涉及三个步骤：</p>
+<ol>
+<li>标记：这是第一步。在这一步，垃圾回收器会找出哪些对象正在使用和哪些对象不在使用。</li>
+<li>正常清除：垃圾回收器清会除不在使用的对象，回收它们的空间分配给其他对象。</li>
+<li>压缩清除：为了提升性能，压缩清除会在删除没用的对象后，把所有存活的对象移到一起。这样可以提高分配新对象的效率。</li>
+</ol>
+<p>简单标记和清除方法存在两个问题：</p>
+<ol>
+<li>效率很低。因为大多数新建对象都会成为“没用对象”。</li>
+<li>经过多次垃圾回收周期的对象很有可能在以后的周期也会存活下来。</li>
+</ol>
+<p>上面简单清除方法的问题在于Java垃圾回收的分代回收的，而且在堆内存里有年轻代和年老代两个区域。我已经在上面解释了Minor GC和Major GC是怎样扫描对象，以及如何把对象从一个分代空间移到另外一个分代空间。</p>
+<h3 id="Java中的内存管理-Java垃圾回收类型"><a href="#Java中的内存管理-Java垃圾回收类型" class="headerlink" title="Java中的内存管理 - Java垃圾回收类型"></a>Java中的内存管理 - Java垃圾回收类型</h3><p>这里有五种可以在应用里使用的垃圾回收类型。仅需要使用JVM开关就可以在我们的应用里启用垃圾回收策略。让我们一起来逐一了解：</p>
+<ol>
+<li>Serial GC（-XX:+UseSerialGC）：Serial GC使用简单的标记、清除、压缩方法对年轻代和年老代进行垃圾回收，即Minor GC和Major GC。Serial GC在client模式（客户端模式）很有用，比如在简单的独立应用和CPU配置较低的机器。这个模式对占有内存较少的应用很管用。</li>
+<li>Parallel GC（-XX:+UseParallelGC）：除了会产生N个线程来进行年轻代的垃圾回收外，Parallel GC和Serial GC几乎一样。这里的N是系统CPU的核数。我们可以使用 -XX:ParallelGCThreads=n 这个JVM选项来控制线程数量。并行垃圾回收器也叫throughput回收器。因为它使用了多CPU加快垃圾回收性能。Parallel GC在进行年老代垃圾回收时使用单线程。</li>
+<li>Parallel Old GC（-XX:+UseParallelOldGC）：和Parallel GC一样。不同之处，Parallel Old GC在年轻代垃圾回收和年老代垃圾回收时都使用多线程回收。</li>
+<li>并发标记清除（CMS）回收器（-XX:+UseConcMarkSweepGC)：CMS回收器也被称为短暂停顿并发回收器。它是对年老代进行垃圾回收的。CMS回收器通过多线程并发进行垃圾回收，尽量减少垃圾回收造成的停顿。CMS回收器对年轻代进行垃圾回收使用的算法和Parallel回收器一样。这个垃圾回收器适用于不能忍受长时间停顿要求快速响应的应用。可使用 -XX:ParallelCMSThreads=n JVM选项来限制CMS回收器的线程数量。</li>
+<li>G1垃圾回收器（-XX:+UseG1GC) G1（Garbage First）：垃圾回收器是在Java 7后才可以使用的特性，它的长远目标时代替CMS回收器。G1回收器是一个并行的、并发的和增量式压缩短暂停顿的垃圾回收器。G1回收器和其他的回收器运行方式不一样，不区分年轻代和年老代空间。它把堆空间划分为多个大小相等的区域。当进行垃圾回收时，它会优先回收存活对象较少的区域，因此叫“Garbage First”。你可以在Oracle Garbage-FIrst回收器文档找到更多详细信息。</li>
+</ol>
+<h3 id="Java中的内存管理-Java垃圾回收监控"><a href="#Java中的内存管理-Java垃圾回收监控" class="headerlink" title="Java中的内存管理 - Java垃圾回收监控"></a>Java中的内存管理 - Java垃圾回收监控</h3><p>我们可以使用命令行和图形工具来监控监控应用垃圾回收。例如，我使用Java SE下载页中的一个demo来实验。</p>
+<p>如果你想使用同样的应用，可以到Java SE下载页面下载JDK 7和JavaFX演示和示例。我使用的示例应用是Java2Demo.jar，它位于 jdk1.7.0_55/demo/jfc/Java2D 目录下。这只是一个可选步骤，你可以运行GC监控命令监控任何Java应用。</p>
+<p>我用来启动演示应用程序的命令是：</p>
+<p> <code>pankaj @ Pankaj：〜/ Downloads / jdk1.7.0_55 / demo / jfc / Java2D $ java -Xmx120m -Xms30m -Xmn10m -XX：PermSize = 20m -XX：MaxPermSize = 20m -XX：+ UseSerialGC -jar Java2Demo.jar</code></p>
+<h4 id="jstat"><a href="#jstat" class="headerlink" title="jstat"></a>jstat</h4><p>可以使用jstat命令行工具监控JVM内存和垃圾回收。标准的JDK已经附带了jstat，所以不需要做任何额外的事情就可以得到它。</p>
+<p>要运行jstat你需要知道应用的进程id，你可以使用 ps -eaf | grep java 命令获取进程id。</p>
+<blockquote>
+<p>pankaj @ Pankaj：〜$ ps -eaf |  grep Java2Demo.jar<br>   501 9582 11579 0 9:48 PM ttys000 0：21.66 / usr / bin / java -Xmx120m -Xms30m -Xmn10m -XX：PermSize = 20m -XX：MaxPermSize = 20m -XX：+ UseG1GC -jar Java2Demo.jar<br>   501 14073 14045 0 9:48 PM ttys002 0：00.00 grep Java2Demo.jar</p>
+</blockquote>
+<p>从上面知道，我的Java应用进程id是9582。现在可以运行jstat命令了，就像下面展示的一样：</p>
+<blockquote>
+<p>pankaj @ Pankaj：〜$ jstat -gc 9582 1000<br>  S0C S1C S0U S1U EC EU OC OU PC PU YGC YGCT FGC FGCT GCT<br> 1024.0 1024.0 0.0 0.0 8192.0 7933.3 42108.0 23401.3 20480.0 19990.9 157 0.274 40 1.381 1.654<br> 1024.0 1024.0 0.0 0.0 8192.0 8026.5 42108.0 23401.3 20480.0 19990.9 157 0.274 40 1.381 1.654<br> 1024.0 1024.0 0.0 0.0 8192.0 8030.0 42108.0 23401.3 20480.0 19990.9 157 0.274 40 1.381 1.654<br> 1024.0 1024.0 0.0 0.0 8192.0 8122.2 42108.0 23401.3 20480.0 19990.9 157 0.274 40 1.381 1.654<br> 1024.0 1024.0 0.0 0.0 8192.0 8171.2 42108.0 23401.3 20480.0 19990.9 157 0.274 40 1.381 1.654<br> 1024.0 1024.0 48.7 0.0 8192.0 106.7 42108.0 23401.3 20480.0 19990.9 158 0.275 40 1.381 1.656<br> 1024.0 1024.0 48.7 0.0 8192.0 145.8 42108.0 23401.3 20480.0 19990.9 158 0.275 40 1.381 1.656</p>
+</blockquote>
+<p>jstat命令的最后一个参数是每个输出的时间间隔。每隔一秒就会打印出内存和垃圾回收数据。</p>
+<p>让我们一起来对每一列的意义进行逐一了解：</p>
+<ul>
+<li>S0C和S1C：这一列展示了Survivor0和Survivor1区的当前大小（单位KB）。</li>
+<li>S0U和S1U：这一列展示了当前Survivor0和Survivor1区的使用情况（单位KB）。注意：无论任何时候，总会有一个Survivor区是空着的。</li>
+<li>EC和EU：这些列展示了Eden区当前空间大小和使用情况（单位KB）。注意：EU的大小一直在增大。而且只要大小接近EC时，就会触发Minor GC并且EU将会减小。</li>
+<li>OC和OU：这些列展示了年老代当前空间大小和当前使用情况（单位KB）。</li>
+<li>PC和PU：这些列展示了Perm Gen（永久代）当前空间大小和当前使用情况（单位KB）。</li>
+<li>YGC和YGCT：YGC这列显示了发生在年轻代的GC事件的数量。YGCT这列显示了在年轻代进行GC操作的累计时间。注意：在EU的值由于minor GC导致下降时，同一行的YGC和YGCT都会增加。</li>
+<li>FGC和FGCT：FGC列显示了发生Full GC事件的次数。FGCT显示了进行Full GC操作的累计时间。注意：相对于年轻代的GC使用时间，Full GC所用的时间长很多。</li>
+<li>GCT：这一列显示了GC操作的总累计时间。注意：总累计时间是YGCT和FGCT两列所用时间的总和（GCT=YGCT+FGCT）。</li>
+</ul>
+<p>jstat的优点，我们同样可以在没有GUI的远程服务器上运行jstat。注意：我们是通过 -Xmn10m 选项来指定S0C、S1C和EC的总和为10m的。</p>
+<h4 id="Java-VisualVM与Visual-GC插件"><a href="#Java-VisualVM与Visual-GC插件" class="headerlink" title="Java VisualVM与Visual GC插件"></a>Java VisualVM与Visual GC插件</h4><p>如果你想在GUI里查看内存和GC，那么可以使用jvisualvm工具。Java VisualVM同样是JDK的一部分，所以你不需要单独去下载。</p>
+<p>在终端运行jvisualvm命令启动Java VisualVM程序。一旦启动程序，你需要从Tools-&gt;Plugins选项安装Visual GC插件，就像下面图片展示的。</p>
+<p><img src="/gallery/VisualVM-Visual-GC-Plugin.png" alt="VisualVM" title="VisualVM"></p>
+<p>安装完Visual GC插件后，从左边栏打开应用并把视角转到Visual GC部分。你将会得到关于JVM内存和垃圾回收详情，如下图所示。<br><img src="/gallery/Serial-GC-VisualGC.png" alt="VisualGC" title="VisualGC"></p>
+<h3 id="Java垃圾回收调优"><a href="#Java垃圾回收调优" class="headerlink" title="Java垃圾回收调优"></a>Java垃圾回收调优</h3><p>Java垃圾回收调优应该是提升应用吞吐量的最后一个选择。在你发现应用由于长时间垃圾回收导致了应用性能下降、出现超时的时候，应该考虑Java垃圾回收调优。</p>
+<p>如果你在日志里看到 java.lang.OutOfMemoryError: PermGen space错误，那么可以尝试使用 -XX:PermGen 和 -XX:MaxPermGen JVM选项去监控并增加Perm Gen内存空间。你也可以尝试使用-XX:+CMSClassUnloadingEnabled并查看使用CMS垃圾回收器的执行性能。</p>
+<p>如果你看到了大量的Full GC操作，那么你应该尝试增大老年代的内存空间。</p>
+<p>全面垃圾回收调优要花费大量的努力和时间，这里没有一尘不变的硬性调优规则。你需要去尝试不同的选项并且对这些选项进行对比，从而找出最适合自己应用的方案。</p>
+<p>这就是所有的Java内存模型和垃圾回收内容。希望对你理解JVM内存和垃圾回收过程有所帮助。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol>
+<li><a href="https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java#java-jvm-memory-model" target="_blank" rel="noopener">原文</a></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="/2018/11/26/java-jvm-memory-model-memory-management/" data-id="cjxu2c54s004j14f1fu5hwljd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jesshaw" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/11/26/java-multithreading-concurrency-interview-questions/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            java多线程、并发常见面试问题
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/11/26/java-heap-space-vs-stack-memory/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Java堆VS栈-Java中的内存分配</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water7.jpg)" alt="为Spring设置restful基础路径" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="title">为Spring设置restful基础路径</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.936Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-penetrate-layers/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water13.jpg)" alt="spring中如何穿透多层共享公用信息" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-penetrate-layers/" class="title">spring中如何穿透多层共享公用信息</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.920Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-interview-questions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water6.jpg)" alt="Spring面试问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-interview-questions/" class="title">Spring面试问题</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.896Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-hot-deploy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water14.jpg)" alt="Spring Boot热部署：spring-boot-devtools" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-hot-deploy/" class="title">Spring Boot热部署：spring-boot-devtools</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.878Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water10.jpg)" alt="在Linux中后台运行进程的几种方法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="title">在Linux中后台运行进程的几种方法</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.871Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/">csharp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/db/">db</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/management/">management</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-docker-install-安装/">CentOS, docker, install,安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate-ORM/">Hibernate,ORM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asynchronous-wcf-castle-WcfFacility-异步/">asynchronous,wcf, castle, WcfFacility,异步.</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv-excel/">csv,excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/date-duration-period-ChronoUnit-java-time-java8/">date,duration,period,ChronoUnit,java.time,java8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-docker命令/">docker,docker命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-git命令/">git,git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-String-interview-字符串-面试/">java,String,interview,字符串,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-class-loader-类加载器/">java,class loader,类加载器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-core-interview-核心技术-编程-面试/">java,core,interview,核心技术,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-exception-interview-异常-面试/">java,exception,interview,异常,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-mybatis-columns-mapping-列映射/">java,mybatis,columns mapping,列映射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-programming-interview-编程-面试/">java,programming, interview,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-interview-面试/">java,spring,interview,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-restful-base-path-基础路径/">java,spring,restful,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-share-base-path-基础路径/">java,spring,share,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/">java,spring,spring boot,spring-boot-devtools,热部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-date-日期，格式化/">js,date,日期，格式化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-object-create-js对象创建-js类-最佳实践/">js,object create,js对象创建,js类,最佳实践</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-VirtualBox-win7/">linux,CentOS,VirtualBox,win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-java-jvm/">linux,CentOS,java,jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/">linux,VirtualBox,VirtualBox image,CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-linux/">linux,linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-process-后台运行/">linux,process,后台运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/liquibase-db-upgrade-数据库升级/">liquibase,db upgrade,数据库升级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven-mvn-maven命令/">maven,mvn,maven命令</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/model/">model</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs-nodejs命令/">nodejs,nodejs命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test-hexo/">test,hexo</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CentOS-docker-install-安装/" style="font-size: 10px;">CentOS, docker, install,安装</a> <a href="/tags/Hibernate-ORM/" style="font-size: 10px;">Hibernate,ORM</a> <a href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/" style="font-size: 10px;">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a> <a href="/tags/asynchronous-wcf-castle-WcfFacility-异步/" style="font-size: 10px;">asynchronous,wcf, castle, WcfFacility,异步.</a> <a href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/csv-excel/" style="font-size: 10px;">csv,excel</a> <a href="/tags/date-duration-period-ChronoUnit-java-time-java8/" style="font-size: 10px;">date,duration,period,ChronoUnit,java.time,java8</a> <a href="/tags/docker-docker命令/" style="font-size: 10px;">docker,docker命令</a> <a href="/tags/git-git命令/" style="font-size: 10px;">git,git命令</a> <a href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/" style="font-size: 10px;">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a> <a href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/" style="font-size: 10px;">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a> <a href="/tags/java-String-interview-字符串-面试/" style="font-size: 10px;">java,String,interview,字符串,面试</a> <a href="/tags/java-class-loader-类加载器/" style="font-size: 20px;">java,class loader,类加载器</a> <a href="/tags/java-core-interview-核心技术-编程-面试/" style="font-size: 10px;">java,core,interview,核心技术,编程,面试</a> <a href="/tags/java-exception-interview-异常-面试/" style="font-size: 10px;">java,exception,interview,异常,面试</a> <a href="/tags/java-mybatis-columns-mapping-列映射/" style="font-size: 10px;">java,mybatis,columns mapping,列映射</a> <a href="/tags/java-programming-interview-编程-面试/" style="font-size: 10px;">java,programming, interview,编程,面试</a> <a href="/tags/java-spring-interview-面试/" style="font-size: 10px;">java,spring,interview,面试</a> <a href="/tags/java-spring-restful-base-path-基础路径/" style="font-size: 10px;">java,spring,restful,base path,基础路径</a> <a href="/tags/java-spring-share-base-path-基础路径/" style="font-size: 10px;">java,spring,share,base path,基础路径</a> <a href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/" style="font-size: 10px;">java,spring,spring boot,spring-boot-devtools,热部署</a> <a href="/tags/js-date-日期，格式化/" style="font-size: 10px;">js,date,日期，格式化</a> <a href="/tags/js-object-create-js对象创建-js类-最佳实践/" style="font-size: 10px;">js,object create,js对象创建,js类,最佳实践</a> <a href="/tags/linux-CentOS-VirtualBox-win7/" style="font-size: 10px;">linux,CentOS,VirtualBox,win7</a> <a href="/tags/linux-CentOS-java-jvm/" style="font-size: 10px;">linux,CentOS,java,jvm</a> <a href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/" style="font-size: 10px;">linux,VirtualBox,VirtualBox image,CentOS</a> <a href="/tags/linux-linux/" style="font-size: 10px;">linux,linux</a> <a href="/tags/linux-process-后台运行/" style="font-size: 10px;">linux,process,后台运行</a> <a href="/tags/liquibase-db-upgrade-数据库升级/" style="font-size: 10px;">liquibase,db upgrade,数据库升级</a> <a href="/tags/maven-mvn-maven命令/" style="font-size: 20px;">maven,mvn,maven命令</a> <a href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/" style="font-size: 10px;">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a> <a href="/tags/model/" style="font-size: 10px;">model</a> <a href="/tags/nodejs-nodejs命令/" style="font-size: 10px;">nodejs,nodejs命令</a> <a href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/" style="font-size: 10px;">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a> <a href="/tags/test-hexo/" style="font-size: 10px;">test,hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 jes shaw</p>
+                <p>Powered by <a href="#//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="#//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
