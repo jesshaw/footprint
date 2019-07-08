@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>如何快速搭建linux运行环境 | Footprint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="linux,VirtualBox,VirtualBox image,CentOS">
+    
+    <meta name="description" content="对于程序员来说，很可能用linux作为服务器运行环境，为了提前发现问题不可避免的需要搭建一套linux运行环境，此文给出一个可行、快速且经济的解决方案。">
+<meta name="keywords" content="linux,VirtualBox,VirtualBox image,CentOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何快速搭建linux运行环境">
+<meta property="og:url" content="/2018/11/26/quickly-set-up-linux-in-virtualbox/index.html">
+<meta property="og:site_name" content="Footprint">
+<meta property="og:description" content="对于程序员来说，很可能用linux作为服务器运行环境，为了提前发现问题不可避免的需要搭建一套linux运行环境，此文给出一个可行、快速且经济的解决方案。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/gallery/blue-water7.jpg">
+<meta property="og:updated_time" content="2018-02-09T14:54:36.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何快速搭建linux运行环境">
+<meta name="twitter:description" content="对于程序员来说，很可能用linux作为服务器运行环境，为了提前发现问题不可避免的需要搭建一套linux运行环境，此文给出一个可行、快速且经济的解决方案。">
+<meta name="twitter:image" content="/gallery/blue-water7.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Footprint" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jes&#39; footprint</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/linux/">linux</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-quickly-set-up-linux-in-virtualbox" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        如何快速搭建linux运行环境
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/26/quickly-set-up-linux-in-virtualbox/" class="article-date">
+            <time datetime="2018-11-26T05:54:44.837Z" itemprop="datePublished">2018-11-26</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/">linux,VirtualBox,VirtualBox image,CentOS</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>对于程序员来说，很可能用linux作为服务器运行环境，为了提前发现问题不可避免的需要搭建一套linux运行环境，此文给出一个可行、快速且经济的解决方案。</p>
+<a id="more"></a>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul>
+<li>在VirtualBox中安装好CentOS 7 </li>
+<li>可实现主机到虚机的双向复制和文件共享</li>
+</ul>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>win7</li>
+<li>VirtualBox 5.2.6</li>
+<li>CentOS 7 32位镜像</li>
+</ul>
+<h2 id="实施步骤"><a href="#实施步骤" class="headerlink" title="实施步骤"></a>实施步骤</h2><h3 id="1-下载VirtualBox"><a href="#1-下载VirtualBox" class="headerlink" title="1 下载VirtualBox"></a>1 下载VirtualBox</h3><p>打开<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">virtualbox官网</a> ，选择windows hosts下载到本地，安装完成进行到下一步。</p>
+<h3 id="2-下载Linux镜像"><a href="#2-下载Linux镜像" class="headerlink" title="2 下载Linux镜像"></a>2 下载Linux镜像</h3><p>打开<a href="https://www.osboxes.org/virtualbox-images/" target="_blank" rel="noopener">osboxes官网</a> ,打开CentOS链接，找到linux 32bit下载。也可以下载64bit据自身机器情况而定。</p>
+<h3 id="3-创建虚拟电脑"><a href="#3-创建虚拟电脑" class="headerlink" title="3 创建虚拟电脑"></a>3 创建虚拟电脑</h3><p>打开VirtualBox-&gt;新建-&gt;CentOS-&gt;…-&gt;使用已有虚拟硬盘-&gt;选择已下载的Linux镜像*.vdi文件-&gt;..-&gt;直至完成。</p>
+<h3 id="4-系统初始化设置"><a href="#4-系统初始化设置" class="headerlink" title="4 系统初始化设置"></a>4 系统初始化设置</h3><p>按提示进行系统设置，最后输入osboxes.org作为用户密码，登入Linux系统即完成搭建。</p>
+<h3 id="5-安装增强功能"><a href="#5-安装增强功能" class="headerlink" title="5 安装增强功能"></a>5 安装增强功能</h3><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>设备-&gt;安装增强功能-&gt;直至完成。</p>
+<h5 id="设置共享剪切板"><a href="#设置共享剪切板" class="headerlink" title="设置共享剪切板"></a>设置共享剪切板</h5><p>设备-&gt;共享剪切板-&gt;双向</p>
+<h5 id="设置共享目录"><a href="#设置共享目录" class="headerlink" title="设置共享目录"></a>设置共享目录</h5><p>设备-&gt;共享文件夹-&gt;设置共享目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--挂载</span><br><span class="line">mount -t vboxsf hostDirectoryName virtualDirectoryPath</span><br><span class="line">--解挂</span><br><span class="line">umount virtualDirectoryPath</span><br></pre></td></tr></table></figure>
+<h5 id="挂载解决办法"><a href="#挂载解决办法" class="headerlink" title="挂载解决办法"></a>挂载解决办法</h5><p>问题：/sbin/mount.vboxsf: mounting failed with the error: No such device</p>
+<p>执行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum update</span><br><span class="line">yum install kernel</span><br><span class="line">yum install kernel-devel</span><br><span class="line">yum install kernel-headers</span><br><span class="line">yum install gcc</span><br><span class="line">yum install make  </span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/daiyudong2020/article/details/58073520" target="_blank" rel="noopener">参考</a></p>
+<h2 id="3-延伸阅读"><a href="#3-延伸阅读" class="headerlink" title="3  延伸阅读"></a>3  延伸阅读</h2><h3 id="设置系统启动后进入文本界面："><a href="#设置系统启动后进入文本界面：" class="headerlink" title="设置系统启动后进入文本界面："></a>设置系统启动后进入文本界面：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">set</span>-default multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="设置系统启动后进入图形界面："><a href="#设置系统启动后进入图形界面：" class="headerlink" title="设置系统启动后进入图形界面："></a>设置系统启动后进入图形界面：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">set</span>-default graphical.target</span><br></pre></td></tr></table></figure>
+<h3 id="重启系统："><a href="#重启系统：" class="headerlink" title="重启系统："></a>重启系统：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl reboot</span><br></pre></td></tr></table></figure>
+<h3 id="以文本界面启动后，执行以下命令启动图形界面："><a href="#以文本界面启动后，执行以下命令启动图形界面：" class="headerlink" title="以文本界面启动后，执行以下命令启动图形界面："></a>以文本界面启动后，执行以下命令启动图形界面：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startx</span><br></pre></td></tr></table></figure>
+<h3 id="快捷方式"><a href="#快捷方式" class="headerlink" title="快捷方式"></a>快捷方式</h3><p>Ctrl + Alt + F2  切换到文本界面<br>Ctrl + Alt + F1  切换到图形界面<br>Ctrl + Alt + backspace 重启当前图形界面</p>
+<p><a href="https://www.ifshow.com/centos-7-switching-graphical-and-text-interface/" target="_blank" rel="noopener">参考</a></p>
+<h3 id="进入setting设置termial终端打开快捷键为alt-F12"><a href="#进入setting设置termial终端打开快捷键为alt-F12" class="headerlink" title="进入setting设置termial终端打开快捷键为alt+F12"></a>进入setting设置termial终端打开快捷键为alt+F12</h3><p>Setthings-&gt;Keyboard-&gt;add command-&gt;Name “Terminal” Command “/usr/bin/gnome-terminal”-&gt;Shortcuts-&gt;输入alt+F12。</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="/2018/11/26/quickly-set-up-linux-in-virtualbox/" data-id="cjxu366jr002aqsf10e6x1r1d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jesshaw" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/11/26/research-and-development-personnel-performance-appraisal/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            研发人员的绩效考核
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/11/26/orm-common-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">ORM常用的设计模式</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water7.jpg)" alt="为Spring设置restful基础路径" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="title">为Spring设置restful基础路径</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.936Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-penetrate-layers/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water13.jpg)" alt="spring中如何穿透多层共享公用信息" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-penetrate-layers/" class="title">spring中如何穿透多层共享公用信息</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.920Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-interview-questions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water6.jpg)" alt="Spring面试问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-interview-questions/" class="title">Spring面试问题</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.896Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-hot-deploy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water14.jpg)" alt="Spring Boot热部署：spring-boot-devtools" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-hot-deploy/" class="title">Spring Boot热部署：spring-boot-devtools</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.878Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water10.jpg)" alt="在Linux中后台运行进程的几种方法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="title">在Linux中后台运行进程的几种方法</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.871Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/">csharp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/db/">db</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/management/">management</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-docker-install-安装/">CentOS, docker, install,安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate-ORM/">Hibernate,ORM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asynchronous-wcf-castle-WcfFacility-异步/">asynchronous,wcf, castle, WcfFacility,异步.</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv-excel/">csv,excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/date-duration-period-ChronoUnit-java-time-java8/">date,duration,period,ChronoUnit,java.time,java8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-docker命令/">docker,docker命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-git命令/">git,git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-String-interview-字符串-面试/">java,String,interview,字符串,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-class-loader-类加载器/">java,class loader,类加载器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-core-interview-核心技术-编程-面试/">java,core,interview,核心技术,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-exception-interview-异常-面试/">java,exception,interview,异常,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-mybatis-columns-mapping-列映射/">java,mybatis,columns mapping,列映射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-programming-interview-编程-面试/">java,programming, interview,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-interview-面试/">java,spring,interview,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-restful-base-path-基础路径/">java,spring,restful,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-share-base-path-基础路径/">java,spring,share,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/">java,spring,spring boot,spring-boot-devtools,热部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-date-日期，格式化/">js,date,日期，格式化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-object-create-js对象创建-js类-最佳实践/">js,object create,js对象创建,js类,最佳实践</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-VirtualBox-win7/">linux,CentOS,VirtualBox,win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-java-jvm/">linux,CentOS,java,jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/">linux,VirtualBox,VirtualBox image,CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-linux/">linux,linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-process-后台运行/">linux,process,后台运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/liquibase-db-upgrade-数据库升级/">liquibase,db upgrade,数据库升级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven-mvn-maven命令/">maven,mvn,maven命令</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/model/">model</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs-nodejs命令/">nodejs,nodejs命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test-hexo/">test,hexo</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CentOS-docker-install-安装/" style="font-size: 10px;">CentOS, docker, install,安装</a> <a href="/tags/Hibernate-ORM/" style="font-size: 10px;">Hibernate,ORM</a> <a href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/" style="font-size: 10px;">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a> <a href="/tags/asynchronous-wcf-castle-WcfFacility-异步/" style="font-size: 10px;">asynchronous,wcf, castle, WcfFacility,异步.</a> <a href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/csv-excel/" style="font-size: 10px;">csv,excel</a> <a href="/tags/date-duration-period-ChronoUnit-java-time-java8/" style="font-size: 10px;">date,duration,period,ChronoUnit,java.time,java8</a> <a href="/tags/docker-docker命令/" style="font-size: 10px;">docker,docker命令</a> <a href="/tags/git-git命令/" style="font-size: 10px;">git,git命令</a> <a href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/" style="font-size: 10px;">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a> <a href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/" style="font-size: 10px;">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a> <a href="/tags/java-String-interview-字符串-面试/" style="font-size: 10px;">java,String,interview,字符串,面试</a> <a href="/tags/java-class-loader-类加载器/" style="font-size: 20px;">java,class loader,类加载器</a> <a href="/tags/java-core-interview-核心技术-编程-面试/" style="font-size: 10px;">java,core,interview,核心技术,编程,面试</a> <a href="/tags/java-exception-interview-异常-面试/" style="font-size: 10px;">java,exception,interview,异常,面试</a> <a href="/tags/java-mybatis-columns-mapping-列映射/" style="font-size: 10px;">java,mybatis,columns mapping,列映射</a> <a href="/tags/java-programming-interview-编程-面试/" style="font-size: 10px;">java,programming, interview,编程,面试</a> <a href="/tags/java-spring-interview-面试/" style="font-size: 10px;">java,spring,interview,面试</a> <a href="/tags/java-spring-restful-base-path-基础路径/" style="font-size: 10px;">java,spring,restful,base path,基础路径</a> <a href="/tags/java-spring-share-base-path-基础路径/" style="font-size: 10px;">java,spring,share,base path,基础路径</a> <a href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/" style="font-size: 10px;">java,spring,spring boot,spring-boot-devtools,热部署</a> <a href="/tags/js-date-日期，格式化/" style="font-size: 10px;">js,date,日期，格式化</a> <a href="/tags/js-object-create-js对象创建-js类-最佳实践/" style="font-size: 10px;">js,object create,js对象创建,js类,最佳实践</a> <a href="/tags/linux-CentOS-VirtualBox-win7/" style="font-size: 10px;">linux,CentOS,VirtualBox,win7</a> <a href="/tags/linux-CentOS-java-jvm/" style="font-size: 10px;">linux,CentOS,java,jvm</a> <a href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/" style="font-size: 10px;">linux,VirtualBox,VirtualBox image,CentOS</a> <a href="/tags/linux-linux/" style="font-size: 10px;">linux,linux</a> <a href="/tags/linux-process-后台运行/" style="font-size: 10px;">linux,process,后台运行</a> <a href="/tags/liquibase-db-upgrade-数据库升级/" style="font-size: 10px;">liquibase,db upgrade,数据库升级</a> <a href="/tags/maven-mvn-maven命令/" style="font-size: 20px;">maven,mvn,maven命令</a> <a href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/" style="font-size: 10px;">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a> <a href="/tags/model/" style="font-size: 10px;">model</a> <a href="/tags/nodejs-nodejs命令/" style="font-size: 10px;">nodejs,nodejs命令</a> <a href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/" style="font-size: 10px;">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a> <a href="/tags/test-hexo/" style="font-size: 10px;">test,hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 jes shaw</p>
+                <p>Powered by <a href="#//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="#//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

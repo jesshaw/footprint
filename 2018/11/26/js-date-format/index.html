@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>js日期格式化 | Footprint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="js,date,日期，格式化">
+    
+    <meta name="description" content="js原生提供了不少的格式化，但因业务需要不能满足需求。因此下面给出一些新的格式化方法，作为原生日期格式化的补充。">
+<meta name="keywords" content="js,date,日期，格式化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js日期格式化">
+<meta property="og:url" content="/2018/11/26/js-date-format/index.html">
+<meta property="og:site_name" content="Footprint">
+<meta property="og:description" content="js原生提供了不少的格式化，但因业务需要不能满足需求。因此下面给出一些新的格式化方法，作为原生日期格式化的补充。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/gallery/blue-water11.jpg">
+<meta property="og:updated_time" content="2017-10-27T09:29:00.018Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js日期格式化">
+<meta name="twitter:description" content="js原生提供了不少的格式化，但因业务需要不能满足需求。因此下面给出一些新的格式化方法，作为原生日期格式化的补充。">
+<meta name="twitter:image" content="/gallery/blue-water11.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Footprint" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jes&#39; footprint</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/js/">js</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-js-date-format" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        js日期格式化
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/26/js-date-format/" class="article-date">
+            <time datetime="2018-11-26T05:54:44.640Z" itemprop="datePublished">2018-11-26</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/js-date-日期，格式化/">js,date,日期，格式化</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>js原生提供了不少的格式化，但因业务需要不能满足需求。因此下面给出一些新的格式化方法，作为原生日期格式化的补充。<br><a id="more"></a></p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>使用以下占位符自定义格式化</p>
+<p>月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span> (<span class="params">fmt</span>) </span>&#123; <span class="comment">//author: meizz </span></span><br><span class="line">    <span class="keyword">var</span> o = &#123;</span><br><span class="line">        <span class="string">"M+"</span>: <span class="keyword">this</span>.getMonth() + <span class="number">1</span>, <span class="comment">//月份 </span></span><br><span class="line">        <span class="string">"d+"</span>: <span class="keyword">this</span>.getDate(), <span class="comment">//日 </span></span><br><span class="line">        <span class="string">"h+"</span>: <span class="keyword">this</span>.getHours(), <span class="comment">//小时 </span></span><br><span class="line">        <span class="string">"m+"</span>: <span class="keyword">this</span>.getMinutes(), <span class="comment">//分 </span></span><br><span class="line">        <span class="string">"s+"</span>: <span class="keyword">this</span>.getSeconds(), <span class="comment">//秒 </span></span><br><span class="line">        <span class="string">"q+"</span>: <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth() + <span class="number">3</span>) / <span class="number">3</span>), <span class="comment">//季度 </span></span><br><span class="line">        <span class="string">"S"</span>: <span class="keyword">this</span>.getMilliseconds() <span class="comment">//毫秒 </span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(fmt)) fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear() + <span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> o)</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span> + k + <span class="string">")"</span>).test(fmt)) fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length == <span class="number">1</span>) ? (o[k]) : ((<span class="string">"00"</span> + o[k]).substr((<span class="string">""</span> + o[k]).length)));</span><br><span class="line">    <span class="keyword">return</span> fmt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// e.g.</span></span><br><span class="line"><span class="keyword">var</span> now=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(now.format(<span class="string">"yyyy年MM-dd"</span>));</span><br><span class="line"><span class="comment">//print 2017年01-03</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(now.format(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)); </span><br><span class="line"><span class="comment">//print 2017-01-03 23:02:03</span></span><br></pre></td></tr></table></figure>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>使用以下占位符自定义格式化</p>
+<p>月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q)可以用 1-2 个占位符 * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.prototype.pattern=<span class="function"><span class="keyword">function</span>(<span class="params">fmt</span>) </span>&#123;         </span><br><span class="line">    <span class="keyword">var</span> o = &#123;         </span><br><span class="line">    <span class="string">"M+"</span> : <span class="keyword">this</span>.getMonth()+<span class="number">1</span>, <span class="comment">//月份         </span></span><br><span class="line">    <span class="string">"d+"</span> : <span class="keyword">this</span>.getDate(), <span class="comment">//日         </span></span><br><span class="line">    <span class="string">"h+"</span> : <span class="keyword">this</span>.getHours()%<span class="number">12</span> == <span class="number">0</span> ? <span class="number">12</span> : <span class="keyword">this</span>.getHours()%<span class="number">12</span>, <span class="comment">//小时         </span></span><br><span class="line">    <span class="string">"H+"</span> : <span class="keyword">this</span>.getHours(), <span class="comment">//小时         </span></span><br><span class="line">    <span class="string">"m+"</span> : <span class="keyword">this</span>.getMinutes(), <span class="comment">//分         </span></span><br><span class="line">    <span class="string">"s+"</span> : <span class="keyword">this</span>.getSeconds(), <span class="comment">//秒         </span></span><br><span class="line">    <span class="string">"q+"</span> : <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth()+<span class="number">3</span>)/<span class="number">3</span>), <span class="comment">//季度         </span></span><br><span class="line">    <span class="string">"S"</span> : <span class="keyword">this</span>.getMilliseconds() <span class="comment">//毫秒         </span></span><br><span class="line">    &#125;;         </span><br><span class="line">    <span class="keyword">var</span> week = &#123;         </span><br><span class="line">    <span class="string">"0"</span> : <span class="string">"/u65e5"</span>,         </span><br><span class="line">    <span class="string">"1"</span> : <span class="string">"/u4e00"</span>,         </span><br><span class="line">    <span class="string">"2"</span> : <span class="string">"/u4e8c"</span>,         </span><br><span class="line">    <span class="string">"3"</span> : <span class="string">"/u4e09"</span>,         </span><br><span class="line">    <span class="string">"4"</span> : <span class="string">"/u56db"</span>,         </span><br><span class="line">    <span class="string">"5"</span> : <span class="string">"/u4e94"</span>,         </span><br><span class="line">    <span class="string">"6"</span> : <span class="string">"/u516d"</span>        </span><br><span class="line">    &#125;;         </span><br><span class="line">    <span class="keyword">if</span>(<span class="regexp">/(y+)/</span>.test(fmt))&#123;         </span><br><span class="line">        fmt=fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear()+<span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));         </span><br><span class="line">    &#125;         </span><br><span class="line">    <span class="keyword">if</span>(<span class="regexp">/(E+)/</span>.test(fmt))&#123;         </span><br><span class="line">        fmt=fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, ((<span class="built_in">RegExp</span>.$<span class="number">1.</span>length&gt;<span class="number">1</span>) ? (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length&gt;<span class="number">2</span> ? <span class="string">"/u661f/u671f"</span> : <span class="string">"/u5468"</span>) : <span class="string">""</span>)+week[<span class="keyword">this</span>.getDay()+<span class="string">""</span>]);         </span><br><span class="line">    &#125;         </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> o)&#123;         </span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span>+ k +<span class="string">")"</span>).test(fmt))&#123;         </span><br><span class="line">            fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length==<span class="number">1</span>) ? (o[k]) : ((<span class="string">"00"</span>+ o[k]).substr((<span class="string">""</span>+ o[k]).length)));         </span><br><span class="line">        &#125;         </span><br><span class="line">    &#125;         </span><br><span class="line">    <span class="keyword">return</span> fmt;         </span><br><span class="line">&#125;       </span><br><span class="line">     </span><br><span class="line"><span class="comment">// e.g.</span></span><br><span class="line"><span class="keyword">var</span> now=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(now.format(<span class="string">"yyyy年MM-dd"</span>));</span><br><span class="line"><span class="comment">//print 2017年01-03</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(now.format(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)); </span><br><span class="line"><span class="comment">//print 2017-01-03 23:02:03</span></span><br></pre></td></tr></table></figure>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>使用以下占位符自定义格式化</p>
+<p>月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q)可以用 1-2 个占位符 * 年(y)可以用 1-4 个占位符，毫秒(l)只能用 1 个占位符(是 1-3 位的数字)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span> (<span class="params">mask</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> d = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> zeroize = <span class="function"><span class="keyword">function</span> (<span class="params">value, length</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!length) length = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            value = <span class="built_in">String</span>(value);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, zeros = <span class="string">''</span>; i &lt; (length - value.length); i++) &#123;</span><br><span class="line"></span><br><span class="line">                zeros += <span class="string">'0'</span>;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> zeros + value;</span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> mask.replace(<span class="regexp">/"[^"]*"|'[^']*'|/</span>b ( ? : d &#123;</span><br><span class="line">        <span class="number">1</span>, <span class="number">4</span></span><br><span class="line">    &#125; | m &#123;</span><br><span class="line">        <span class="number">1</span>, <span class="number">4</span></span><br><span class="line">    &#125; | yy( ? : yy) ? | ([hHMstT]) / <span class="number">1</span> ? | [lLZ]) / b / g, <span class="function"><span class="keyword">function</span> (<span class="params">$<span class="number">0</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> ($<span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'d'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getDate();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'dd'</span>:</span><br><span class="line">            <span class="keyword">return</span> zeroize(d.getDate());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'ddd'</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="string">'Sun'</span>, <span class="string">'Mon'</span>, <span class="string">'Tue'</span>, <span class="string">'Wed'</span>, <span class="string">'Thr'</span>, <span class="string">'Fri'</span>, <span class="string">'Sat'</span>][d.getDay()];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'dddd'</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="string">'Sunday'</span>, <span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>, <span class="string">'Thursday'</span>, <span class="string">'Friday'</span>, <span class="string">'Saturday'</span>][d.getDay()];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'M'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getMonth() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'MM'</span>:</span><br><span class="line">            <span class="keyword">return</span> zeroize(d.getMonth() + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'MMM'</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="string">'Jan'</span>, <span class="string">'Feb'</span>, <span class="string">'Mar'</span>, <span class="string">'Apr'</span>, <span class="string">'May'</span>, <span class="string">'Jun'</span>, <span class="string">'Jul'</span>, <span class="string">'Aug'</span>, <span class="string">'Sep'</span>, <span class="string">'Oct'</span>, <span class="string">'Nov'</span>, <span class="string">'Dec'</span>][d.getMonth()];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'MMMM'</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="string">'January'</span>, <span class="string">'February'</span>, <span class="string">'March'</span>, <span class="string">'April'</span>, <span class="string">'May'</span>, <span class="string">'June'</span>, <span class="string">'July'</span>, <span class="string">'August'</span>, <span class="string">'September'</span>, <span class="string">'October'</span>, <span class="string">'November'</span>, <span class="string">'December'</span>][d.getMonth()];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'yy'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">String</span>(d.getFullYear()).substr(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'yyyy'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getFullYear();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'h'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getHours() % <span class="number">12</span> || <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'hh'</span>:</span><br><span class="line">            <span class="keyword">return</span> zeroize(d.getHours() % <span class="number">12</span> || <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'H'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getHours();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'HH'</span>:</span><br><span class="line">            <span class="keyword">return</span> zeroize(d.getHours());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'m'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getMinutes();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'mm'</span>:</span><br><span class="line">            <span class="keyword">return</span> zeroize(d.getMinutes());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'s'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getSeconds();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'ss'</span>:</span><br><span class="line">            <span class="keyword">return</span> zeroize(d.getSeconds());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'l'</span>:</span><br><span class="line">            <span class="keyword">return</span> zeroize(d.getMilliseconds(), <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'L'</span>:</span><br><span class="line">            <span class="keyword">var</span> m = d.getMilliseconds();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (m &gt; <span class="number">99</span>) m = <span class="built_in">Math</span>.round(m / <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> zeroize(m);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'tt'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getHours() &lt; <span class="number">12</span> ? <span class="string">'am'</span> : <span class="string">'pm'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'TT'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.getHours() &lt; <span class="number">12</span> ? <span class="string">'AM'</span> : <span class="string">'PM'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'Z'</span>:</span><br><span class="line">            <span class="keyword">return</span> d.toUTCString().match(<span class="regexp">/[A-Z]+$/</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Return quoted strings with the surrounding quotes removed      </span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> $<span class="number">0.</span>substr(<span class="number">1</span>, $<span class="number">0.</span>length - <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">     </span><br><span class="line"><span class="comment">// e.g.</span></span><br><span class="line"><span class="keyword">var</span> now=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(now.format(<span class="string">"yyyy年MM-dd"</span>));</span><br><span class="line"><span class="comment">//print 2017年01-03</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(now.format(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)); </span><br><span class="line"><span class="comment">//print 2017-01-03 23:02:03</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="/2018/11/26/js-date-format/" data-id="cjxu366ja001mqsf19nc0pubn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jesshaw" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/11/26/js-object-creation-patterns-best-practises/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            js对象创建：模式和最佳实践
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/11/26/java-thread-wait-notify-and-notifyall-example/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Java Thread wait, notify and notifyAll 示例</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water7.jpg)" alt="为Spring设置restful基础路径" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="title">为Spring设置restful基础路径</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.936Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-penetrate-layers/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water13.jpg)" alt="spring中如何穿透多层共享公用信息" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-penetrate-layers/" class="title">spring中如何穿透多层共享公用信息</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.920Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-interview-questions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water6.jpg)" alt="Spring面试问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-interview-questions/" class="title">Spring面试问题</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.896Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-hot-deploy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water14.jpg)" alt="Spring Boot热部署：spring-boot-devtools" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-hot-deploy/" class="title">Spring Boot热部署：spring-boot-devtools</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.878Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water10.jpg)" alt="在Linux中后台运行进程的几种方法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="title">在Linux中后台运行进程的几种方法</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.871Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/">csharp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/db/">db</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/management/">management</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-docker-install-安装/">CentOS, docker, install,安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate-ORM/">Hibernate,ORM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asynchronous-wcf-castle-WcfFacility-异步/">asynchronous,wcf, castle, WcfFacility,异步.</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv-excel/">csv,excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/date-duration-period-ChronoUnit-java-time-java8/">date,duration,period,ChronoUnit,java.time,java8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-docker命令/">docker,docker命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-git命令/">git,git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-String-interview-字符串-面试/">java,String,interview,字符串,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-class-loader-类加载器/">java,class loader,类加载器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-core-interview-核心技术-编程-面试/">java,core,interview,核心技术,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-exception-interview-异常-面试/">java,exception,interview,异常,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-mybatis-columns-mapping-列映射/">java,mybatis,columns mapping,列映射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-programming-interview-编程-面试/">java,programming, interview,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-interview-面试/">java,spring,interview,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-restful-base-path-基础路径/">java,spring,restful,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-share-base-path-基础路径/">java,spring,share,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/">java,spring,spring boot,spring-boot-devtools,热部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-date-日期，格式化/">js,date,日期，格式化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-object-create-js对象创建-js类-最佳实践/">js,object create,js对象创建,js类,最佳实践</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-VirtualBox-win7/">linux,CentOS,VirtualBox,win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-java-jvm/">linux,CentOS,java,jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/">linux,VirtualBox,VirtualBox image,CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-linux/">linux,linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-process-后台运行/">linux,process,后台运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/liquibase-db-upgrade-数据库升级/">liquibase,db upgrade,数据库升级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven-mvn-maven命令/">maven,mvn,maven命令</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/model/">model</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs-nodejs命令/">nodejs,nodejs命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test-hexo/">test,hexo</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CentOS-docker-install-安装/" style="font-size: 10px;">CentOS, docker, install,安装</a> <a href="/tags/Hibernate-ORM/" style="font-size: 10px;">Hibernate,ORM</a> <a href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/" style="font-size: 10px;">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a> <a href="/tags/asynchronous-wcf-castle-WcfFacility-异步/" style="font-size: 10px;">asynchronous,wcf, castle, WcfFacility,异步.</a> <a href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/csv-excel/" style="font-size: 10px;">csv,excel</a> <a href="/tags/date-duration-period-ChronoUnit-java-time-java8/" style="font-size: 10px;">date,duration,period,ChronoUnit,java.time,java8</a> <a href="/tags/docker-docker命令/" style="font-size: 10px;">docker,docker命令</a> <a href="/tags/git-git命令/" style="font-size: 10px;">git,git命令</a> <a href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/" style="font-size: 10px;">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a> <a href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/" style="font-size: 10px;">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a> <a href="/tags/java-String-interview-字符串-面试/" style="font-size: 10px;">java,String,interview,字符串,面试</a> <a href="/tags/java-class-loader-类加载器/" style="font-size: 20px;">java,class loader,类加载器</a> <a href="/tags/java-core-interview-核心技术-编程-面试/" style="font-size: 10px;">java,core,interview,核心技术,编程,面试</a> <a href="/tags/java-exception-interview-异常-面试/" style="font-size: 10px;">java,exception,interview,异常,面试</a> <a href="/tags/java-mybatis-columns-mapping-列映射/" style="font-size: 10px;">java,mybatis,columns mapping,列映射</a> <a href="/tags/java-programming-interview-编程-面试/" style="font-size: 10px;">java,programming, interview,编程,面试</a> <a href="/tags/java-spring-interview-面试/" style="font-size: 10px;">java,spring,interview,面试</a> <a href="/tags/java-spring-restful-base-path-基础路径/" style="font-size: 10px;">java,spring,restful,base path,基础路径</a> <a href="/tags/java-spring-share-base-path-基础路径/" style="font-size: 10px;">java,spring,share,base path,基础路径</a> <a href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/" style="font-size: 10px;">java,spring,spring boot,spring-boot-devtools,热部署</a> <a href="/tags/js-date-日期，格式化/" style="font-size: 10px;">js,date,日期，格式化</a> <a href="/tags/js-object-create-js对象创建-js类-最佳实践/" style="font-size: 10px;">js,object create,js对象创建,js类,最佳实践</a> <a href="/tags/linux-CentOS-VirtualBox-win7/" style="font-size: 10px;">linux,CentOS,VirtualBox,win7</a> <a href="/tags/linux-CentOS-java-jvm/" style="font-size: 10px;">linux,CentOS,java,jvm</a> <a href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/" style="font-size: 10px;">linux,VirtualBox,VirtualBox image,CentOS</a> <a href="/tags/linux-linux/" style="font-size: 10px;">linux,linux</a> <a href="/tags/linux-process-后台运行/" style="font-size: 10px;">linux,process,后台运行</a> <a href="/tags/liquibase-db-upgrade-数据库升级/" style="font-size: 10px;">liquibase,db upgrade,数据库升级</a> <a href="/tags/maven-mvn-maven命令/" style="font-size: 20px;">maven,mvn,maven命令</a> <a href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/" style="font-size: 10px;">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a> <a href="/tags/model/" style="font-size: 10px;">model</a> <a href="/tags/nodejs-nodejs命令/" style="font-size: 10px;">nodejs,nodejs命令</a> <a href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/" style="font-size: 10px;">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a> <a href="/tags/test-hexo/" style="font-size: 10px;">test,hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 jes shaw</p>
+                <p>Powered by <a href="#//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="#//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

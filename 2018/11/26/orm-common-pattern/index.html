@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>ORM常用的设计模式 | Footprint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式">
+    
+    <meta name="description" content="ORM(Object Relational Mapping)即对象关系映射，一种用于实现对象语言与不同类型的关系型数据之间的转换。">
+<meta name="keywords" content="orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ORM常用的设计模式">
+<meta property="og:url" content="/2018/11/26/orm-common-pattern/index.html">
+<meta property="og:site_name" content="Footprint">
+<meta property="og:description" content="ORM(Object Relational Mapping)即对象关系映射，一种用于实现对象语言与不同类型的关系型数据之间的转换。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/gallery/blue-water2.jpg">
+<meta property="og:updated_time" content="2018-01-12T09:16:20.151Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ORM常用的设计模式">
+<meta name="twitter:description" content="ORM(Object Relational Mapping)即对象关系映射，一种用于实现对象语言与不同类型的关系型数据之间的转换。">
+<meta name="twitter:image" content="/gallery/blue-water2.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Footprint" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jes&#39; footprint</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/java/">java</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-orm-common-pattern" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        ORM常用的设计模式
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/26/orm-common-pattern/" class="article-date">
+            <time datetime="2018-11-26T05:54:44.818Z" itemprop="datePublished">2018-11-26</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>ORM(Object Relational Mapping)即对象关系映射，一种用于实现对象语言与不同类型的关系型数据之间的转换。</p>
+<a id="more"></a>
+<p>我们讨论该问题目的在于如何让我们系统中的对象与数据库进行交互。由于数据库与对象之间存在着结构上的差异，Mapping是相当困难的。不推荐开发人员自己进行Mapping Layer的开发，这是危险的也是及其可能失败的。更加推荐购买专业的工具，虽然这些工具通常很昂贵。到目前为止，我所接触的项目确实有Mapping layer，但它并不是典型的Mapping layer between Relational Database and Object，它是处于JSP页面与Database之间的Mapping，用于自动地将用户在页面上填写的数据更新到数据库中。这在Web项目中是很好用的，但目前这个Mapping Layer还不能做到general，它只能适用与特定的Web Application架构。</p>
+<p>下面开始与大家聊聊三种Database Mapping层的常用的系统架构。 </p>
+<h2 id="1-网关模式（Gateway）"><a href="#1-网关模式（Gateway）" class="headerlink" title="1. 网关模式（Gateway）"></a>1. 网关模式（Gateway）</h2><p>之所以称之“网关”，顾名思义，Mapping层扮演着一个代理的角色，应用逻辑层无需知道具体Mapping的细节，而只需通过网关的公共接口，提交数据更新或者数据加载请求，由网关去执行具体的Object到Record或者Record到Object的转换。从而实现了数据层的透明。应用逻辑层所要了解的只有网关的信息和其公共接口。使用公共接口同时有助应用逻辑代码在不同的数据层的复用：无需改变应用逻辑层的任何代码，只需为特定的数据层实现特定的网关。网关模式具体分为两种：Row Data Gateway &amp; Table Data Gateway </p>
+<p>共同的特点： </p>
+<p>对应于数据库中的每个Table，有一个Mapping Class，并且在这个class中每个column有其对应的字段；所有的数据库mapping代码都存在于在Mapping Class之中，使数据库访问代码与应用逻辑完全分离； </p>
+<h3 id="Row-Data-Gateway"><a href="#Row-Data-Gateway" class="headerlink" title="Row Data Gateway"></a>Row Data Gateway</h3><p>Mapping Class是一个对应于数据库中某张表格的一条记录。记录的每个字段对应于Class中的一个Field。所有访问数据的细节都被封装在这个接口中。Row Data Gateway与Transaction Script配合使用，效果很好 </p>
+<p>典型案例: Java中的SessionBean（Transaction Script）和EntityBean（Row Data Gateway） </p>
+<p>适用情况：应用逻辑相对复杂，对象与对象之间交互繁多的大规模系统； </p>
+<h3 id="Table-Data-Gateway："><a href="#Table-Data-Gateway：" class="headerlink" title="Table Data Gateway："></a>Table Data Gateway：</h3><p>这个接口定义了关于某个Table的所有查询（find），更新，插入和删除代码。Table Data Gateway将输入的参数mapping成对应的SQL，并执行SQL，最后返回适当的数据结构。如何返回Query的信息是一个具有欺骗性的决策问题。当需要返回多个记录并且函数只允许返回一个结果时，你将面临着多种选择：Map &amp; Data Transfer Object &amp; Record Set。 </p>
+<p>Map：不是一个好方法，map中的Key常常是一种HardCode； </p>
+<p>Data Transfer Object：是避免map的一个方法，并且可以被重用； </p>
+<p>Record Set：虽然会使Business Logic Layer不能完全与数据库访问层相分离，但是如果我们的开发平台有很多基于Record Set的工具，采用它不失为一个好方法（.NET）。 </p>
+<p>典型案例：Window DNA架构； </p>
+<p>适用情况：以显示信息，修改信息为功能的MIS（信息管理系统）； </p>
+<h2 id="2-活动记录模式（Active-Record）"><a href="#2-活动记录模式（Active-Record）" class="headerlink" title="2. 活动记录模式（Active Record）"></a>2. 活动记录模式（Active Record）</h2><p>将Business Logic与数据库访问放置于同一个Business Object中。这种模式出现的原因是业务逻辑与数据库模型非常相似。Active Record同时负责数据库存取和基于这些数据的应用逻辑的执行。应用程序的所有逻辑可以都在Active Record中，也可以是部分。有一点是默认前提，Active Record的数据结构和数据库Schema必须保持一致（在我看来这是个缺点！） </p>
+<p>Active Record中通常有以下方法： </p>
+<p>从SQL数据集创建Active Record的构建方法； </p>
+<p>静态的finder方法用于封装SQL查询并且返回Active Record记录； </p>
+<p>用Active Record中的数据更新数据库的方法； </p>
+<p>所有字段getting和settting方法； </p>
+<p>实现应用逻辑的方法； </p>
+<p>活动记录模式的优点在于简单，其缺点在于没有隐藏数据库层，从而导致很难应用其他OR Mapping模式在活动记录模式之上。另外一方面，活动记录模式与Row Data Gateway的区别在于数据库存取代码是在Business Object中（Active Record）还是在一个单独的Mapping Class中（Row Data Gateway），当然也有同时存在于两者的情况；如果应用逻辑的复杂程度迫使你适用面向对象的一些机制（Direct relationships，collections and Inheritance），这时直接将数据库存取代码置于Business Object中，由于有大量的转换，会使事情变得混乱，这时应该适用Data Mapper。</p>
+<p>但这并不是个好方法，因为它将面向对象设计和数据库设计紧密耦合在一起，这随着项目进展会使对设计的重构工作变得及其困难。通常我们会将数据库访问代码分离到一个Gateway中。有一种情况例外，当你对Transaction Script &amp; Row Data Gateway的架构进行重构的时候，为了去除Transaction Script中的重复代码，将其放进Row Data Gateway中，这是就转变成Active Record了。 </p>
+<p>适用情况：当应用逻辑不复杂，主要是创建，更新，插入，删除操作，而且操作主要是针对单条记录时； </p>
+<h2 id="3-数据映射模式（Data-Mapper）"><a href="#3-数据映射模式（Data-Mapper）" class="headerlink" title="3. 数据映射模式（Data Mapper）"></a>3. 数据映射模式（Data Mapper）</h2><p>这是最复杂，但最灵活的一种架构模式。使用Data Mapper，Business Objects可以与数据库结构完全的分离，他们无需知道数据库的结构和数据更新的细节。Data Mapper对于那些无法在关系型数据库表示的对象系统特性非常有效，例如Collection成员结构和继承关系。Data Mapper是内存中对象与数据库之间的媒介。它负责双方之间的数据传输。数据映射模式（Data Mapper）与网关模式最大的（Gateway）最大的区别在于依赖和控制的位置相反。在网关模式中，应用逻辑层需要了解数据库中的数据结构，二在数据映射模式中，应用逻辑无需了解数据库设计，提高了应用层（business logic）和数据层（data source）的分离，便于两者的开发和测试。</p>
+<p>面向对象的对象系统与面向关系的关系型数据库是两种异构的结构，因此在对象系统中的很多机制（collections, inheritance等）都无法在关系型数据库中得到直接的表示，这就是数据映射模式产生的原因。在这种情况下，在两种模式下的数据转换变得相当复杂，因此我们有必要将它分层，否则任何一方（对象系统和数据库）的改变都将波及对方。 </p>
+<p>数据映射层的最大目标就是将业务逻辑（domain）和数据层（data source）分离。整个数据映射层（Data Mapper）完全独立于系统其他部分，可以被完全替换或者允许一个逻辑层重用于不同的数据层上。但要实现它有很多重要的问题必须解决，而且不同人可以采用不同的方法实现这个数据映射模式（Data Mapper）。因此这里只介绍几个重要的实现问题。 </p>
+<h3 id="①-Finder方法的处理"><a href="#①-Finder方法的处理" class="headerlink" title="① Finder方法的处理"></a>① Finder方法的处理</h3><p>处理方法： </p>
+<p>在一个独立的Package中，为Finder方法定义一个接口，然后在数据映射层实现这个接口。逻辑层通过接口调用Finder方法，后者通过数据映射层加载数据。 </p>
+<p>原因：之所以使用接口的原因，在于使Finder方法标准化，这样应用逻辑层虽然可能在任何地方都会调用Finder方法取得带有数据的Business Object，但却不依赖于数据映射层。 </p>
+<p>Finder方法：将方法调用转换成SQL查询； </p>
+<p>数据映射层：从数据集中获得数据并创建Business Object； </p>
+<p>遗留问题： </p>
+<p>数据映射层如何知道那些Object被更新了，哪些被创建，哪些被删除了？ </p>
+<p>如何控制每次查询获得的记录数，以尽量减少查询的数目？ </p>
+<p>其他模式如何用在数据映射层（Lazy Load, Registry, Identity Map）? </p>
+<h3 id="②-如何将数据映射到Business-Object的字段中"><a href="#②-如何将数据映射到Business-Object的字段中" class="headerlink" title="② 如何将数据映射到Business Object的字段中"></a>② 如何将数据映射到Business Object的字段中</h3><p>数据映射层需要访问Business Object的所有字段，因此这些方法必须被设置为public，但这不不是我们所预想的。这个问题没有明确的答案，几种可选的方法都有两面性。 </p>
+<ul>
+<li>将数据映射层于逻辑层放置于同一个包下 </li>
+</ul>
+<p>缺点：有可能使事情变得更混乱； </p>
+<ul>
+<li>使用Reflection方法来访问Object的字段 </li>
+</ul>
+<p>缺点：速度慢； </p>
+<p>增加状态标志来保证在数据库加载环境下访问这些字段 </p>
+<p>针对这个问题，在创建Business Object的时候，你有两个选择，使用胖构造函数（这个名词是我自己取的:^)）空构造函数。 </p>
+<ul>
+<li>胖构造函数（Rich Constructor） </li>
+</ul>
+<p>优点：保证Object至少包含必须的数据；对于常量字段，无需setting方法； </p>
+<p>缺点：必须考虑循环引用问题（cyclic reference）； </p>
+<ul>
+<li>空构造函数（Empty Constructor） </li>
+</ul>
+<p>优点：不会出现循环引用问题（cyclic reference）； </p>
+<p>缺点：对于常量字段，仍然需要setting方法，可能引入潜在错误； </p>
+<h3 id="③-基于元数据的映射（Metadata-based-Mapping）"><a href="#③-基于元数据的映射（Metadata-based-Mapping）" class="headerlink" title="③ 基于元数据的映射（Metadata based Mapping）"></a>③ 基于元数据的映射（Metadata based Mapping）</h3><ul>
+<li>显式代码：这要求每个Business Object有一个Mapping class； </li>
+<li>Metadata Mapping：元数据被存储在单独的class和文件中，我倾向于文件，随着xml的广泛使用，以XML形式存储元数据会增强移植性； </li>
+</ul>
+<h2 id="3种OR-Mapping架构模式的取舍和选用"><a href="#3种OR-Mapping架构模式的取舍和选用" class="headerlink" title="3种OR Mapping架构模式的取舍和选用"></a>3种OR Mapping架构模式的取舍和选用</h2><p>OR Mapping架构取决于应用逻辑层的架构。如果使用表模式（Table Module）来组织应用逻辑，那么Table Data Gateway是你的最佳选择；如果使用Transaction Script模式来组织应用逻辑，那么如果开发平台提供了使用数据集的方便就采用Table Data Gateway，否则采用Row Data Gateway；如果是使用Domain Model来建立应用逻辑模型，那么对于复杂的大系统，颖毫不犹豫地选择数据映射模式，对于逻辑简单的小系统，Active Record也是一个可选方案。</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="/2018/11/26/orm-common-pattern/" data-id="cjxu366lh004nqsf1vsv0aod8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jesshaw" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/11/26/quickly-set-up-linux-in-virtualbox/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            如何快速搭建linux运行环境
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/11/26/nodejs-usefully-command/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">nodejs常用命令</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water7.jpg)" alt="为Spring设置restful基础路径" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-restcontrooler-specific-basepath/" class="title">为Spring设置restful基础路径</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.936Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-penetrate-layers/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water13.jpg)" alt="spring中如何穿透多层共享公用信息" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-penetrate-layers/" class="title">spring中如何穿透多层共享公用信息</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.920Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-interview-questions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water6.jpg)" alt="Spring面试问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-interview-questions/" class="title">Spring面试问题</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.896Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/spring-hot-deploy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water14.jpg)" alt="Spring Boot热部署：spring-boot-devtools" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2018/11/26/spring-hot-deploy/" class="title">Spring Boot热部署：spring-boot-devtools</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.878Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water10.jpg)" alt="在Linux中后台运行进程的几种方法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/2018/11/26/run-backgroud-process-sereral-ways/" class="title">在Linux中后台运行进程的几种方法</a></p>
+                            <p class="item-date"><time datetime="2018-11-26T05:54:44.871Z" itemprop="datePublished">2018-11-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/">csharp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/db/">db</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/management/">management</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-docker-install-安装/">CentOS, docker, install,安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate-ORM/">Hibernate,ORM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asynchronous-wcf-castle-WcfFacility-异步/">asynchronous,wcf, castle, WcfFacility,异步.</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv-excel/">csv,excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/date-duration-period-ChronoUnit-java-time-java8/">date,duration,period,ChronoUnit,java.time,java8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-docker命令/">docker,docker命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-git命令/">git,git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-String-interview-字符串-面试/">java,String,interview,字符串,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-class-loader-类加载器/">java,class loader,类加载器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-core-interview-核心技术-编程-面试/">java,core,interview,核心技术,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-exception-interview-异常-面试/">java,exception,interview,异常,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-mybatis-columns-mapping-列映射/">java,mybatis,columns mapping,列映射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-programming-interview-编程-面试/">java,programming, interview,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-interview-面试/">java,spring,interview,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-restful-base-path-基础路径/">java,spring,restful,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-share-base-path-基础路径/">java,spring,share,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/">java,spring,spring boot,spring-boot-devtools,热部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-date-日期，格式化/">js,date,日期，格式化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-object-create-js对象创建-js类-最佳实践/">js,object create,js对象创建,js类,最佳实践</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-VirtualBox-win7/">linux,CentOS,VirtualBox,win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-java-jvm/">linux,CentOS,java,jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/">linux,VirtualBox,VirtualBox image,CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-linux/">linux,linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-process-后台运行/">linux,process,后台运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/liquibase-db-upgrade-数据库升级/">liquibase,db upgrade,数据库升级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven-mvn-maven命令/">maven,mvn,maven命令</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/model/">model</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs-nodejs命令/">nodejs,nodejs命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test-hexo/">test,hexo</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CentOS-docker-install-安装/" style="font-size: 10px;">CentOS, docker, install,安装</a> <a href="/tags/Hibernate-ORM/" style="font-size: 10px;">Hibernate,ORM</a> <a href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/" style="font-size: 10px;">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a> <a href="/tags/asynchronous-wcf-castle-WcfFacility-异步/" style="font-size: 10px;">asynchronous,wcf, castle, WcfFacility,异步.</a> <a href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/csv-excel/" style="font-size: 10px;">csv,excel</a> <a href="/tags/date-duration-period-ChronoUnit-java-time-java8/" style="font-size: 10px;">date,duration,period,ChronoUnit,java.time,java8</a> <a href="/tags/docker-docker命令/" style="font-size: 10px;">docker,docker命令</a> <a href="/tags/git-git命令/" style="font-size: 10px;">git,git命令</a> <a href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/" style="font-size: 10px;">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a> <a href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/" style="font-size: 10px;">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a> <a href="/tags/java-String-interview-字符串-面试/" style="font-size: 10px;">java,String,interview,字符串,面试</a> <a href="/tags/java-class-loader-类加载器/" style="font-size: 20px;">java,class loader,类加载器</a> <a href="/tags/java-core-interview-核心技术-编程-面试/" style="font-size: 10px;">java,core,interview,核心技术,编程,面试</a> <a href="/tags/java-exception-interview-异常-面试/" style="font-size: 10px;">java,exception,interview,异常,面试</a> <a href="/tags/java-mybatis-columns-mapping-列映射/" style="font-size: 10px;">java,mybatis,columns mapping,列映射</a> <a href="/tags/java-programming-interview-编程-面试/" style="font-size: 10px;">java,programming, interview,编程,面试</a> <a href="/tags/java-spring-interview-面试/" style="font-size: 10px;">java,spring,interview,面试</a> <a href="/tags/java-spring-restful-base-path-基础路径/" style="font-size: 10px;">java,spring,restful,base path,基础路径</a> <a href="/tags/java-spring-share-base-path-基础路径/" style="font-size: 10px;">java,spring,share,base path,基础路径</a> <a href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/" style="font-size: 10px;">java,spring,spring boot,spring-boot-devtools,热部署</a> <a href="/tags/js-date-日期，格式化/" style="font-size: 10px;">js,date,日期，格式化</a> <a href="/tags/js-object-create-js对象创建-js类-最佳实践/" style="font-size: 10px;">js,object create,js对象创建,js类,最佳实践</a> <a href="/tags/linux-CentOS-VirtualBox-win7/" style="font-size: 10px;">linux,CentOS,VirtualBox,win7</a> <a href="/tags/linux-CentOS-java-jvm/" style="font-size: 10px;">linux,CentOS,java,jvm</a> <a href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/" style="font-size: 10px;">linux,VirtualBox,VirtualBox image,CentOS</a> <a href="/tags/linux-linux/" style="font-size: 10px;">linux,linux</a> <a href="/tags/linux-process-后台运行/" style="font-size: 10px;">linux,process,后台运行</a> <a href="/tags/liquibase-db-upgrade-数据库升级/" style="font-size: 10px;">liquibase,db upgrade,数据库升级</a> <a href="/tags/maven-mvn-maven命令/" style="font-size: 20px;">maven,mvn,maven命令</a> <a href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/" style="font-size: 10px;">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a> <a href="/tags/model/" style="font-size: 10px;">model</a> <a href="/tags/nodejs-nodejs命令/" style="font-size: 10px;">nodejs,nodejs命令</a> <a href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/" style="font-size: 10px;">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a> <a href="/tags/test-hexo/" style="font-size: 10px;">test,hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 jes shaw</p>
+                <p>Powered by <a href="#//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="#//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
