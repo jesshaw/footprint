@@ -41,12 +41,19 @@ docker ps -a
 
 ##### 删除容器
 ```bash
-docker rm
+docker rm 1adbdsaf
+ 
+```
+
+##### 删除所有已出的容器
+```bash
+docker rmi `docker ps -a | grep  "Exited" | awk '{print $1}'`
+ 
 ```
 
 ##### 删除镜像
 ```bash
-docker rmi
+docker rmi 1232a
 ```
 
 ##### 删除所有none镜像

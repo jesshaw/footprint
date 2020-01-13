@@ -163,8 +163,15 @@ Host code.lexiangmiao.com
 4. 添加私钥到本地
 
 ```bash
+# 先要启动ssh-agent才能添加
+eval $(ssh-agent -s)
+
 ssh-add ~/.ssh/id_rsa.lexiangmiao
+
+# 删除私钥 hostname配置在config中
+ssh-keygen -R hostname
 ```
+
 
 5. 测试是否成功
 ```bash
@@ -183,6 +190,22 @@ git config --local -l
 # 查看全局配置
 git config --global -l
 ```
+
+7. 配置新的url
+git remote set-url origin git@github.com-worker_user1:worker_user1/repo_name.git
+
+
+## 拉不到代码，原因是因为不是以管理方式运行的git bash
+
+git@git.dev.sh.ctripcorp.com: Permission denied (ssh key error).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+## 改用https方式作为库地址时，保留输入用户名和密码
+
+git config --global credential.helper store
 
 
 

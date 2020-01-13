@@ -541,6 +541,10 @@
 		"selected_items":
 		[
 			[
+				"ssht",
+				"Set Syntax: HTML"
+			],
+			[
 				"ins",
 				"Package Control: Install Package"
 			],
@@ -791,10 +795,24 @@
 	},
 	"expanded_folders":
 	[
+		"/D/projects/github/footprint",
+		"/D/projects/github/footprint/source",
+		"/D/projects/github/footprint/source/_posts"
 	],
 	"file_history":
 	[
+		"/C/opt/settings/server.properties",
+		"/D/projects/github/footprint/source/_posts/git-usefully-command.md",
+		"/D/Users/mzxiao/.ssh/config",
 		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/projects/github/footprint/README.md",
+		"/D/Users/mzxiao/AppData/Local/Yarn/Data/global/node_modules/generator-jhipster-ionic/generators/app/index.js",
+		"/D/Users/mzxiao/AppData/Local/Temp/haxm_log8.txt",
+		"/D/Users/mzxiao/.m2/settings.xml",
+		"/D/Users/mzxiao/AppData/Local/Temp/haxm_log2.txt",
+		"/D/Users/mzxiao/Desktop/xf.txt",
+		"/D/Users/mzxiao/.gradle/init.gradle",
+		"/D/Users/mzxiao/AppData/Roaming/npm-cache/_logs/2019-07-09T01_41_17_545Z-debug.log",
 		"/D/projects/sample/footprint/README.md",
 		"/D/projects/sample/footprint/package.json",
 		"/D/projects/sample/footprint/public/CNAME",
@@ -808,7 +826,6 @@
 		"/D/projects/sample/footprint/source/_posts/git-usefully-command.md",
 		"/D/projects/sample/footprint/source/_drafts/docker-auto-deploy.md",
 		"/D/projects/sample/footprint/source/_posts/docker-install.md",
-		"/C/opt/settings/server.properties",
 		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/uidphone.txt",
 		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/phoneuid.txt",
 		"/D/projects/sample/footprint/source/_posts/linux-usefully-command.md",
@@ -833,7 +850,6 @@
 		"/D/Users/mzxiao/Desktop/破独酒店模板.csv",
 		"/D/Users/mzxiao/Desktop/扫码住黑名单模板test.csv",
 		"/D/Users/mzxiao/Desktop/扫码住黑名单模板.csv",
-		"/D/Users/mzxiao/Desktop/xf.txt",
 		"/G/DevTools/BaijiEditor/BaijiEditor.exe.config",
 		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchBySqlService.class",
 		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchByOrderIdService.class",
@@ -849,7 +865,6 @@
 		"/D/projects/sample/footprint/source/_drafts/docker-nginx.md",
 		"/D/projects/sample/footprint/source/_posts/nodejs-usefully-command.md",
 		"/D/projects/sample/footprint/source/_posts/maven-usefully-command.md",
-		"/D/Users/mzxiao/.ssh/config",
 		"/D/Users/mzxiao/.ssh/id_rsa.github.pub",
 		"/D/Users/mzxiao/.ssh/id_rsa.github",
 		"/D/Users/mzxiao/.ssh/known_hosts",
@@ -913,15 +928,7 @@
 		"/D/me/ts/trainmall/src/main/docker/mysql.yml",
 		"/D/me/ts/trainmall/src/main/docker/app.yml",
 		"/D/Users/mzxiao.CN1/Downloads/Dockerfile (2)",
-		"/D/Projects/sb/footprint/source/_drafts/docker-auto-deploy.md",
-		"/D/Projects/sb/footprint/source/_drafts/docker-nginx.md",
-		"/D/Projects/sb/footprint/source/_posts/linux-usefully-command.md",
-		"/D/Users/mzxiao.CN1/Desktop/新建文件夹/test.html",
-		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-plugins.md",
-		"/D/Projects/sb/footprint/source/_drafts/shortcuts.html",
-		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-shortcuts.html",
-		"/D/Projects/sb/footprint/source/_drafts/intellij-idea-shortcuts1.html",
-		"/D/Projects/sb/footprint/source/_drafts/resources-optimizer-with-maven.md"
+		"/D/Projects/sb/footprint/source/_drafts/docker-auto-deploy.md"
 	],
 	"find":
 	{
@@ -1113,7 +1120,7 @@
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3965.0,
+						"translation.y": 3893.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1227,7 +1234,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 389.0,
+	"side_bar_width": 359.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
