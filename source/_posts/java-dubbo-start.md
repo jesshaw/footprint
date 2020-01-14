@@ -95,5 +95,3 @@ public class DefaultDemoService implements DemoService {
 ## 引用
 1. [dubbo-admin](https://github.com/apache/dubbo-admin)
 2. [dubbo-registry-zookeeper-samples](https://github.com/apache/dubbo-spring-boot-project/tree/master/dubbo-spring-boot-samples/dubbo-registry-zookeeper-samples)
-3. [Period Java文档](https://docs.oracle.com/javase/8/docs/api/java/time/Period.html)
-4. [ChronoUnit Java文档](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html)
