@@ -40,6 +40,7 @@ services:
 
 ## 2.创建一个服务提供方
 拉取dubbo-registry-zookeeper-samples，启动
+
 ```java
 @Service(version = "${demo.service.version}")
 public class DefaultDemoService implements DemoService {

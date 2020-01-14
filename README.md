@@ -1,14 +1,16 @@
 # footprint
 my footprint
 
-## hexo server
+## 1. skip to site branch
 
-## hexo clean
+```
+git checkout site
+```
 
-## hexo deploy
+## 2. hexo server
 
-## release steps
+## 3. release steps
 
-1. hexo generate
+hexo generate
 
-2. hexo deploy
+hexo deploy
