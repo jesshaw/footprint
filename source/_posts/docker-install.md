@@ -96,7 +96,11 @@ sudo touch /etc/docker/daemon.json
 在daemon.json中增加以下配置
 ```json
 {
+<<<<<<< HEAD
 "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn", "http://hub-mirror.c.163.com"],
+=======
+"registry-mirrors": ["https://docker.mirrors.ustc.edu.cn", "http://hub-mirror.c.163.com","https://registry.docker-cn.com"],
+>>>>>>> master_bak
 "max-concurrent-downloads": 10
 }
 ```

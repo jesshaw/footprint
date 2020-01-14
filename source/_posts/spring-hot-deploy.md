@@ -20,7 +20,11 @@ base类加载器（base ClassLoader）, restart类加载器（restart ClassLoade
 * base ClassLoader：用于加载不会改变的jar（eg.第三方依赖的jar）
 * restart ClassLoader：用于加载我们正在开发的jar（eg.整个项目里我们自己编写的类）。当应用重启后，原先的restart ClassLoader被丢掉、重新new一个restart ClassLoader来加载这些修改过的东西，而base ClassLoader却不需要动一下。这就是devtools重启速度快的原因。
 
+<<<<<<< HEAD
 使用devtools，只需要添加其依赖即可 :
+=======
+使用devtools，需要添加其依赖即可 :
+>>>>>>> master_bak
 
 ```xml
 <dependencies>
@@ -30,6 +34,22 @@ base类加载器（base ClassLoader）, restart类加载器（restart ClassLoade
         <optional>true</optional>
     </dependency>
 </dependencies>
+<<<<<<< HEAD
+=======
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <!-- fork:如果没有该配置，这个devtools不会起作用，即应用不会restart -->
+                <fork>true</fork>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+>>>>>>> master_bak
 ```
 默认情况下，
 `/META-INF/maven，/META-INF/resources，/resources，/static，/templates，/public`

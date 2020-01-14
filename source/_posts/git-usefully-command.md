@@ -4,11 +4,212 @@ tags: git,git命令
 categories: 
   - git
 
-thumbnail: /gallery/blue-water9.jpg
+thumbnail: /gallery/blue-water10.jpg
 ---
 
 收集平时常用的一些maven命令。
 <!-- more -->
+
+## 打标签并推送到远程 
+```bash
+# 基于当前节点打tag
+
+git tag -a v0.9.0.RELEASE -m '接手之前的版本'
+
+# 指琮前节点打tag
+
+git tag -a v0.9.0.RELEASE -m '接手之前的版本' 033133b
+
+# 显示tag内容
+git show v0.9.0.RELEASE
+
+# 推送tag到远程
+git push origin v0.9.0.RELEASE
+```
+
+
+### 方法1
+git revert <commit> ...对所有n个提交做回滚，然后push到远程，保留了修改历史记录。
+	
+### 方法2
+ git reset --hard HEAD~n 重设到指定分支，若push到远程，可能被阻止，可以使用git push -f 强制更新。
+
+## 回滚远程提交
+
+### 方法1
+git revert <commit> ...对所有n个提交做回滚，然后push到远程，保留了修改历史记录。
+	
+### 方法2
+ git reset --hard HEAD~n 重设到指定分支，若push到远程，可能被阻止，可以使用git push -f 强制更新。
+
+## git clone查定分支和目录
+
+$ git clone
+will give you the whole repository.
+
+After the clone, you can list the tags with $ git tag -l and then checkout a specific tag:
+
+$ git checkout tags/<tag_name>
+Even better, checkout and create a branch (otherwise you will be on a branch named after the revision number of tag):
+
+$ git checkout tags/<tag_name> -b <branch_name>
+
+## 查看远程地址
+
+查看全名
+```bash
+git remote -v
+ ```
+ 
+短名方式查看
+
+```bash
+git remote
+ ```
+
+## 创建临时版本
+
+```bash
+ git checkout -b dev20170803
+ ```
+## git bash连接linux
+
+1. linux上执行，ssh-keygen 生成公私钥对
+
+```bash
+ssh-keygen
+# 据提示输入文件名称，如id_rsa.trainmall
+```
+
+2. 公钥添加到authorized_keys
+
+```bash
+cat id_rsa.pub >> ~/.ssh/authorized_keys
+```
+
+3. 修改配置文件允许使用秘钥登录
+
+```bash
+vim /etc/ssh/sshd_config
+```
+PubkeyAuthentication yes
+AuthorizedKeysFile      .ssh/authorized_keys
+PasswordAuthentication yes
+
+
+4. 重启ssh服务
+```bash
+systemctl restart sshd
+```
+
+5.  复制linux服务器上的私钥到本地机
+
+scp root@192.168.1.168:/root/.ssh/id_rsa ~/.ssh
+
+6. 需要本地配置多个ssh，则要进行config配置
+```bash
+vim config
+
+# 增加以下配置
+# trainmall
+Host trainmall
+	Hostname 47.96.102.25
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_rsa.trainmall
+	User jesshaw@126.com
+```
+
+
+7. 测试是否成功
+```bash
+ssh root@trainmall
+```
+
+## 管理git生成的多个ssh key
+
+1. 生成公私钥对
+```bash
+cd ~/.ssh/
+ssh-keygen -t rsa -C "jeshaw@lexiangmiao.com"
+# 根据提示输入文件名称，如id_rsa.lexiangmiao
+```
+
+2. 添加公钥到需要上传的代码网站
+
+```bash
+cat id_rsa.lexiangmiao.pub
+```
+
+3. 配置config
+```bash
+vim config
+
+# github
+Host mygithub github.com
+	Hostname github.com
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_rsa.github
+	User jesshaw@lexiangmiao.com
+
+# lexiangmiao
+Host code.lexiangmiao.com
+	Hostname code.lexiangmiao.com
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_rsa.lexiangmiao
+	User jesshaw@lexiangmiao.com
+```
+
+
+4. 添加私钥到本地
+
+```bash
+# 先要启动ssh-agent才能添加
+eval $(ssh-agent -s)
+
+ssh-add ~/.ssh/id_rsa.lexiangmiao
+
+# 删除私钥 hostname配置在config中
+ssh-keygen -R hostname
+```
+
+
+5. 测试是否成功
+```bash
+ssh -T git@github.com
+
+#调试方式查看是否成功
+ssh -vT git@code.lexiangmiao.com
+```
+
+6. 配置当前库的用户和邮箱
+
+```bash
+git config user.name "Firstname Lastname"
+git config user.email "your_email@example.com"
+git config --local -l
+# 查看全局配置
+git config --global -l
+```
+
+7. 配置新的url
+git remote set-url origin git@github.com-worker_user1:worker_user1/repo_name.git
+
+
+## 拉不到代码，原因是因为不是以管理方式运行的git bash
+
+git@git.dev.sh.ctripcorp.com: Permission denied (ssh key error).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+## 改用https方式作为库地址时，保留输入用户名和密码
+
+git config --global credential.helper store
+
+
+
+
 ## 箭头键不能工作
 
 经常碰到在bash中执行命名后需要使用上下箭头键来完成选择，但是偏偏在win7中不能使用。(当然换到cmd中是可以的，不使用此方式的原因你懂的)

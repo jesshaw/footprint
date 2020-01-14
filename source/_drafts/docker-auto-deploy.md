@@ -24,6 +24,14 @@ sudo docker pull jenkins:2.60.3
 chmod 777 /home/osboxes/jenkins_home/
 # 启动
 sudo docker run -d --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/osboxes/jenkins_home:/var/jenkins_home jenkins:2.60.3
+<<<<<<< HEAD
+=======
+
+sudo docker run -d --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/jenkins_home:/var/jenkins_home jenkins:2.60.3
+
+38d04be1bc21404c9a9b464ecd49a231
+
+>>>>>>> master_bak
 # 查看日志
 docker logs
 docker container logs myjenkins

@@ -4,12 +4,105 @@
 		"selected_items":
 		[
 			[
+<<<<<<< HEAD
 				"desc",
 				"description	(_config.yml)"
 			],
 			[
 				"dev",
 				"devtool	(webpack.config.js)"
+=======
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"blo",
+				"block\tdisplay"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"ali",
+				"align-content\tproperty"
+			],
+			[
+				"te",
+				"text-align\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"style",
+				"style\tAttr"
+			],
+			[
+				"h",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"a",
+				"action\tAttr"
+			],
+			[
+				"fi",
+				"file"
+			],
+			[
+				"sty",
+				"style\tTag"
+			],
+			[
+				"tri",
+				"trainmall\t(git-usefully-command.md)"
+			],
+			[
+				"page",
+				"page_1"
+			],
+			[
+				"j",
+				"jhipster"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"同前",
+				"同前所述"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"desc",
+				"description\t(_config.yml)"
+			],
+			[
+				"dev",
+				"devtool\t(webpack.config.js)"
+>>>>>>> master_bak
 			],
 			[
 				"co",
@@ -41,17 +134,24 @@
 			],
 			[
 				"bui",
+<<<<<<< HEAD
 				"build	(bundle.js)"
+=======
+				"build\t(bundle.js)"
+>>>>>>> master_bak
 			],
 			[
 				"l",
 				"lexiangmiao"
 			],
 			[
+<<<<<<< HEAD
 				"le",
 				"lexiangmiao	(java-classloader.md)"
 			],
 			[
+=======
+>>>>>>> master_bak
 				"Java",
 				"Java类加载器"
 			],
@@ -61,11 +161,19 @@
 			],
 			[
 				"inpu",
+<<<<<<< HEAD
 				"inp:submit	HTML - Input:submit"
 			],
 			[
 				"inp",
 				"inp:text	HTML - Input:text"
+=======
+				"inp:submit\tHTML - Input:submit"
+			],
+			[
+				"inp",
+				"inp:text\tHTML - Input:text"
+>>>>>>> master_bak
 			],
 			[
 				"print",
@@ -77,7 +185,11 @@
 			],
 			[
 				"mi",
+<<<<<<< HEAD
 				"main	method (main)"
+=======
+				"main\tmethod (main)"
+>>>>>>> master_bak
 			],
 			[
 				"pu",
@@ -93,7 +205,11 @@
 			],
 			[
 				"sele",
+<<<<<<< HEAD
 				"select	(grabOrder.js)"
+=======
+				"select\t(grabOrder.js)"
+>>>>>>> master_bak
 			],
 			[
 				"getmi",
@@ -121,21 +237,32 @@
 			],
 			[
 				"主",
+<<<<<<< HEAD
 				"主任医师	(list.json)"
 			],
 			[
 				"De",
 				"Description	(list.json)"
+=======
+				"主任医师\t(list.json)"
+			],
+			[
+				"De",
+				"Description\t(list.json)"
+>>>>>>> master_bak
 			],
 			[
 				"user",
 				"userConfig"
 			],
 			[
+<<<<<<< HEAD
 				"fi",
 				"filter"
 			],
 			[
+=======
+>>>>>>> master_bak
 				"get",
 				"getTime〔function〕"
 			],
@@ -153,11 +280,15 @@
 			],
 			[
 				"re",
+<<<<<<< HEAD
 				"resetPassword	method"
 			],
 			[
 				"h",
 				"handler"
+=======
+				"resetPassword\tmethod"
+>>>>>>> master_bak
 			],
 			[
 				"rou",
@@ -169,7 +300,11 @@
 			],
 			[
 				"update",
+<<<<<<< HEAD
 				"updateUsername	(users.controller.js)"
+=======
+				"updateUsername\t(users.controller.js)"
+>>>>>>> master_bak
 			],
 			[
 				"fin",
@@ -193,7 +328,11 @@
 			],
 			[
 				"bo",
+<<<<<<< HEAD
 				"boolean	(homeworks.ts)"
+=======
+				"boolean\t(homeworks.ts)"
+>>>>>>> master_bak
 			],
 			[
 				"json",
@@ -201,11 +340,19 @@
 			],
 			[
 				"homeworks",
+<<<<<<< HEAD
 				"homeworks	parameter"
 			],
 			[
 				"auth",
 				"autHttp	property"
+=======
+				"homeworks\tparameter"
+			],
+			[
+				"auth",
+				"autHttp\tproperty"
+>>>>>>> master_bak
 			],
 			[
 				"ca",
@@ -213,7 +360,11 @@
 			],
 			[
 				"getHomeworkSummariesB",
+<<<<<<< HEAD
 				"getHomeworkSummariesByCategory	method"
+=======
+				"getHomeworkSummariesByCategory\tmethod"
+>>>>>>> master_bak
 			],
 			[
 				"ho",
@@ -237,7 +388,11 @@
 			],
 			[
 				"profi",
+<<<<<<< HEAD
 				"ProfilePage	alias"
+=======
+				"ProfilePage\talias"
+>>>>>>> master_bak
 			],
 			[
 				"conte",
@@ -253,7 +408,11 @@
 			],
 			[
 				"for",
+<<<<<<< HEAD
 				"for	for (…) {…}"
+=======
+				"for\tfor (…) {…}"
+>>>>>>> master_bak
 			],
 			[
 				"homw",
@@ -269,6 +428,7 @@
 			],
 			[
 				"in",
+<<<<<<< HEAD
 				"indexOf	method"
 			],
 			[
@@ -294,6 +454,33 @@
 			[
 				"dire",
 				"directives	property"
+=======
+				"indexOf\tmethod"
+			],
+			[
+				"su",
+				"substring\tmethod"
+			],
+			[
+				"url",
+				"url2json\t(util.ts)"
+			],
+			[
+				"gep",
+				"getParameterByName\t(util.ts)"
+			],
+			[
+				"nu",
+				"null\t(profile.ts)"
+			],
+			[
+				"form",
+				"FORM_DIRECTIVES\talias"
+			],
+			[
+				"dire",
+				"directives\tproperty"
+>>>>>>> master_bak
 			],
 			[
 				"au",
@@ -305,6 +492,7 @@
 			],
 			[
 				"impo",
+<<<<<<< HEAD
 				"import	keyword"
 			],
 			[
@@ -334,6 +522,37 @@
 			[
 				"Route",
 				"RouterConfig	alias"
+=======
+				"import\tkeyword"
+			],
+			[
+				"imop",
+				"import\tkeyword"
+			],
+			[
+				"ruote",
+				"Routes\talias"
+			],
+			[
+				"routes",
+				"Routes\talias"
+			],
+			[
+				"router",
+				"provideRouter\talias"
+			],
+			[
+				"route",
+				"ROUTES\tconst"
+			],
+			[
+				"routerc",
+				"RouterConfig\talias"
+			],
+			[
+				"Route",
+				"RouterConfig\talias"
+>>>>>>> master_bak
 			],
 			[
 				"in-m",
@@ -341,6 +560,7 @@
 			],
 			[
 				"ng2",
+<<<<<<< HEAD
 				"ng2-import	Angular 2 Import Snippet"
 			],
 			[
@@ -354,6 +574,21 @@
 			[
 				"imp",
 				"import	imports a module …"
+=======
+				"ng2-import\tAngular 2 Import Snippet"
+			],
+			[
+				"ng2-bo",
+				"ng2-bootstrap-prod\tAngular 2 Production Bootstrap Snippet"
+			],
+			[
+				"comp",
+				"component\tproperty"
+			],
+			[
+				"imp",
+				"import\timports a module …"
+>>>>>>> master_bak
 			],
 			[
 				"js",
@@ -361,6 +596,7 @@
 			],
 			[
 				"Imme",
+<<<<<<< HEAD
 				"InMemoryDataService	alias"
 			],
 			[
@@ -386,6 +622,29 @@
 			[
 				"hero",
 				"hero	parameter"
+=======
+				"InMemoryDataService\talias"
+			],
+			[
+				"imme",
+				"InMemoryBackendService\talias"
+			],
+			[
+				"Xhr",
+				"XHRBackend\talias"
+			],
+			[
+				"temp",
+				"templateUrl\t(hero-detail.component.ts)"
+			],
+			[
+				"ro",
+				"router\t(app.routes.ts)"
+			],
+			[
+				"hero",
+				"hero\tparameter"
+>>>>>>> master_bak
 			],
 			[
 				"her",
@@ -393,6 +652,7 @@
 			],
 			[
 				"gether",
+<<<<<<< HEAD
 				"getHeroes	method"
 			],
 			[
@@ -414,6 +674,29 @@
 			[
 				"tem",
 				"templateUrl	property"
+=======
+				"getHeroes\tmethod"
+			],
+			[
+				"Onde",
+				"OnDestroy\talias"
+			],
+			[
+				"impl",
+				"implements\tkeyword"
+			],
+			[
+				"active",
+				"ActivatedRoute\talias"
+			],
+			[
+				"heroser",
+				"HeroService\talias"
+			],
+			[
+				"tem",
+				"templateUrl\tproperty"
+>>>>>>> master_bak
 			],
 			[
 				"da",
@@ -421,11 +704,19 @@
 			],
 			[
 				"provider",
+<<<<<<< HEAD
 				"provideRouter	alias"
 			],
 			[
 				"Heroes",
 				"HeroesComponent	alias"
+=======
+				"provideRouter\talias"
+			],
+			[
+				"Heroes",
+				"HeroesComponent\talias"
+>>>>>>> master_bak
 			],
 			[
 				"com",
@@ -437,6 +728,7 @@
 			],
 			[
 				"ge",
+<<<<<<< HEAD
 				"getHeroesSlowly	method"
 			],
 			[
@@ -478,12 +770,24 @@
 			[
 				"fun",
 				"function"
+=======
+				"getHeroesSlowly\tmethod"
+			],
+			[
+				"Her",
+				"HEROES\talias"
+			],
+			[
+				"prom",
+				"Promise\tinterface"
+>>>>>>> master_bak
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+<<<<<<< HEAD
 			"file": "README.md",
 			"settings":
 			{
@@ -582,6 +886,15 @@
 				"line_ending": "Windows",
 				"name": "//主键"
 			}
+=======
+			"file": "/F/Works/日常.md",
+			"settings":
+			{
+				"buffer_size": 5820,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+>>>>>>> master_bak
 		}
 	],
 	"build_system": "",
@@ -591,6 +904,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
+<<<<<<< HEAD
 		"height": 392.0,
 		"last_filter": "mark",
 		"selected_items":
@@ -642,12 +956,98 @@
 			[
 				"pcl",
 				"Package Control: List Packages"
+=======
+		"height": 137.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ssht",
+				"Set Syntax: HTML"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inp",
+				"Package Control: Install Package"
+			],
+			[
+				"ssj",
+				"Set Syntax: JSON"
+			],
+			[
+				"ssejs",
+				"Set Syntax: JSON"
+			],
+			[
+				"ssh",
+				"Set Syntax: HTML"
+			],
+			[
+				"html5",
+				"Snippet: Simple HTML5 Boilerplate"
+			],
+			[
+				"ss",
+				"Set Syntax: SQL"
+			],
+			[
+				"sssq",
+				"Set Syntax: SQL"
+			],
+			[
+				"sssl",
+				"Set Syntax: SQL"
+			],
+			[
+				"pcin",
+				"Package Control: Install Package"
+			],
+			[
+				"ssq",
+				"Set Syntax: SQL"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mar",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"pcd",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pcb",
+				"Preferences: Browse Packages"
+			],
+			[
+				"markdo",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pcs",
+				"Preferences: Settings"
+>>>>>>> master_bak
 			],
 			[
 				"pcr",
 				"Package Control: Remove Package"
 			],
 			[
+<<<<<<< HEAD
 				"pci",
 				"Package Control: Discover Packages"
 			],
@@ -660,6 +1060,92 @@
 				"Package Control: Remove Package"
 			],
 			[
+=======
+				"pcinsta",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"pce",
+				"Package Control: Disable Package"
+			],
+			[
+				"pc",
+				"Package Control: List Packages"
+			],
+			[
+				"markd",
+				"Build With: Markdown"
+			],
+			[
+				"pcen",
+				"Package Control: Enable Package"
+			],
+			[
+				"di",
+				"Package Control: Disable Package"
+			],
+			[
+				"pcis",
+				"Package Control: Install Package"
+			],
+			[
+				"pcre",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssm",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markde",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pagek",
+				"Package Control: Discover Packages"
+			],
+			[
+				"browe",
+				"Preferences: Browse Packages"
+			],
+			[
+				"de",
+				"ANF: Delete File"
+			],
+			[
+				"view",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"vie",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"sss",
+				"Set Syntax: SQL"
+			],
+			[
+				"m",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pcl",
+				"Package Control: List Packages"
+			],
+			[
+				"pci",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+>>>>>>> master_bak
 				"dis",
 				"Package Control: Discover Packages"
 			],
@@ -676,10 +1162,13 @@
 				"Preferences: Alignment File Settings – User"
 			],
 			[
+<<<<<<< HEAD
 				"pce",
 				"Package Control: Enable Package"
 			],
 			[
+=======
+>>>>>>> master_bak
 				"setj",
 				"Set Syntax: JSON"
 			],
@@ -708,10 +1197,13 @@
 				"Set Syntax: TypeScript"
 			],
 			[
+<<<<<<< HEAD
 				"pcd",
 				"Package Control: Discover Packages"
 			],
 			[
+=======
+>>>>>>> master_bak
 				"npi",
 				"Nodejs::NPM::Install"
 			],
@@ -732,7 +1224,11 @@
 				"Preferences: Browse Packages"
 			]
 		],
+<<<<<<< HEAD
 		"width": 965.0
+=======
+		"width": 540.0
+>>>>>>> master_bak
 	},
 	"console":
 	{
@@ -754,14 +1250,21 @@
 	},
 	"expanded_folders":
 	[
+<<<<<<< HEAD
 		"/D/Projects/sb/footprint",
 		"/D/Projects/sb/footprint/source",
 		"/D/Projects/sb/footprint/source/_drafts",
 		"/D/Projects/sb/footprint/source/_posts"
+=======
+		"/D/projects/github/footprint",
+		"/D/projects/github/footprint/source",
+		"/D/projects/github/footprint/source/_posts"
+>>>>>>> master_bak
 	],
 	"file_history":
 	[
 		"/C/opt/settings/server.properties",
+<<<<<<< HEAD
 		"/D/me/trainmall/src/main/resources/config/application-prod.yml",
 		"/D/me/trainmall/package.json",
 		"/D/me/trainmall/README.md",
@@ -897,6 +1400,143 @@
 	"find_in_files":
 	{
 		"height": 96.0,
+=======
+		"/D/projects/github/footprint/source/_posts/git-usefully-command.md",
+		"/D/Users/mzxiao/.ssh/config",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/projects/github/footprint/README.md",
+		"/D/Users/mzxiao/AppData/Local/Yarn/Data/global/node_modules/generator-jhipster-ionic/generators/app/index.js",
+		"/D/Users/mzxiao/AppData/Local/Temp/haxm_log8.txt",
+		"/D/Users/mzxiao/.m2/settings.xml",
+		"/D/Users/mzxiao/AppData/Local/Temp/haxm_log2.txt",
+		"/D/Users/mzxiao/Desktop/xf.txt",
+		"/D/Users/mzxiao/.gradle/init.gradle",
+		"/D/Users/mzxiao/AppData/Roaming/npm-cache/_logs/2019-07-09T01_41_17_545Z-debug.log",
+		"/D/projects/sample/footprint/README.md",
+		"/D/projects/sample/footprint/package.json",
+		"/D/projects/sample/footprint/public/CNAME",
+		"/D/projects/sample/footprint/source/_drafts/running-docker-in-jenkins-in-docker.md",
+		"/D/projects/sample/footprint/_config.yml",
+		"/D/projects/sample/footprint/placeholder",
+		"/D/projects/sample/footprint/package-lock.json",
+		"/D/projects/sample/footprint/source/CNAME",
+		"/D/Users/mzxiao/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/D/Users/mzxiao/AppData/Roaming/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/D/projects/sample/footprint/source/_posts/git-usefully-command.md",
+		"/D/projects/sample/footprint/source/_drafts/docker-auto-deploy.md",
+		"/D/projects/sample/footprint/source/_posts/docker-install.md",
+		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/uidphone.txt",
+		"/D/Users/mzxiao/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/IDU64DLL/phoneuid.txt",
+		"/D/projects/sample/footprint/source/_posts/linux-usefully-command.md",
+		"/D/projects/sample/footprint/source/_posts/docker-usefully-command.md",
+		"/D/projects/sample/footprint/source/_drafts/automatically-generate-table-of-contents-using-jquery.md",
+		"/D/projects/github/mydocker/frp/frp_0.27.0_windows_amd64/systemd/frpc.service",
+		"/D/projects/github/frp/gitlab_chuantou.ini",
+		"/D/projects/github/frp/README.md",
+		"/D/projects/github/mydocker/nginx/docker-compose.yml",
+		"/D/projects/github/mydocker/nginx/static-html-directory/index.html",
+		"/G/DevTools/frp_0.27.0_windows_amd64/frps.ini",
+		"/G/DevTools/frp_0.27.0_windows_amd64/frpc.ini",
+		"/D/projects/github/puppeteer/sample/example.js",
+		"/D/Users/mzxiao/Desktop/open_hotel_qr_code_wifi.txt",
+		"/D/Users/mzxiao/Desktop/open_hotel_qr_code_wifi.sql",
+		"/D/projects/sample/footprint/source/_drafts/jhipster-usefully-cmd.md",
+		"/D/projects/github/Flutter-UI-Kit-master/lib/logic/bloc/cart_bloc.dart",
+		"/D/Users/mzxiao/Downloads/contract/UserProfileService.bjsc",
+		"/D/Users/mzxiao/Downloads/contract/GetUserProperty.bjsc",
+		"/F/me/徐汇学区/对口小区.txt",
+		"/F/me/徐汇学区/新建文本文档.txt",
+		"/D/Users/mzxiao/Desktop/破独酒店模板.csv",
+		"/D/Users/mzxiao/Desktop/扫码住黑名单模板test.csv",
+		"/D/Users/mzxiao/Desktop/扫码住黑名单模板.csv",
+		"/G/DevTools/BaijiEditor/BaijiEditor.exe.config",
+		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchBySqlService.class",
+		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchByOrderIdService.class",
+		"/D/Users/mzxiao/Downloads/2019-03-21%2Fhtl-ordersearch-service-5333691/search-1.0.1/WEB-INF/classes/com/ctrip/hotel/order/search/service/SearchByOrderIdService$1.class",
+		"/F/Works/酒店前端/酒店运营/图文秀/preview.html",
+		"/D/Users/mzxiao/Desktop/乐享喵.html",
+		"/F/me/lxm/站酷快乐体.txt",
+		"/F/Works/酒店前端/酒店运营/图文秀/test.html",
+		"/D/Users/mzxiao/Desktop/a.html",
+		"/D/Users/mzxiao/Desktop/aa.html",
+		"/D/Users/mzxiao/Desktop/帐号.txt",
+		"/D/Users/mzxiao/Documents/WeChat Files/Wwammwwamm/FileStorage/File/2019-03/帐号.txt",
+		"/D/projects/sample/footprint/source/_drafts/docker-nginx.md",
+		"/D/projects/sample/footprint/source/_posts/nodejs-usefully-command.md",
+		"/D/projects/sample/footprint/source/_posts/maven-usefully-command.md",
+		"/D/Users/mzxiao/.ssh/id_rsa.github.pub",
+		"/D/Users/mzxiao/.ssh/id_rsa.github",
+		"/D/Users/mzxiao/.ssh/known_hosts",
+		"/D/projects/jhipster/testapp/src/main/webapp/app/index.tsx",
+		"/D/Users/mzxiao/Desktop/WrapQRCodeForMaterials.bjsc",
+		"/F/Works/酒店前端/酒店运营/节日氛围传图接入/节日切图规范/节日切图规范/蜂鸟+查询/26.蜂鸟入口字色.txt",
+		"/D/Users/mzxiao/Desktop/a.json",
+		"/D/Users/mzxiao/Desktop/扫码住黑名单模板 - 副本.csv",
+		"/F/me/pjd/新建文本文档.txt",
+		"/D/Users/mzxiao/Desktop/图文秀/test.html",
+		"/D/Users/mzxiao/Desktop/加黑模板.csv",
+		"/D/WebSites/CtripAppData/Database.Config",
+		"/D/Users/mzxiao/.ssh/id_rsa.aliyun",
+		"/D/Users/mzxiao/Desktop/黑名单导入.csv",
+		"/D/projects/hoteloperation/operation-core/src/main/java/com/ctrip/hotel/operation/core/util/StringUtils.java",
+		"/F/me/filmlist.txt",
+		"/D/Users/mzxiao/Documents/我接收到的文件/checksum.go",
+		"/D/Users/mzxiao/Downloads/HotelOperationService/Hotel/Operation/Soa/V1/FetchHotelInfoRequestType.cs",
+		"/D/Users/mzxiao/Documents/WXWork/1688851031412968/Cache/File/2018-12/元旦特惠酒店.csv",
+		"/D/Users/mzxiao/Downloads/LogDemo.java",
+		"/D/Users/mzxiao/Downloads/user.xls",
+		"/D/projects/sample/footprint/source/_posts/maven-duplicate-classes.md",
+		"/F/Works/酒店前端/酒店运营/金池项目/job.txt",
+		"/D/Users/mzxiao/Desktop/黑名单11.29.csv",
+		"/D/Users/mzxiao/Desktop/黑名单11.29 - 副本.csv",
+		"/D/Users/mzxiao/Desktop/hotel_info.sql",
+		"/F/Works/日常.md",
+		"/D/projects/github/vue-lexiangmiao/.eslintrc.js",
+		"/D/projects/github/vue-lexiangmiao/package.json",
+		"/D/Users/mzxiao/Desktop/aa.txt",
+		"/D/Users/mzxiao/Desktop/黑名单1129 - 副本.csv",
+		"/D/Users/mzxiao/Desktop/黑名单1129.csv",
+		"/D/projects/github/lexiangmiao-style/README.md",
+		"/D/projects/github/vue-lexiangmiao/tests/unit/example.spec.js",
+		"/D/projects/github/vue-lexiangmiao/tests/unit/.eslintrc.js",
+		"/D/Users/mzxiao/AppData/Roaming/npm-cache/_logs/2018-11-27T08_21_12_438Z-debug.log",
+		"/C/Program Files (x86)/Yarn/bin/yarn",
+		"/D/Users/mzxiao/Desktop/deduct_detail.sql",
+		"/D/projects/sample/footprint/source/_drafts/telephone-interview.md",
+		"/F/Projects/Readme.txt",
+		"/C/projects/tm/up.sql",
+		"/D/Projects/sb/footprint/source/_posts/core-java-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/spring-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/java-string-interview-questions.md",
+		"/D/Projects/sb/footprint/source/_posts/java-collections-interview-questions.md",
+		"/D/Works/日常.md",
+		"/D/Users/mzxiao.CN1/Downloads/install_docker.sh",
+		"/D/Users/mzxiao.CN1/Downloads/start.sh",
+		"/D/Projects/sb/footprint/source/_posts/maven-usefully-command.md",
+		"/D/Projects/sb/footprint/source/_posts/maven-duplicate-classes.md",
+		"/C/projects/tm/trainmall-backendsite/prodstart.sh",
+		"/D/Projects/sb/footprint/source/_posts/java-8-period-and-duration.md",
+		"/D/Projects/sb/footprint/source/_posts/spring-hot-deploy.md",
+		"/D/Projects/sb/footprint/source/_posts/java-thread-wait-notify-and-notifyall-example.md",
+		"/C/projects/hoteloperation/operation-web/target/operation-web-1.0/WEB-INF/classes/templates/common/header.ftl",
+		"/C/projects/tm/trainmall/prodstart.sh",
+		"/D/Projects/sb/footprint/source/_posts/git-usefully-command.md",
+		"/D/me/ts/doc/resetadmin.sql",
+		"/D/Projects/sb/footprint/source/_posts/docker-usefully-command.md",
+		"/D/Projects/sb/footprint/source/_drafts/running-docker-in-jenkins-in-docker.md",
+		"/D/me/ts/trainmall/src/main/docker/mysql.yml",
+		"/D/me/ts/trainmall/src/main/docker/app.yml",
+		"/D/Users/mzxiao.CN1/Downloads/Dockerfile (2)",
+		"/D/Projects/sb/footprint/source/_drafts/docker-auto-deploy.md"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+>>>>>>> master_bak
 		"where_history":
 		[
 			"src,<open folders>",
@@ -908,6 +1548,98 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
+=======
+			"host",
+			"\n4.7W  10000 164s",
+			"\n4.7W  5000 195s",
+			"195s",
+			"UPDATE",
+			"^",
+			"<img",
+			"src",
+			" <img",
+			"<img",
+			"width",
+			"\"width\"",
+			"\n\t\t.cut{\n\t\t\twidth: 759;\t\t\t\n\t\t}",
+			"\"width\": 750",
+			"^",
+			"470083",
+			"^",
+			"${currentdate}",
+			"^",
+			"cost_guarantee_amount",
+			"FALSE",
+			" ",
+			"a.",
+			",",
+			" ",
+			"  `",
+			"\t",
+			"htlbookingeventdb_W",
+			"..\\",
+			"WalletStatus",
+			"Column",
+			"//",
+			" //重",
+			"/",
+			"**",
+			"/*",
+			"/**",
+			",",
+			"domestic/hotel",
+			"domestic",
+			"host",
+			" \n",
+			"显示意向操作和 快速修复",
+			"ft10",
+			"background: #333333;",
+			"background",
+			"英语原文",
+			"_tipoff",
+			"_tipon",
+			"onmouseover=\"_tipon(this)\"",
+			"google",
+			"$",
+			"^",
+			"$",
+			"^",
+			"jes1",
+			"aliyun",
+			"/*\t",
+			"*/",
+			"/*\t\t*/\t",
+			"*/",
+			"/*\t\t*/",
+			"返点",
+			"返利",
+			" ",
+			"*/",
+			"/*\t\t*/\t\t",
+			"* ",
+			"*/",
+			"*/\t",
+			"*",
+			"/*\t\t*/",
+			"*/",
+			"/*\t\t*/\t",
+			"/*\t\t*/",
+			"/* */",
+			"^",
+			"OVERFLOW",
+			"toc",
+			"订单编号",
+			"0.5元/盒",
+			"* 历史记录",
+			"toc",
+			"###",
+			"管理",
+			"/*  */",
+			"'",
+			"<GoogleTransProxyUrl>",
+			"2.60.3-alpine",
+>>>>>>> master_bak
 			"jenkins",
 			"docker",
 			"@Column",
@@ -946,6 +1678,7 @@
 			"java",
 			"git",
 			";",
+<<<<<<< HEAD
 			"String",
 			"private ",
 			";",
@@ -1036,11 +1769,18 @@
 			"BigDecimal ",
 			"Timestamp ",
 			"Integer "
+=======
+			"String"
+>>>>>>> master_bak
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
+<<<<<<< HEAD
 		"regex": false,
+=======
+		"regex": true,
+>>>>>>> master_bak
 		"replace_history":
 		[
 			"",
@@ -1055,11 +1795,16 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 11,
+=======
+			"selected": 0,
+>>>>>>> master_bak
 			"sheets":
 			[
 				{
 					"buffer": 0,
+<<<<<<< HEAD
 					"file": "README.md",
 					"semi_transient": false,
 					"settings":
@@ -1425,18 +2170,31 @@
 					"settings":
 					{
 						"buffer_size": 251,
+=======
+					"file": "/F/Works/日常.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5820,
+>>>>>>> master_bak
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								206,
 								206
+=======
+								5625,
+								5588
+>>>>>>> master_bak
 							]
 						],
 						"settings":
 						{
+<<<<<<< HEAD
 							"BracketHighlighterBusy": false,
 							"auto_complete": false,
 							"bh_regions":
@@ -2126,6 +2884,12 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+=======
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3893.0,
+>>>>>>> master_bak
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -2136,11 +2900,19 @@
 	],
 	"incremental_find":
 	{
+<<<<<<< HEAD
 		"height": 26.0
 	},
 	"input":
 	{
 		"height": 36.0
+=======
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 39.0
+>>>>>>> master_bak
 	},
 	"layout":
 	{
@@ -2181,11 +2953,23 @@
 	{
 		"height": 120.0
 	},
+<<<<<<< HEAD
 	"pinned_build_system": "",
 	"project": "footprint.sublime-project",
 	"replace":
 	{
 		"height": 48.0
+=======
+	"output.mde":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "Packages/Markdown Preview/Markdown.sublime-build",
+	"project": "footprint.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+>>>>>>> master_bak
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2235,7 +3019,11 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
+<<<<<<< HEAD
 	"side_bar_width": 498.0,
+=======
+	"side_bar_width": 359.0,
+>>>>>>> master_bak
 	"status_bar_visible": true,
 	"template_settings":
 	{
