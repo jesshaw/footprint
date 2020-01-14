@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Java工程师该如何编写高效代码？ | Footprint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="java, efficient code, 高效代码">
+    
+    <meta name="description" content="世界上只有两种物质：高效率和低效率；世界上只有两种人：高效率的人和低效率的人。——萧伯纳 同理，世界上只有两种代码：高效代码和低效代码；世界上只有两种人：编写高效代码的人和编写低效代码的人。如何编写高效代码，是每个研发团队都面临的一个重大问题。 本文作者根据实际经验，查阅了大量资料，总结了”Java高效代码50例”，让每一个Java程序员都能编写出”高效代码”。">
+<meta name="keywords" content="java, efficient code, 高效代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java工程师该如何编写高效代码？">
+<meta property="og:url" content="/2020/01/14/java-efficient-code/index.html">
+<meta property="og:site_name" content="Footprint">
+<meta property="og:description" content="世界上只有两种物质：高效率和低效率；世界上只有两种人：高效率的人和低效率的人。——萧伯纳 同理，世界上只有两种代码：高效代码和低效代码；世界上只有两种人：编写高效代码的人和编写低效代码的人。如何编写高效代码，是每个研发团队都面临的一个重大问题。 本文作者根据实际经验，查阅了大量资料，总结了”Java高效代码50例”，让每一个Java程序员都能编写出”高效代码”。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/gallery/green-water4.jpg">
+<meta property="og:updated_time" content="2020-01-14T02:04:05.736Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java工程师该如何编写高效代码？">
+<meta name="twitter:description" content="世界上只有两种物质：高效率和低效率；世界上只有两种人：高效率的人和低效率的人。——萧伯纳 同理，世界上只有两种代码：高效代码和低效代码；世界上只有两种人：编写高效代码的人和编写低效代码的人。如何编写高效代码，是每个研发团队都面临的一个重大问题。 本文作者根据实际经验，查阅了大量资料，总结了”Java高效代码50例”，让每一个Java程序员都能编写出”高效代码”。">
+<meta name="twitter:image" content="/gallery/green-water4.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Footprint" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jes&#39; footprint</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/java/">java</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-java-efficient-code" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Java工程师该如何编写高效代码？
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2020/01/14/java-efficient-code/" class="article-date">
+            <time datetime="2020-01-14T02:02:38.318Z" itemprop="datePublished">2020-01-14</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java-efficient-code-高效代码/">java, efficient code, 高效代码</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>世界上只有两种物质：高效率和低效率；世界上只有两种人：高效率的人和低效率的人。——萧伯纳</p>
+<p>同理，世界上只有两种代码：高效代码和低效代码；世界上只有两种人：编写高效代码的人和编写低效代码的人。如何编写高效代码，是每个研发团队都面临的一个重大问题。</p>
+<p>本文作者根据实际经验，查阅了大量资料，总结了”Java高效代码50例”，让每一个Java程序员都能编写出”高效代码”。<br><a id="more"></a></p>
+<h2 id="1-常量-amp-变量"><a href="#1-常量-amp-变量" class="headerlink" title="1. 常量 &amp; 变量"></a>1. 常量 &amp; 变量</h2><h3 id="1-1-直接赋值常量值，禁止声明新对象"><a href="#1-1-直接赋值常量值，禁止声明新对象" class="headerlink" title="1.1. 直接赋值常量值，禁止声明新对象"></a>1.1. 直接赋值常量值，禁止声明新对象</h3><p>直接赋值常量值，只是创建了一个对象引用，而这个对象引用指向常量值。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Long i = <span class="keyword">new</span> Long(<span class="number">1L</span>);</span><br><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Long i = <span class="number">1L</span>;</span><br><span class="line">String s = <span class="string">"abc"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-当成员变量值无需改变时，尽量定义为静态常量"><a href="#1-2-当成员变量值无需改变时，尽量定义为静态常量" class="headerlink" title="1.2. 当成员变量值无需改变时，尽量定义为静态常量"></a>1.2. 当成员变量值无需改变时，尽量定义为静态常量</h3><p>在类的每个对象实例中，每个成员变量都有一份副本，而成员静态常量只有一份实例。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpConnection</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">long</span> timeout = <span class="number">5L</span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpConnection</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> TIMEOUT = <span class="number">5L</span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-尽量使用基本数据类型，避免自动装箱和拆箱"><a href="#1-3-尽量使用基本数据类型，避免自动装箱和拆箱" class="headerlink" title="1.3. 尽量使用基本数据类型，避免自动装箱和拆箱"></a>1.3. 尽量使用基本数据类型，避免自动装箱和拆箱</h3><p>Java 中的基本数据类型 double、float、long、int、short、char、boolean，分别对应包装类 Double、Float、Long、Integer、Short、Character、Boolean。JVM 支持基本类型与对应包装类的自动转换，被称为自动装箱和拆箱。装箱和拆箱都是需要 CPU 和内存资源的，所以应尽量避免使用自动装箱和拆箱。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Integer sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span>[] values = ...;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> value : values) &#123;</span><br><span class="line">    sum += value; <span class="comment">// 相当于 result = Integer.valueOf(result.intValue() + value);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span>[] values = ...;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> value : values) &#123;</span><br><span class="line">    sum += value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-如果变量的初值会被覆盖，就没有必要给变量赋初值"><a href="#1-4-如果变量的初值会被覆盖，就没有必要给变量赋初值" class="headerlink" title="1.4. 如果变量的初值会被覆盖，就没有必要给变量赋初值"></a>1.4. 如果变量的初值会被覆盖，就没有必要给变量赋初值</h3><p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">if</span> (isAll) &#123;</span><br><span class="line">    userList = userDAO.queryAll();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    userList = userDAO.queryActive();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList;</span><br><span class="line"><span class="keyword">if</span> (isAll) &#123;</span><br><span class="line">    userList = userDAO.queryAll();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    userList = userDAO.queryActive();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-尽量使用函数内的基本类型临时变量"><a href="#1-5-尽量使用函数内的基本类型临时变量" class="headerlink" title="1.5. 尽量使用函数内的基本类型临时变量"></a>1.5. 尽量使用函数内的基本类型临时变量</h3><p>在函数内，基本类型的参数和临时变量都保存在栈（Stack）中，访问速度较快；对象类型的参数和临时变量的引用都保存在栈（Stack）中，内容都保存在堆（Heap）中，访问速度较慢。在类中，任何类型的成员变量都保存在堆（Heap）中，访问速度较慢。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Accumulator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> result = <span class="number">0.0</span>D;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addAll</span><span class="params">(@NonNull <span class="keyword">double</span>[] values)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">double</span> value : values) &#123;</span><br><span class="line">            result += value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Accumulator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> result = <span class="number">0.0</span>D;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addAll</span><span class="params">(@NonNull <span class="keyword">double</span>[] values)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> sum = <span class="number">0.0</span>D;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">double</span> value : values) &#123;</span><br><span class="line">            sum += value;</span><br><span class="line">        &#125;</span><br><span class="line">        result += sum;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-6-尽量不要在循环体外定义变量"><a href="#1-6-尽量不要在循环体外定义变量" class="headerlink" title="1.6. 尽量不要在循环体外定义变量"></a>1.6. 尽量不要在循环体外定义变量</h3><p>在老版 JDK 中，建议“尽量不要在循环体内定义变量”，但是在新版的 JDK 中已经做了优化。通过对编译后的字节码分析，变量定义在循环体外和循环体内没有本质的区别，运行效率基本上是一样的。</p>
+<p>反而，根据“ 局部变量作用域最小化 ”原则，变量定义在循环体内更科学更便于维护，避免了延长大对象生命周期导致延缓回收问题 。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">UserVO userVO;</span><br><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = <span class="keyword">new</span> ArrayList&lt;&gt;(userDOList.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">    userVO.setId(userDO.getId());</span><br><span class="line">    ...</span><br><span class="line">    userVOList.add(userVO);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = <span class="keyword">new</span> ArrayList&lt;&gt;(userDOList.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    UserVO userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">    userVO.setId(userDO.getId());</span><br><span class="line">    ...</span><br><span class="line">    userVOList.add(userVO);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-7-不可变的静态常量，尽量使用非线程安全类"><a href="#1-7-不可变的静态常量，尽量使用非线程安全类" class="headerlink" title="1.7. 不可变的静态常量，尽量使用非线程安全类"></a>1.7. 不可变的静态常量，尽量使用非线程安全类</h3><p>不可变的静态常量，虽然需要支持多线程访问，也可以使用非线程安全类。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Class&gt; CLASS_MAP;</span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    Map&lt;String, Class&gt; classMap = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;(<span class="number">16</span>);</span><br><span class="line">    classMap.put(<span class="string">"VARCHAR"</span>, java.lang.String.class);</span><br><span class="line">    ...</span><br><span class="line">    CLASS_MAP = Collections.unmodifiableMap(classMap);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Class&gt; CLASS_MAP;</span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    Map&lt;String, Class&gt; classMap = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">16</span>);</span><br><span class="line">    classMap.put(<span class="string">"VARCHAR"</span>, java.lang.String.class);</span><br><span class="line">    ...</span><br><span class="line">    CLASS_MAP = Collections.unmodifiableMap(classMap);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-8-不可变的成员变量，尽量使用非线程安全类"><a href="#1-8-不可变的成员变量，尽量使用非线程安全类" class="headerlink" title="1.8. 不可变的成员变量，尽量使用非线程安全类"></a>1.8. 不可变的成员变量，尽量使用非线程安全类</h3><p>不可变的成员变量，虽然需要支持多线程访问，也可以使用非线程安全类。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrategyFactory</span> <span class="keyword">implements</span> <span class="title">InitializingBean</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Strategy&gt; strategyList;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, Strategy&gt; strategyMap;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterPropertiesSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (CollectionUtils.isNotEmpty(strategyList)) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = (<span class="keyword">int</span>) Math.ceil(strategyList.size() * <span class="number">4.0</span> / <span class="number">3</span>);</span><br><span class="line">            Map&lt;String, Strategy&gt; map = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;(size);</span><br><span class="line">            <span class="keyword">for</span> (Strategy strategy : strategyList) &#123;</span><br><span class="line">                map.put(strategy.getType(), strategy);</span><br><span class="line">            &#125;</span><br><span class="line">            strategyMap = Collections.unmodifiableMap(map);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrategyFactory</span> <span class="keyword">implements</span> <span class="title">InitializingBean</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Strategy&gt; strategyList;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, Strategy&gt; strategyMap;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterPropertiesSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (CollectionUtils.isNotEmpty(strategyList)) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = (<span class="keyword">int</span>) Math.ceil(strategyList.size() * <span class="number">4.0</span> / <span class="number">3</span>);</span><br><span class="line">            Map&lt;String, Strategy&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;(size);</span><br><span class="line">            <span class="keyword">for</span> (Strategy strategy : strategyList) &#123;</span><br><span class="line">                map.put(strategy.getType(), strategy);</span><br><span class="line">            &#125;</span><br><span class="line">            strategyMap = Collections.unmodifiableMap(map);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<h2 id="2-对象-amp-类"><a href="#2-对象-amp-类" class="headerlink" title="2. 对象 &amp; 类"></a>2. 对象 &amp; 类</h2><h3 id="2-1-禁止使用-JSON-转化对象"><a href="#2-1-禁止使用-JSON-转化对象" class="headerlink" title="2.1. 禁止使用 JSON 转化对象"></a>2.1. 禁止使用 JSON 转化对象</h3><p>JSON 提供把对象转化为 JSON 字符串、把 JSON 字符串转为对象的功能，于是被某些人用来转化对象。这种对象转化方式，虽然在功能上没有问题，但是在性能上却存在问题。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = JSON.parseArray(JSON.toJSONString(userDOList), UserVO.class);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = <span class="keyword">new</span> ArrayList&lt;&gt;(userDOList.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    UserVO userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">    userVO.setId(userDO.getId());</span><br><span class="line">    ...</span><br><span class="line">    userVOList.add(userVO);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-尽量不使用反射赋值对象"><a href="#2-2-尽量不使用反射赋值对象" class="headerlink" title="2.2. 尽量不使用反射赋值对象"></a>2.2. 尽量不使用反射赋值对象</h3><p>用反射赋值对象，主要优点是节省了代码量，主要缺点却是性能有所下降。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = <span class="keyword">new</span> ArrayList&lt;&gt;(userDOList.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    UserVO userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">    BeanUtils.copyProperties(userDO, userVO);</span><br><span class="line">    userVOList.add(userVO);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = <span class="keyword">new</span> ArrayList&lt;&gt;(userDOList.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    UserVO userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">    userVO.setId(userDO.getId());</span><br><span class="line">    ...</span><br><span class="line">    userVOList.add(userVO);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-采用-Lambda-表达式替换内部匿名类"><a href="#2-3-采用-Lambda-表达式替换内部匿名类" class="headerlink" title="2.3. 采用 Lambda 表达式替换内部匿名类"></a>2.3. 采用 Lambda 表达式替换内部匿名类</h3><p>对于大多数刚接触 JDK8 的同学来说，都会认为 Lambda 表达式就是匿名内部类的语法糖。实际上， Lambda 表达式在大多数虚拟机中采用 invokeDynamic 指令实现，相对于匿名内部类在效率上会更高一些。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;User&gt; userList = ...;</span><br><span class="line">Collections.sort(userList, <span class="keyword">new</span> Comparator&lt;User&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(User user1, User user2)</span> </span>&#123;</span><br><span class="line">        Long userId1 = user1.getId();</span><br><span class="line">        Long userId2 = user2.getId();</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">return</span> userId1.compareTo(userId2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;User&gt; userList = ...;</span><br><span class="line">Collections.sort(userList, (user1, user2) -&gt; &#123;</span><br><span class="line">    Long userId1 = user1.getId();</span><br><span class="line">    Long userId2 = user2.getId();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> userId1.compareTo(userId2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-尽量避免定义不必要的子类"><a href="#2-4-尽量避免定义不必要的子类" class="headerlink" title="2.4. 尽量避免定义不必要的子类"></a>2.4. 尽量避免定义不必要的子类</h3><p>多一个类就需要多一份类加载，所以尽量避免定义不必要的子类。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Class&gt; CLASS_MAP =</span><br><span class="line">    Collections.unmodifiableMap(<span class="keyword">new</span> HashMap&lt;String, Class&gt;(<span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">    &#123;</span><br><span class="line">        put(<span class="string">"VARCHAR"</span>, java.lang.String.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Class&gt; CLASS_MAP;</span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    Map&lt;String, Class&gt; classMap = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">16</span>);</span><br><span class="line">    classMap.put(<span class="string">"VARCHAR"</span>, java.lang.String.class);</span><br><span class="line">    ...</span><br><span class="line">    CLASS_MAP = Collections.unmodifiableMap(classMap);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-5-尽量指定类的-final-修饰符"><a href="#2-5-尽量指定类的-final-修饰符" class="headerlink" title="2.5. 尽量指定类的 final 修饰符"></a>2.5. 尽量指定类的 final 修饰符</h3><p>为类指定 final 修饰符，可以让该类不可以被继承。如果指定了一个类为 final，则该类所有的方法都是 final 的，Java 编译器会寻找机会内联所有的 final 方法。内联对于提升 Java 运行效率作用重大，具体可参见 Java 运行期优化，能够使性能平均提高 50%。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateHelper</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">DateHelper</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：使用 Spring 的 AOP 特性时，需要对 Bean 进行动态代理，如果 Bean 类添加了 final 修饰，会导致异常。</p>
+<h2 id="3-方法"><a href="#3-方法" class="headerlink" title="3. 方法"></a>3. 方法</h2><h3 id="3-1-把跟类成员变量无关的方法声明成静态方法"><a href="#3-1-把跟类成员变量无关的方法声明成静态方法" class="headerlink" title="3.1. 把跟类成员变量无关的方法声明成静态方法"></a>3.1. 把跟类成员变量无关的方法声明成静态方法</h3><p>静态方法的好处就是不用生成类的实例就可以直接调用。静态方法不再属于某个对象，而是属于它所在的类。只需要通过其类名就可以访问，不需要再消耗资源去反复创建对象。即便在类内部的私有方法，如果没有使用到类成员变量，也应该声明为静态方法。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMonth</span><span class="params">(Date date)</span> </span>&#123;</span><br><span class="line">  Calendar calendar = Calendar.getInstance();</span><br><span class="line">  calendar.setTime(date);</span><br><span class="line">  <span class="keyword">return</span> calendar.get(Calendar.MONTH) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMonth</span><span class="params">(Date date)</span> </span>&#123;</span><br><span class="line">  Calendar calendar = Calendar.getInstance();</span><br><span class="line">  calendar.setTime(date);</span><br><span class="line">  <span class="keyword">return</span> calendar.get(Calendar.MONTH) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-尽量使用基本数据类型作为方法参数类型，避免不必要的装箱、拆箱和空指针判断"><a href="#3-2-尽量使用基本数据类型作为方法参数类型，避免不必要的装箱、拆箱和空指针判断" class="headerlink" title="3.2. 尽量使用基本数据类型作为方法参数类型，避免不必要的装箱、拆箱和空指针判断"></a>3.2. 尽量使用基本数据类型作为方法参数类型，避免不必要的装箱、拆箱和空指针判断</h3><p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(Double value1, Double value2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> double1 = Objects.isNull(value1) ? <span class="number">0.0</span>D : value1;</span><br><span class="line">    <span class="keyword">double</span> double2 = Objects.isNull(value2) ? <span class="number">0.0</span>D : value2;</span><br><span class="line">    <span class="keyword">return</span> double1 + double2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">double</span> result = sum(<span class="number">1.0</span>D, <span class="number">2.0</span>D);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">double</span> value1, <span class="keyword">double</span> value2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value1 + value2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">double</span> result = sum(<span class="number">1.0</span>D, <span class="number">2.0</span>D);</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-尽量使用基本数据类型作为方法返回值类型，避免不必要的装箱、拆箱和空指针判断"><a href="#3-3-尽量使用基本数据类型作为方法返回值类型，避免不必要的装箱、拆箱和空指针判断" class="headerlink" title="3.3. 尽量使用基本数据类型作为方法返回值类型，避免不必要的装箱、拆箱和空指针判断"></a>3.3. 尽量使用基本数据类型作为方法返回值类型，避免不必要的装箱、拆箱和空指针判断</h3><p>在 JDK 类库的方法中，很多方法返回值都采用了基本数据类型，首先是为了避免不必要的装箱和拆箱，其次是为了避免返回值的空指针判断。比如：Collection.isEmpty() 和 Map.size()。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">isValid</span><span class="params">(UserDO user)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Objects.isNull(user)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> Boolean.TRUE.equals(user.getIsValid());</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 调用代码</span></span><br><span class="line">UserDO user = ...;</span><br><span class="line">Boolean isValid = isValid(user);</span><br><span class="line"><span class="keyword">if</span> (Objects.nonNull(isValid) &amp;&amp; isValid.booleanValue()) &#123; </span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(UserDO user)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Objects.isNull(user)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> Boolean.TRUE.equals(user.getIsValid());</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 调用代码</span></span><br><span class="line">UserDO user = ...;</span><br><span class="line"><span class="keyword">if</span> (isValid(user)) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-协议方法参数值非空，避免不必要的空指针判断"><a href="#3-4-协议方法参数值非空，避免不必要的空指针判断" class="headerlink" title="3.4. 协议方法参数值非空，避免不必要的空指针判断"></a>3.4. 协议方法参数值非空，避免不必要的空指针判断</h3><p>协议编程，可以 @NonNull 和 @Nullable 标注参数，是否遵循全凭调用者自觉。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(UserDO user)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Objects.isNull(user)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> Boolean.TRUE.equals(user.getIsValid());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(@NonNull UserDO user)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Boolean.TRUE.equals(user.getIsValid());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-5-协议方法返回值非空，避免不必要的空指针判断"><a href="#3-5-协议方法返回值非空，避免不必要的空指针判断" class="headerlink" title="3.5. 协议方法返回值非空，避免不必要的空指针判断"></a>3.5. 协议方法返回值非空，避免不必要的空指针判断</h3><p>协议编程，可以 @NonNull 和 @Nullable 标注参数，是否遵循全凭实现者自觉。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;OrderVO&gt; <span class="title">queryUserOrder</span><span class="params">(Long userId)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 调用代码</span></span><br><span class="line">List&lt;OrderVO&gt; orderList = orderService.queryUserOrder(userId);</span><br><span class="line"><span class="keyword">if</span> (CollectionUtils.isNotEmpty(orderList)) &#123;</span><br><span class="line">    <span class="keyword">for</span> (OrderVO order : orderList) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@NonNull</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;OrderVO&gt; <span class="title">queryUserOrder</span><span class="params">(Long userId)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 调用代码</span></span><br><span class="line">List&lt;OrderVO&gt; orderList = orderService.queryUserOrder(userId);</span><br><span class="line"><span class="keyword">for</span> (OrderVO order : orderList) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-6-被调用方法已支持判空处理，调用方法无需再进行判空处理"><a href="#3-6-被调用方法已支持判空处理，调用方法无需再进行判空处理" class="headerlink" title="3.6. 被调用方法已支持判空处理，调用方法无需再进行判空处理"></a>3.6. 被调用方法已支持判空处理，调用方法无需再进行判空处理</h3><p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UserDO user = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">if</span> (StringUtils.isNotBlank(value)) &#123;</span><br><span class="line">    user = JSON.parseObject(value, UserDO.class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UserDO user = JSON.parseObject(value, UserDO.class);</span><br></pre></td></tr></table></figure>
+<h3 id="3-7-尽量避免不必要的函数封装"><a href="#3-7-尽量避免不必要的函数封装" class="headerlink" title="3.7. 尽量避免不必要的函数封装"></a>3.7. 尽量避免不必要的函数封装</h3><p>方法调用会引起入栈和出栈，导致消耗更多的 CPU 和内存，应当尽量避免不必要的函数封装。当然，为了使代码更简洁、更清晰、更易维护，增加一定的方法调用所带来的性能损耗是值得的。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数封装</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isVip</span><span class="params">(Boolean isVip)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Boolean.TRUE.equals(isVip);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 使用代码</span></span><br><span class="line"><span class="keyword">boolean</span> isVip = isVip(user.getVip());</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> isVip = Boolean.TRUE.equals(user.getVip());</span><br></pre></td></tr></table></figure>
+<h3 id="3-8-尽量指定方法的-final-修饰符"><a href="#3-8-尽量指定方法的-final-修饰符" class="headerlink" title="3.8. 尽量指定方法的 final 修饰符"></a>3.8. 尽量指定方法的 final 修饰符</h3><p>方法指定 final 修饰符，可以让方法不可以被重写，Java 编译器会寻找机会内联所有的 final 方法。内联对于提升 Java 运行效率作用重大，具体可参见 Java 运行期优化，能够使性能平均提高 50%。</p>
+<p>注意：所有的 private 方法会隐式地被指定 final 修饰符，所以无须再为其指定 final 修饰符。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：使用 Spring 的 AOP 特性时，需要对 Bean 进行动态代理，如果方法添加了 final 修饰，将不会被代理。</p>
+<h2 id="4-表达式"><a href="#4-表达式" class="headerlink" title="4. 表达式"></a>4. 表达式</h2><h3 id="4-1-尽量减少方法的重复调用"><a href="#4-1-尽量减少方法的重复调用" class="headerlink" title="4.1. 尽量减少方法的重复调用"></a>4.1. 尽量减少方法的重复调用</h3><p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList = ...;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; userList.size(); i++) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList = ...;</span><br><span class="line"><span class="keyword">int</span> userLength = userList.size();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; userLength; i++) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-尽量避免不必要的方法调用"><a href="#4-2-尽量避免不必要的方法调用" class="headerlink" title="4.2. 尽量避免不必要的方法调用"></a>4.2. 尽量避免不必要的方法调用</h3><p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList = userDAO.queryActive();</span><br><span class="line"><span class="keyword">if</span> (isAll) &#123;</span><br><span class="line">    userList = userDAO.queryAll();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList;</span><br><span class="line"><span class="keyword">if</span> (isAll) &#123;</span><br><span class="line">    userList = userDAO.queryAll();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    userList = userDAO.queryActive();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-尽量使用移位来代替正整数乘除"><a href="#4-3-尽量使用移位来代替正整数乘除" class="headerlink" title="4.3. 尽量使用移位来代替正整数乘除"></a>4.3. 尽量使用移位来代替正整数乘除</h3><p>用移位操作可以极大地提高性能。对于乘除 2^n(n 为正整数) 的正整数计算，可以用移位操作来代替。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num1 = a * <span class="number">4</span>;</span><br><span class="line"><span class="keyword">int</span> num2 = a / <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num1 = a &lt;&lt; <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> num2 = a &gt;&gt; <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-提取公共表达式，避免重复计算"><a href="#4-4-提取公共表达式，避免重复计算" class="headerlink" title="4.4. 提取公共表达式，避免重复计算"></a>4.4. 提取公共表达式，避免重复计算</h3><p>提取公共表达式，只计算一次值，然后重复利用值。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> distance = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> dx = x2 - x1;</span><br><span class="line"><span class="keyword">double</span> dy = y2 - y1;</span><br><span class="line"><span class="keyword">double</span> distance = Math.sqrt(dx * dx + dy * dy);</span><br><span class="line">或</span><br><span class="line"><span class="keyword">double</span> distance = Math.sqrt(Math.pow(x2 - x1, <span class="number">2</span>) + Math.pow(y2 - y1, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="4-5-尽量不在条件表达式中用-取反"><a href="#4-5-尽量不在条件表达式中用-取反" class="headerlink" title="4.5. 尽量不在条件表达式中用! 取反"></a>4.5. 尽量不在条件表达式中用! 取反</h3><p>使用! 取反会多一次计算，如果没有必要则优化掉。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!(a &gt;= <span class="number">10</span>)) &#123;</span><br><span class="line">    ... <span class="comment">// 条件处理 1</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ... <span class="comment">// 条件处理 2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    ... <span class="comment">// 条件处理 1</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ... <span class="comment">// 条件处理 2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-6-对于多常量选择分支，尽量使用-switch-语句而不是-if-else-语句"><a href="#4-6-对于多常量选择分支，尽量使用-switch-语句而不是-if-else-语句" class="headerlink" title="4.6. 对于多常量选择分支，尽量使用 switch 语句而不是 if-else 语句"></a>4.6. 对于多常量选择分支，尽量使用 switch 语句而不是 if-else 语句</h3><p>if-else 语句，每个 if 条件语句都要加装计算，直到 if 条件语句为 true 为止。switch 语句进行了跳转优化，Java 中采用 tableswitch 或 lookupswitch 指令实现，对于多常量选择分支处理效率更高。经过试验证明：在每个分支出现概率相同的情况下，低于 5 个分支时 if-else 语句效率更高，高于 5 个分支时 switch 语句效率更高。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i == <span class="number">1</span>) &#123;</span><br><span class="line">    ...; <span class="comment">// 分支 1</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">2</span>) &#123;</span><br><span class="line">    ...; <span class="comment">// 分支 2</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == ...) &#123;</span><br><span class="line">    ...; <span class="comment">// 分支 n</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ...; <span class="comment">// 分支 n+1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (i) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">        ... <span class="comment">// 分支 1</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span> :</span><br><span class="line">        ... <span class="comment">// 分支 2</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> ... :</span><br><span class="line">        ... <span class="comment">// 分支 n</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span> :</span><br><span class="line">        ... <span class="comment">// 分支 n+1</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>备注：如果业务复杂，可以采用 Map 实现策略模式。</p>
+<h2 id="5-字符串"><a href="#5-字符串" class="headerlink" title="5. 字符串"></a>5. 字符串</h2><h3 id="5-1-尽量不要使用正则表达式匹配"><a href="#5-1-尽量不要使用正则表达式匹配" class="headerlink" title="5.1. 尽量不要使用正则表达式匹配"></a>5.1. 尽量不要使用正则表达式匹配</h3><p>正则表达式匹配效率较低，尽量使用字符串匹配操作。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String source = <span class="string">"a::1,b::2,c::3,d::4"</span>;</span><br><span class="line">String target = source.replaceAll(<span class="string">"::"</span>, <span class="string">"="</span>);</span><br><span class="line">Stringp[] targets = source.spit(<span class="string">"::"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String source = <span class="string">"a::1,b::2,c::3,d::4"</span>;</span><br><span class="line">String target = source.replace(<span class="string">"::"</span>, <span class="string">"="</span>);</span><br><span class="line">Stringp[] targets = StringUtils.split(source, <span class="string">"::"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-尽量使用字符替换字符串"><a href="#5-2-尽量使用字符替换字符串" class="headerlink" title="5.2. 尽量使用字符替换字符串"></a>5.2. 尽量使用字符替换字符串</h3><p>字符串的长度不确定，而字符的长度固定为 1，查找和匹配的效率自然提高了。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String source = <span class="string">"a:1,b:2,c:3,d:4"</span>;</span><br><span class="line"><span class="keyword">int</span> index = source.indexOf(<span class="string">":"</span>);</span><br><span class="line">String target = source.replace(<span class="string">":"</span>, <span class="string">"="</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String source = <span class="string">"a:1,b:2,c:3,d:4"</span>;</span><br><span class="line"><span class="keyword">int</span> index = source.indexOf(<span class="string">':'</span>);</span><br><span class="line">String target = source.replace(<span class="string">':'</span>, <span class="string">'='</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-尽量使用-StringBuilder-进行字符串拼接"><a href="#5-3-尽量使用-StringBuilder-进行字符串拼接" class="headerlink" title="5.3. 尽量使用 StringBuilder 进行字符串拼接"></a>5.3. 尽量使用 StringBuilder 进行字符串拼接</h3><p>String 是 final 类，内容不可修改，所以每次字符串拼接都会生成一个新对象。StringBuilder 在初始化时申请了一块内存，以后的字符串拼接都在这块内存中执行，不会申请新内存和生成新对象。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i != <span class="number">0</span>) &#123;</span><br><span class="line">        s += <span class="string">','</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s += i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="number">128</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i != <span class="number">0</span>) &#123;</span><br><span class="line">        sb.append(<span class="string">','</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    sb.append(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-4-不要使用-“”-转化字符串"><a href="#5-4-不要使用-“”-转化字符串" class="headerlink" title="5.4. 不要使用 “”+ 转化字符串"></a>5.4. 不要使用 “”+ 转化字符串</h3><p>使用 “”+ 进行字符串转化，使用方便但是效率低，建议使用 String.valueOf.</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">12345</span>;</span><br><span class="line">String s = <span class="string">""</span> + i;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">12345</span>;</span><br><span class="line">String s = String.valueOf(i);</span><br></pre></td></tr></table></figure>
+<h2 id="6-数组"><a href="#6-数组" class="headerlink" title="6. 数组"></a>6. 数组</h2><h3 id="6-1-不要使用循环拷贝数组，尽量使用-System-arraycopy-拷贝数组"><a href="#6-1-不要使用循环拷贝数组，尽量使用-System-arraycopy-拷贝数组" class="headerlink" title="6.1. 不要使用循环拷贝数组，尽量使用 System.arraycopy 拷贝数组"></a>6.1. 不要使用循环拷贝数组，尽量使用 System.arraycopy 拷贝数组</h3><p>推荐使用 System.arraycopy 拷贝数组，也可以使用 Arrays.copyOf 拷贝数组。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] sources = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] targets = <span class="keyword">new</span> <span class="keyword">int</span>[sources.length];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; targets.length; i++) &#123;</span><br><span class="line">    targets[i] = sources[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] sources = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] targets = <span class="keyword">new</span> <span class="keyword">int</span>[sources.length];</span><br><span class="line">System.arraycopy(sources, <span class="number">0</span>, targets, <span class="number">0</span>, targets.length);</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-集合转化为类型-T-数组时，尽量传入空数组-T-0"><a href="#6-2-集合转化为类型-T-数组时，尽量传入空数组-T-0" class="headerlink" title="6.2. 集合转化为类型 T 数组时，尽量传入空数组 T[0]"></a>6.2. 集合转化为类型 T 数组时，尽量传入空数组 T[0]</h3><p>将集合转换为数组有 2 种形式：toArray(new T[n]) 和 toArray(new T[0])。在旧的 Java 版本中，建议使用 toArray(new T[n])，因为创建数组时所需的反射调用非常慢。在 OpenJDK6 后，反射调用是内在的，使得性能得以提高，toArray(new T[0]) 比 toArray(new T[n]) 效率更高。此外，toArray(new T[n]) 比 toArray(new T[0]) 多获取一次列表大小，如果计算列表大小耗时过长，也会导致 toArray(new T[n]) 效率降低。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; integerList = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, ...);</span><br><span class="line">Integer[] integers = integerList.toArray(<span class="keyword">new</span> Integer[integerList.size()]);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; integerList = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, ...);</span><br><span class="line">Integer[] integers = integerList.toArray(<span class="keyword">new</span> Integer[<span class="number">0</span>]); <span class="comment">// 勿用 new Integer[]&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>建议：集合应该提供一个 toArray(Class<t> clazz) 方法，避免无用的空数组初始化（new T[0]）。</t></p>
+<h3 id="6-3-集合转化为-Object-数组时，尽量使用-toArray-方法"><a href="#6-3-集合转化为-Object-数组时，尽量使用-toArray-方法" class="headerlink" title="6.3. 集合转化为 Object 数组时，尽量使用 toArray() 方法"></a>6.3. 集合转化为 Object 数组时，尽量使用 toArray() 方法</h3><p>转化 Object 数组时，没有必要使用 toArray[new Object[0]]，可以直接使用 toArray()。避免了类型的判断，也避免了空数组的申请，所以效率会更高。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object&gt; objectList = Arrays.asList(<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="string">"4"</span>, <span class="number">5</span>, ...);</span><br><span class="line">Object[] objects = objectList.toArray(<span class="keyword">new</span> Object[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object&gt; objectList = Arrays.asList(<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="string">"4"</span>, <span class="number">5</span>, ...);</span><br><span class="line">Object[] objects = objectList.toArray();</span><br></pre></td></tr></table></figure>
+<h2 id="7-集合"><a href="#7-集合" class="headerlink" title="7. 集合"></a>7. 集合</h2><h3 id="7-1-初始化集合时，尽量指定集合大小"><a href="#7-1-初始化集合时，尽量指定集合大小" class="headerlink" title="7.1. 初始化集合时，尽量指定集合大小"></a>7.1. 初始化集合时，尽量指定集合大小</h3><p>Java 集合初始化时都会指定一个默认大小，当默认大小不再满足数据需求时就会扩容，每次扩容的时间复杂度有可能是 O(n)。所以，尽量指定预知的集合大小，就能避免或减少集合的扩容次数。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;Long&gt; userSet = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">Map&lt;Long, UserDO&gt; userMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">List&lt;UserVO&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    userSet.add(userDO.getId());</span><br><span class="line">    userMap.put(userDO.getId(), userDO);</span><br><span class="line">    userList.add(transUser(userDO));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line"><span class="keyword">int</span> userSize = userDOList.size();</span><br><span class="line">Set&lt;Long&gt; userSet = <span class="keyword">new</span> HashSet&lt;&gt;(userSize);</span><br><span class="line">Map&lt;Long, UserDO&gt; userMap = <span class="keyword">new</span> HashMap&lt;&gt;((<span class="keyword">int</span>) Math.ceil(userSize * <span class="number">4.0</span> / <span class="number">3</span>));</span><br><span class="line">List&lt;UserVO&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;(userSize);</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    userSet.add(userDO.getId());</span><br><span class="line">    userMap.put(userDO.getId(), userDO);</span><br><span class="line">    userList.add(transUser(userDO));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-2-不要使用循环拷贝集合，尽量使用-JDK-提供的方法拷贝集合"><a href="#7-2-不要使用循环拷贝集合，尽量使用-JDK-提供的方法拷贝集合" class="headerlink" title="7.2. 不要使用循环拷贝集合，尽量使用 JDK 提供的方法拷贝集合"></a>7.2. 不要使用循环拷贝集合，尽量使用 JDK 提供的方法拷贝集合</h3><p>JDK 提供的方法可以一步指定集合的容量，避免多次扩容浪费时间和空间。同时，这些方法的底层也是调用 System.arraycopy 方法实现，进行数据的批量拷贝效率更高。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; user1List = ...;</span><br><span class="line">List&lt;UserDO&gt; user2List = ...;</span><br><span class="line">List&lt;UserDO&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;(user1List.size() + user2List.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO user1 : user1List) &#123;</span><br><span class="line">    userList.add(user1);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (UserDO user2 : user2List) &#123;</span><br><span class="line">    userList.add(user2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; user1List = ...;</span><br><span class="line">List&lt;UserDO&gt; user2List = ...;</span><br><span class="line">List&lt;UserDO&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;(user1List.size() + user2List.size());</span><br><span class="line">userList.addAll(user1List);</span><br><span class="line">userList.addAll(user2List);</span><br></pre></td></tr></table></figure>
+<h3 id="7-3-尽量使用-Arrays-asList-转化数组为列表"><a href="#7-3-尽量使用-Arrays-asList-转化数组为列表" class="headerlink" title="7.3. 尽量使用 Arrays.asList 转化数组为列表"></a>7.3. 尽量使用 Arrays.asList 转化数组为列表</h3><p>原理与 “ 不要使用循环拷贝集合，尽量使用 JDK 提供的方法拷贝集合 “ 类似。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; typeList = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">8</span>);</span><br><span class="line">typeList.add(<span class="string">"Short"</span>);</span><br><span class="line">typeList.add(<span class="string">"Integer"</span>);</span><br><span class="line">typeList.add(<span class="string">"Long"</span>);</span><br><span class="line"> </span><br><span class="line">String[] names = ...;</span><br><span class="line">List&lt;String&gt; nameList = ...;</span><br><span class="line"><span class="keyword">for</span> (String name : names) &#123;</span><br><span class="line">    nameList.add(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; typeList = Arrays.asList(<span class="string">"Short"</span>, <span class="string">"Integer"</span>, <span class="string">"Long"</span>);</span><br><span class="line"> </span><br><span class="line">String[] names = ...;</span><br><span class="line">List&lt;String&gt; nameList = ...;</span><br><span class="line">nameList.addAll(Arrays.asList(names));</span><br></pre></td></tr></table></figure>
+<h3 id="7-4-直接迭代需要使用的集合"><a href="#7-4-直接迭代需要使用的集合" class="headerlink" title="7.4. 直接迭代需要使用的集合"></a>7.4. 直接迭代需要使用的集合</h3><p>直接迭代需要使用的集合，无需通过其它操作获取数据。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Long, UserDO&gt; userMap = ...;</span><br><span class="line"><span class="keyword">for</span> (Long userId : userMap.keySet()) &#123;</span><br><span class="line">    UserDO user = userMap.get(userId);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Long, UserDO&gt; userMap = ...;</span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Long, UserDO&gt; userEntry : userMap.entrySet()) &#123;</span><br><span class="line">    Long userId = userEntry.getKey();</span><br><span class="line">    UserDO user = userEntry.getValue();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-5-不要使用-size-方法检测空，必须使用-isEmpty-方法检测空"><a href="#7-5-不要使用-size-方法检测空，必须使用-isEmpty-方法检测空" class="headerlink" title="7.5. 不要使用 size 方法检测空，必须使用 isEmpty 方法检测空"></a>7.5. 不要使用 size 方法检测空，必须使用 isEmpty 方法检测空</h3><p>使用 size 方法来检测空逻辑上没有问题，但使用 isEmpty 方法使得代码更易读，并且可以获得更好的性能。任何 isEmpty 方法实现的时间复杂度都是 O(1)，但是某些 size 方法实现的时间复杂度有可能是 O(n)。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList = ...;</span><br><span class="line"><span class="keyword">if</span> (userList.size() == <span class="number">0</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">Map&lt;Long, UserDO&gt; userMap = ...;</span><br><span class="line"><span class="keyword">if</span> (userMap.size() == <span class="number">0</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;UserDO&gt; userList = ...;</span><br><span class="line"><span class="keyword">if</span> (userList.isEmpty()) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">Map&lt;Long, UserDO&gt; userMap = ...;</span><br><span class="line"><span class="keyword">if</span> (userMap.isEmpty()) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-6-非随机访问的-List，尽量使用迭代代替随机访问"><a href="#7-6-非随机访问的-List，尽量使用迭代代替随机访问" class="headerlink" title="7.6. 非随机访问的 List，尽量使用迭代代替随机访问"></a>7.6. 非随机访问的 List，尽量使用迭代代替随机访问</h3><p>对于列表，可分为随机访问和非随机访问两类，可以用是否实现 RandomAccess 接口判断。随机访问列表，直接通过 get 获取数据不影响效率。而非随机访问列表，通过 get 获取数据效率极低。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;UserDO&gt; userDOList = ...;</span><br><span class="line"><span class="keyword">int</span> size = userDOList.size();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">    UserDO userDO = userDOList.get(i);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;UserDO&gt; userDOList = ...;</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实，不管列表支不支持随机访问，都应该使用迭代进行遍历。</p>
+<h3 id="7-7-尽量使用-HashSet-判断值存在"><a href="#7-7-尽量使用-HashSet-判断值存在" class="headerlink" title="7.7. 尽量使用 HashSet 判断值存在"></a>7.7. 尽量使用 HashSet 判断值存在</h3><p>在 Java 集合类库中，List 的 contains 方法普遍时间复杂度是 O(n)，而 HashSet 的时间复杂度为 O(1)。如果需要频繁调用 contains 方法查找数据，可以先将 List 转换成 HashSet。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Long&gt; adminIdList = ...;</span><br><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = <span class="keyword">new</span> ArrayList&lt;&gt;(userDOList.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    <span class="keyword">if</span> (adminIdList.contains(userDO.getId())) &#123;</span><br><span class="line">        userVOList.add(transUser(userDO));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;Long&gt; adminIdSet = ...;</span><br><span class="line">List&lt;UserDO&gt; userDOList = ...;</span><br><span class="line">List&lt;UserVO&gt; userVOList = <span class="keyword">new</span> ArrayList&lt;&gt;(userDOList.size());</span><br><span class="line"><span class="keyword">for</span> (UserDO userDO : userDOList) &#123;</span><br><span class="line">    <span class="keyword">if</span> (adminIdSet.contains(userDO.getId())) &#123;</span><br><span class="line">        userVOList.add(transUser(userDO));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-8-避免先判断存在再进行获取"><a href="#7-8-避免先判断存在再进行获取" class="headerlink" title="7.8. 避免先判断存在再进行获取"></a>7.8. 避免先判断存在再进行获取</h3><p>如果需要先判断存在再进行获取，可以直接获取并判断空，从而避免了二次查找操作。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> UserVO <span class="title">transUser</span><span class="params">(UserDO user, Map&lt;Long, RoleDO&gt; roleMap)</span> </span>&#123;</span><br><span class="line">    UserVO userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">    userVO.setId(user.getId());</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (roleMap.contains(user.getRoleId())) &#123;</span><br><span class="line">        RoleDO role = roleMap.get(user.getRoleId());</span><br><span class="line">        userVO.setRole(transRole(role));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> UserVO <span class="title">transUser</span><span class="params">(UserDO user, Map&lt;Long, RoleDO&gt; roleMap)</span> </span>&#123;</span><br><span class="line">    UserVO userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">    userVO.setId(user.getId());</span><br><span class="line">    ...</span><br><span class="line">    RoleDO role = roleMap.get(user.getRoleId());</span><br><span class="line">    <span class="keyword">if</span> (Objects.nonNull(role)) &#123;</span><br><span class="line">        userVO.setRole(transRole(role));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-异常"><a href="#8-异常" class="headerlink" title="8. 异常"></a>8. 异常</h2><h3 id="8-1-直接捕获对应的异常"><a href="#8-1-直接捕获对应的异常" class="headerlink" title="8.1. 直接捕获对应的异常"></a>8.1. 直接捕获对应的异常</h3><p>直接捕获对应的异常，避免用 instanceof 判断，效率更高代码更简洁。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    saveData();</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    <span class="keyword">if</span> (e <span class="keyword">instanceof</span> IOException) &#123;</span><br><span class="line">        log.error(<span class="string">" 保存数据 IO 异常 "</span>, e);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        log.error(<span class="string">" 保存数据其它异常 "</span>, e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    saveData();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    log.error(<span class="string">" 保存数据 IO 异常 "</span>, e);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    log.error(<span class="string">" 保存数据其它异常 "</span>, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="8-2-尽量避免在循环中捕获异常"><a href="#8-2-尽量避免在循环中捕获异常" class="headerlink" title="8.2. 尽量避免在循环中捕获异常"></a>8.2. 尽量避免在循环中捕获异常</h3><p>当循环体抛出异常后，无需循环继续执行时，没有必要在循环体中捕获异常。因为，过多的捕获异常会降低程序执行效率。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Double <span class="title">sum</span><span class="params">(List&lt;String&gt; valueList)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> sum = <span class="number">0.0</span>D;</span><br><span class="line">    <span class="keyword">for</span> (String value : valueList) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            sum += Double.parseDouble(value);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NumberFormatException e) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Double <span class="title">sum</span><span class="params">(List&lt;String&gt; valueList)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> sum = <span class="number">0.0</span>D;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (String value : valueList) &#123;</span><br><span class="line">            sum += Double.parseDouble(value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (NumberFormatException e) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="8-3-禁止使用异常控制业务流程"><a href="#8-3-禁止使用异常控制业务流程" class="headerlink" title="8.3. 禁止使用异常控制业务流程"></a>8.3. 禁止使用异常控制业务流程</h3><p>相对于条件表达式，异常的处理效率更低。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(UserDO user)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Boolean.TRUE.equals(user.getIsValid());</span><br><span class="line">    &#125; <span class="keyword">catch</span>(NullPointerException e) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(UserDO user)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Objects.isNull(user)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> Boolean.TRUE.equals(user.getIsValid());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9-缓冲区"><a href="#9-缓冲区" class="headerlink" title="9. 缓冲区"></a>9. 缓冲区</h2><h3 id="9-1-初始化时尽量指定缓冲区大小"><a href="#9-1-初始化时尽量指定缓冲区大小" class="headerlink" title="9.1. 初始化时尽量指定缓冲区大小"></a>9.1. 初始化时尽量指定缓冲区大小</h3><p>初始化时，指定缓冲区的预期容量大小，避免多次扩容浪费时间和空间。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer buffer = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer buffer = <span class="keyword">new</span> StringBuffer(<span class="number">1024</span>);</span><br><span class="line">StringBuilder builder = <span class="keyword">new</span> StringBuilder(<span class="number">1024</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="9-2-尽量重复使用同一缓冲区"><a href="#9-2-尽量重复使用同一缓冲区" class="headerlink" title="9.2. 尽量重复使用同一缓冲区"></a>9.2. 尽量重复使用同一缓冲区</h3><p>针对缓冲区，Java 虚拟机需要花时间生成对象，还要花时间进行垃圾回收处理。所以，尽量重复利用缓冲区。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder builder1 = <span class="keyword">new</span> StringBuilder(<span class="number">128</span>);</span><br><span class="line">builder1.append(<span class="string">"update t_user set name = '"</span>).append(userName).append(<span class="string">"' where id = "</span>).append(userId);</span><br><span class="line">statement.executeUpdate(builder1.toString());</span><br><span class="line">StringBuilder builder2 = <span class="keyword">new</span> StringBuilder(<span class="number">128</span>);</span><br><span class="line">builder2.append(<span class="string">"select id, name from t_user where id = "</span>).append(userId);</span><br><span class="line">ResultSet resultSet = statement.executeQuery(builder2.toString());</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder builder = <span class="keyword">new</span> StringBuilder(<span class="number">128</span>);</span><br><span class="line">builder.append(<span class="string">"update t_user set name = '"</span>).append(userName).append(<span class="string">"' where id = "</span>).append(userId);</span><br><span class="line">statement.executeUpdate(builder.toString());</span><br><span class="line">builder.setLength(<span class="number">0</span>);</span><br><span class="line">builder.append(<span class="string">"select id, name from t_user where id = "</span>).append(userId);</span><br><span class="line">ResultSet resultSet = statement.executeQuery(builder.toString());</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>其中，使用 setLength 方法让缓冲区重新从 0 开始。</p>
+<h3 id="9-3-尽量设计使用同一缓冲区"><a href="#9-3-尽量设计使用同一缓冲区" class="headerlink" title="9.3. 尽量设计使用同一缓冲区"></a>9.3. 尽量设计使用同一缓冲区</h3><p>为了提高程序运行效率，在设计上尽量使用同一缓冲区。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 转化 XML(UserDO)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toXml</span><span class="params">(UserDO user)</span> </span>&#123;</span><br><span class="line">    StringBuilder builder = <span class="keyword">new</span> StringBuilder(<span class="number">128</span>);</span><br><span class="line">    builder.append(<span class="string">"&lt;UserDO&gt;"</span>);</span><br><span class="line">    builder.append(toXml(user.getId()));</span><br><span class="line">    builder.append(toXml(user.getName()));</span><br><span class="line">    builder.append(toXml(user.getRole()));</span><br><span class="line">    builder.append(<span class="string">"&lt;/UserDO&gt;"</span>);</span><br><span class="line">    <span class="keyword">return</span> builder.toString();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 转化 XML(Long)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toXml</span><span class="params">(Long value)</span> </span>&#123;</span><br><span class="line">    StringBuilder builder = <span class="keyword">new</span> StringBuilder(<span class="number">128</span>);</span><br><span class="line">    builder.append(<span class="string">"&lt;Long&gt;"</span>);</span><br><span class="line">    builder.append(value);</span><br><span class="line">    builder.append(<span class="string">"&lt;/Long&gt;"</span>);</span><br><span class="line">    <span class="keyword">return</span> builder.toString();</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 使用代码</span></span><br><span class="line">UserDO user = ...;</span><br><span class="line">String xml = toXml(user);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 转化 XML(UserDO)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">toXml</span><span class="params">(StringBuilder builder, UserDO user)</span> </span>&#123;</span><br><span class="line">    builder.append(<span class="string">"&lt;UserDO&gt;"</span>);</span><br><span class="line">    toXml(builder, user.getId());</span><br><span class="line">    toXml(builder, user.getName());</span><br><span class="line">    toXml(builder, user.getRole());</span><br><span class="line">    builder.append(<span class="string">"&lt;/UserDO&gt;"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 转化 XML(Long)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">toXml</span><span class="params">(StringBuilder builder, Long value)</span> </span>&#123;</span><br><span class="line">    builder.append(<span class="string">"&lt;Long&gt;"</span>);</span><br><span class="line">    builder.append(value);</span><br><span class="line">    builder.append(<span class="string">"&lt;/Long&gt;"</span>);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 使用代码</span></span><br><span class="line">UserDO user = ...;</span><br><span class="line">StringBuilder builder = <span class="keyword">new</span> StringBuilder(<span class="number">1024</span>);</span><br><span class="line">toXml(builder, user);</span><br><span class="line">String xml = builder.toString();</span><br></pre></td></tr></table></figure>
+<p>去掉每个转化方法中的缓冲区申请，申请一个缓冲区给每个转化方法使用。从时间上来说，节约了大量缓冲区的申请释放时间；从空间上来说，节约了大量缓冲区的临时存储空间。</p>
+<h3 id="9-4-尽量使用缓冲流减少-IO-操作"><a href="#9-4-尽量使用缓冲流减少-IO-操作" class="headerlink" title="9.4. 尽量使用缓冲流减少 IO 操作"></a>9.4. 尽量使用缓冲流减少 IO 操作</h3><p>使用缓冲流 BufferedReader、BufferedWriter、BufferedInputStream、BufferedOutputStream 等，可以大幅较少 IO 次数并提升 IO 速度。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (FileInputStream input = <span class="keyword">new</span> FileInputStream(<span class="string">"a"</span>);</span><br><span class="line">    FileOutputStream output = <span class="keyword">new</span> FileOutputStream(<span class="string">"b"</span>)) &#123;</span><br><span class="line">    <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">byte</span>[] temp = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">    <span class="keyword">while</span> ((size = input.read(temp)) != -<span class="number">1</span>) &#123;</span><br><span class="line">        output.write(temp, <span class="number">0</span>, size);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    log.error(<span class="string">" 复制文件异常 "</span>, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (BufferedInputStream input = <span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">"a"</span>));</span><br><span class="line">    BufferedOutputStream output = <span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">"b"</span>))) &#123;</span><br><span class="line">    <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">byte</span>[] temp = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">    <span class="keyword">while</span> ((size = input.read(temp)) != -<span class="number">1</span>) &#123;</span><br><span class="line">        output.write(temp, <span class="number">0</span>, size);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    log.error(<span class="string">" 复制文件异常 "</span>, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，可以根据实际情况手动指定缓冲流的大小，把缓冲流的缓冲作用发挥到最大。</p>
+<h2 id="10-线程"><a href="#10-线程" class="headerlink" title="10. 线程"></a>10. 线程</h2><h3 id="10-1-在单线程中，尽量使用非线程安全类"><a href="#10-1-在单线程中，尽量使用非线程安全类" class="headerlink" title="10.1. 在单线程中，尽量使用非线程安全类"></a>10.1. 在单线程中，尽量使用非线程安全类</h3><p>使用非线程安全类，避免了不必要的同步开销。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer buffer = <span class="keyword">new</span> StringBuffer(<span class="number">128</span>);</span><br><span class="line">buffer.append(<span class="string">"select * from "</span>).append(T_USER).append(<span class="string">" where id = ?"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder buffer = <span class="keyword">new</span> StringBuilder(<span class="number">128</span>);</span><br><span class="line">buffer.append(<span class="string">"select * from "</span>).append(T_USER).append(<span class="string">" where id = ?"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="10-2-在多线程中，尽量使用线程安全类"><a href="#10-2-在多线程中，尽量使用线程安全类" class="headerlink" title="10.2. 在多线程中，尽量使用线程安全类"></a>10.2. 在多线程中，尽量使用线程安全类</h3><p>使用线程安全类，比自己实现的同步代码更简洁更高效。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">access</span><span class="params">(Long userId)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        counter++;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> AtomicInteger counter = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">access</span><span class="params">(Long userId)</span> </span>&#123;</span><br><span class="line">    counter.incrementAndGet();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="10-3-尽量减少同步代码块范围"><a href="#10-3-尽量减少同步代码块范围" class="headerlink" title="10.3. 尽量减少同步代码块范围"></a>10.3. 尽量减少同步代码块范围</h3><p>在一个方法中，可能只有一小部分的逻辑是需要同步控制的，如果同步控制了整个方法会影响执行效率。所以，尽量减少同步代码块的范围，只对需要进行同步的代码进行同步。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">access</span><span class="params">(Long userId)</span> </span>&#123;</span><br><span class="line">  counter++;</span><br><span class="line">    ... <span class="comment">// 非同步操作</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">access</span><span class="params">(Long userId)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        counter++;</span><br><span class="line">    &#125;</span><br><span class="line">    ... <span class="comment">// 非同步操作</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="10-4-尽量合并为同一同步代码块"><a href="#10-4-尽量合并为同一同步代码块" class="headerlink" title="10.4. 尽量合并为同一同步代码块"></a>10.4. 尽量合并为同一同步代码块</h3><p>同步代码块是有性能开销的，如果确定可以合并为同一同步代码块，就应该尽量合并为同一同步代码块。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 处理单一订单</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="title">handleOrder</span><span class="params">(OrderDO order)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 处理所有订单</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleOrder</span><span class="params">(List&lt;OrderDO&gt; orderList)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (OrderDO order : orderList) &#123;</span><br><span class="line">        handleOrder(order);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 处理单一订单</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">handleOrder</span><span class="params">(OrderDO order)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 处理所有订单</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">handleOrder</span><span class="params">(List&lt;OrderDO&gt; orderList)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (OrderDO order : orderList) &#123;</span><br><span class="line">        handleOrder(order);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="10-5-尽量使用线程池减少线程开销"><a href="#10-5-尽量使用线程池减少线程开销" class="headerlink" title="10.5. 尽量使用线程池减少线程开销"></a>10.5. 尽量使用线程池减少线程开销</h3><p>多线程中两个必要的开销：线程的创建和上下文切换。采用线程池，可以尽量地避免这些开销。</p>
+<p><strong>反例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">executeTask</span><span class="params">(Runnable runnable)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">new</span> Thread(runnable).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ExecutorService EXECUTOR_SERVICE = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">executeTask</span><span class="params">(Runnable runnable)</span> </span>&#123;</span><br><span class="line">    executorService.execute(runnable);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol>
+<li><a href="https://mp.weixin.qq.com/s/-ioLU65Sxg8tTmPyItZ2Iw" target="_blank" rel="noopener">原文</a></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="/2020/01/14/java-efficient-code/" data-id="ck5d8knri006s88f1mtwfr19n" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jesshaw" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/01/14/java-dubbo-start/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            快速搭建基于dubbo的微服务
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/01/14/spring-interview-questions/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Spring面试问题</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/14/java-dubbo-start/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/green-water1.jpg)" alt="快速搭建基于dubbo的微服务" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/java/duboo/">duboo</a></p>
+                            <p class="item-title"><a href="/2020/01/14/java-dubbo-start/" class="title">快速搭建基于dubbo的微服务</a></p>
+                            <p class="item-date"><time datetime="2020-01-14T02:02:57.639Z" itemprop="datePublished">2020-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/14/java-efficient-code/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/green-water4.jpg)" alt="Java工程师该如何编写高效代码？" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2020/01/14/java-efficient-code/" class="title">Java工程师该如何编写高效代码？</a></p>
+                            <p class="item-date"><time datetime="2020-01-14T02:02:38.318Z" itemprop="datePublished">2020-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/14/spring-interview-questions/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water6.jpg)" alt="Spring面试问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/java/spring/">spring</a></p>
+                            <p class="item-title"><a href="/2020/01/14/spring-interview-questions/" class="title">Spring面试问题</a></p>
+                            <p class="item-date"><time datetime="2020-01-14T01:57:36.682Z" itemprop="datePublished">2020-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/14/spring-hot-deploy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water14.jpg)" alt="Spring Boot热部署：spring-boot-devtools" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2020/01/14/spring-hot-deploy/" class="title">Spring Boot热部署：spring-boot-devtools</a></p>
+                            <p class="item-date"><time datetime="2020-01-14T01:57:36.674Z" itemprop="datePublished">2020-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/14/linux-usefully-command/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/blue-water9.jpg)" alt="linux常用命令" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/2020/01/14/linux-usefully-command/" class="title">linux常用命令</a></p>
+                            <p class="item-date"><time datetime="2020-01-14T01:57:36.668Z" itemprop="datePublished">2020-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/">csharp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/db/">db</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/duboo/">duboo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/spring/">spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/management/">management</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">29</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS-docker-install-安装/">CentOS, docker, install,安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hibernate-ORM/">Hibernate,ORM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asynchronous-wcf-castle-WcfFacility-异步/">asynchronous,wcf, castle, WcfFacility,异步.</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv-excel/">csv,excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/date-duration-period-ChronoUnit-java-time-java8/">date,duration,period,ChronoUnit,java.time,java8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-docker-compose/">docker, docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-docker命令/">docker,docker命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-git命令/">git,git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-efficient-code-高效代码/">java, efficient code, 高效代码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-String-interview-字符串-面试/">java,String,interview,字符串,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-class-loader-类加载器/">java,class loader,类加载器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-core-interview-核心技术-编程-面试/">java,core,interview,核心技术,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-dubbo/">java,dubbo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-exception-interview-异常-面试/">java,exception,interview,异常,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-mybatis-columns-mapping-列映射/">java,mybatis,columns mapping,列映射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-programming-interview-编程-面试/">java,programming, interview,编程,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-interview-面试/">java,spring,interview,面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-restful-base-path-基础路径/">java,spring,restful,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-share-base-path-基础路径/">java,spring,share,base path,基础路径</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/">java,spring,spring boot,spring-boot-devtools,热部署</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-date-日期，格式化/">js,date,日期，格式化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-object-create-js对象创建-js类-最佳实践/">js,object create,js对象创建,js类,最佳实践</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-VirtualBox-win7/">linux,CentOS,VirtualBox,win7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-CentOS-java-jvm/">linux,CentOS,java,jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/">linux,VirtualBox,VirtualBox image,CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-linux/">linux,linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-process-后台运行/">linux,process,后台运行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/liquibase-db-upgrade-数据库升级/">liquibase,db upgrade,数据库升级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven-mvn-maven命令/">maven,mvn,maven命令</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/model/">model</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs-nodejs命令/">nodejs,nodejs命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test-hexo/">test,hexo</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CentOS-docker-install-安装/" style="font-size: 10px;">CentOS, docker, install,安装</a> <a href="/tags/Hibernate-ORM/" style="font-size: 10px;">Hibernate,ORM</a> <a href="/tags/JVM-JRE-JDK-javv虚拟面-java运行时环境-java开发工具包/" style="font-size: 10px;">JVM,JRE, JDK,javv虚拟面,java运行时环境,java开发工具包</a> <a href="/tags/asynchronous-wcf-castle-WcfFacility-异步/" style="font-size: 10px;">asynchronous,wcf, castle, WcfFacility,异步.</a> <a href="/tags/collections-list-set-map，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">collections, list, set, map，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/csv-excel/" style="font-size: 10px;">csv,excel</a> <a href="/tags/date-duration-period-ChronoUnit-java-time-java8/" style="font-size: 10px;">date,duration,period,ChronoUnit,java.time,java8</a> <a href="/tags/docker-docker-compose/" style="font-size: 10px;">docker, docker-compose</a> <a href="/tags/docker-docker命令/" style="font-size: 10px;">docker,docker命令</a> <a href="/tags/git-git命令/" style="font-size: 10px;">git,git命令</a> <a href="/tags/heap-space-stack-memory-memory-allocation，堆空间-堆栈-栈内存-内存分配/" style="font-size: 10px;">heap space, stack memory, memory allocation，堆空间,堆栈,栈内存,内存分配</a> <a href="/tags/java-Multithreading-Concurrency-interview-多线程-并发-面试/" style="font-size: 10px;">java, Multithreading, Concurrency, interview,多线程, 并发, 面试</a> <a href="/tags/java-Thread-wait-notify-notifyAll-等待-通知-通知所有/" style="font-size: 10px;">java, Thread, wait, notify, notifyAll, 等待, 通知, 通知所有</a> <a href="/tags/java-efficient-code-高效代码/" style="font-size: 10px;">java, efficient code, 高效代码</a> <a href="/tags/java-String-interview-字符串-面试/" style="font-size: 10px;">java,String,interview,字符串,面试</a> <a href="/tags/java-class-loader-类加载器/" style="font-size: 20px;">java,class loader,类加载器</a> <a href="/tags/java-core-interview-核心技术-编程-面试/" style="font-size: 10px;">java,core,interview,核心技术,编程,面试</a> <a href="/tags/java-dubbo/" style="font-size: 10px;">java,dubbo</a> <a href="/tags/java-exception-interview-异常-面试/" style="font-size: 10px;">java,exception,interview,异常,面试</a> <a href="/tags/java-mybatis-columns-mapping-列映射/" style="font-size: 10px;">java,mybatis,columns mapping,列映射</a> <a href="/tags/java-programming-interview-编程-面试/" style="font-size: 10px;">java,programming, interview,编程,面试</a> <a href="/tags/java-spring-interview-面试/" style="font-size: 10px;">java,spring,interview,面试</a> <a href="/tags/java-spring-restful-base-path-基础路径/" style="font-size: 10px;">java,spring,restful,base path,基础路径</a> <a href="/tags/java-spring-share-base-path-基础路径/" style="font-size: 10px;">java,spring,share,base path,基础路径</a> <a href="/tags/java-spring-spring-boot-spring-boot-devtools-热部署/" style="font-size: 10px;">java,spring,spring boot,spring-boot-devtools,热部署</a> <a href="/tags/js-date-日期，格式化/" style="font-size: 10px;">js,date,日期，格式化</a> <a href="/tags/js-object-create-js对象创建-js类-最佳实践/" style="font-size: 10px;">js,object create,js对象创建,js类,最佳实践</a> <a href="/tags/linux-CentOS-VirtualBox-win7/" style="font-size: 10px;">linux,CentOS,VirtualBox,win7</a> <a href="/tags/linux-CentOS-java-jvm/" style="font-size: 10px;">linux,CentOS,java,jvm</a> <a href="/tags/linux-VirtualBox-VirtualBox-image-CentOS/" style="font-size: 10px;">linux,VirtualBox,VirtualBox image,CentOS</a> <a href="/tags/linux-linux/" style="font-size: 10px;">linux,linux</a> <a href="/tags/linux-process-后台运行/" style="font-size: 10px;">linux,process,后台运行</a> <a href="/tags/liquibase-db-upgrade-数据库升级/" style="font-size: 10px;">liquibase,db upgrade,数据库升级</a> <a href="/tags/maven-mvn-maven命令/" style="font-size: 20px;">maven,mvn,maven命令</a> <a href="/tags/memory-memory-mode-memory-management-内存-内存模型-内存管理-垃圾回收/" style="font-size: 10px;">memory,memory mode,memory management,内存,内存模型,内存管理,垃圾回收</a> <a href="/tags/model/" style="font-size: 10px;">model</a> <a href="/tags/nodejs-nodejs命令/" style="font-size: 10px;">nodejs,nodejs命令</a> <a href="/tags/orm-gateway-pattern-active-record-pattern-data-mapper-pattern-对象关系映射，-网关模式-活动记录模式-数据映射模式/" style="font-size: 10px;">orm,gateway pattern, active record pattern, data mapper pattern,对象关系映射， 网关模式, 活动记录模式 , 数据映射模式</a> <a href="/tags/test-hexo/" style="font-size: 10px;">test,hexo</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 jes shaw</p>
+                <p>Powered by <a href="#//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="#//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
