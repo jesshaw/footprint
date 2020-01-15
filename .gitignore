@@ -5,3 +5,21 @@ db.json
 node_modules/
 public/
 .deploy*/
+
+######################
+# Intellij
+######################
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+classes/
+out/
+
+######################
+#  sublime
+######################
+*.sublime-project
+*.sublime-workspace

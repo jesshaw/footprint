@@ -23,22 +23,15 @@ RUN apt-get update \
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
  
 USER jenkins
-<<<<<<< HEAD
-COPY plugins.txt /usr/share/jenkins/plugins.txt
-=======
 COPY plugins.txt  /usr/share/jenkins/plugins.txt
->>>>>>> master_bak
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 ```
 
 把jenkins添加到sudoer用户组，给其制制授权避免jenkins用户执行不了docker的问题
-<<<<<<< HEAD
 
-=======
-```
 
 ## 不需要以下插件，可以到jenkins站点直接安装
->>>>>>> master_bak
+
 新建plugins.txt，增加需要的插件
 ```bash
 $ cat plugins.txt
@@ -46,30 +39,14 @@ scm-api:latest
 git-client:latest
 git:latest
 greenballs:latest
-<<<<<<< HEAD
-=======
 maven-plugin:latest
->>>>>>> master_bak
 ```
 
 ## 接下来构建镜像并运行容器，并映射Docker socket和binary。
 
 ```bash
-<<<<<<< HEAD
-$ docker build -t myjenk .
-=======
 $ docker build -t myjenkins .
->>>>>>> master_bak
-...
-Successfully built 12dafdsafsf1213
-$ docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
-                -v $(which docker):/usr/bin/docker -p 8080:8080 myjenk
 
-<<<<<<< HEAD
-```
-这样jenkins就启动了，然后不需要安装其他任何插件。
-
-=======
 $ docker run -d --name tm_jenkins \
 				-v /var/run/docker.sock:/var/run/docker.sock \
                 -v $(which docker):/usr/bin/docker \
@@ -78,6 +55,7 @@ $ docker run -d --name tm_jenkins \
                 -p 50000:50000  myjenkins
 
 ```
+
 这样jenkins就启动了，然后不需要安装其他任何插件。
 
 ### 查看日志
@@ -104,7 +82,7 @@ and the repository exists.
 ### docker-compose up 之前先清理以前创建的镜像，否则进而面的数据文件不会有变化
 docker-compose down --rmi local 清量自定生成的image文件
 
->>>>>>> master_bak
+
 ## 按以下步骤创建一个项目
 
 * 在浏览器中打开Jenkins并创建一个新的项目。 Open the Jenkins home page in a browser and click the “create new jobs” link.
@@ -115,15 +93,13 @@ docker-compose down --rmi local 清量自定生成的image文件
 
 运行成功则说明容器间通信成功。
 
-<<<<<<< HEAD
-=======
-
 
 
 ##### 启动docker的jenkins时给jenkins授权,1000:1000为jenkins用户和用户组
 ```bash
 sudo chown -R 1000:1000 /home/docker/jenkins
+```
 
->>>>>>> master_bak
+
 [DooD](http://container-solutions.com/running-docker-in-jenkins-in-docker/)
 [libltdl7问题](https://www.cnblogs.com/leolztang/p/6934694.html)

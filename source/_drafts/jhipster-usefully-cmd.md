@@ -2,6 +2,7 @@
 title: jhipster注意事项
 tags: jhipster
 categories: 
+  - java
   - jhipster
 
 thumbnail: /gallery/blue-water1.jpg

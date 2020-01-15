@@ -197,7 +197,7 @@ git remote set-url origin git@github.com-worker_user1:worker_user1/repo_name.git
 
 ## 拉不到代码，原因是因为不是以管理方式运行的git bash
 
-git@git.dev.sh.ctripcorp.com: Permission denied (ssh key error).
+git@github.com-worker_user1: Permission denied (ssh key error).
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
