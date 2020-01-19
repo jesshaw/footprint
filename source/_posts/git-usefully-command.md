@@ -10,6 +10,15 @@ thumbnail: /gallery/blue-water10.jpg
 收集平时常用的一些maven命令。
 <!-- more -->
 
+## 推送到指定仓库
+
+echo "# reservation_room_app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jesshaw/reservation_room_app.git
+git push -u origin master 
+
 ## 打标签并推送到远程 
 ```bash
 # 基于当前节点打tag
@@ -105,6 +114,7 @@ systemctl restart sshd
 5.  复制linux服务器上的私钥到本地机
 
 scp root@192.168.1.168:/root/.ssh/id_rsa ~/.ssh
+
 
 6. 需要本地配置多个ssh，则要进行config配置
 ```bash
