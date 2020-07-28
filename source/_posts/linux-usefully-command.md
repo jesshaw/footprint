@@ -9,8 +9,12 @@ thumbnail: /gallery/blue-water9.jpg
 收集平时常用的一些linux命令。
 <!-- more -->
 
-<<<<<<< HEAD
-=======
+## 排序的方式查看进程使用情况
+
+```bash
+ps aux --sort -rss
+```
+
 ## ssh几个超时参数
 
 ### 客户端方案
@@ -22,9 +26,10 @@ Host *
 vim /etc/ssh/sshd_config
 ```
 
-#ClientAliveInterval 0改为ClientAliveInterval 500     （每500秒往客户端发送会话请求，保持连接）
+\#ClientAliveInterval 0改为ClientAliveInterval 500     （每500秒往客户端发送会话请求，保持连接）
 
-#ClientAliveCountMax 3      （去掉注释即可，3表示重连3次失败后，重启SSH会话）
+\#ClientAliveCountMax 3      （去掉注释即可，3表示重连3次失败后，重启SSH会话）
+
 ```bash
 systemctl restart sshd   #重启sshd服务
 ```
@@ -32,14 +37,13 @@ systemctl restart sshd   #重启sshd服务
 
 http://www.361way.com/ssh-autologout/4679.html
 
->>>>>>> master_bak
+
 ## 更改密码
 ```bash
 $  passwd
 ```
 
-<<<<<<< HEAD
-=======
+
 ## 查看大文本
 ```bash
 $  more filename
@@ -68,9 +72,6 @@ $ vim /etc/sysconfig/iptables-config
 $ systemctl restart iptables
 
 ```
-
-
->>>>>>> master_bak
 
 
 

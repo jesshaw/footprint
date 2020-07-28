@@ -10,12 +10,6 @@ thumbnail: /gallery/blue-water9.jpg
 收集平时常用的一些docker命令。
 <!-- more -->
 
-<<<<<<< HEAD
-=======
-###
-docker build src/main/docker -t trainmall:v3 
-
->>>>>>> master_bak
 ##### 拉取镜像
 ```bash
 docker pull
@@ -28,11 +22,7 @@ docker build
 
 ##### 列出镜像
 ```bash
-<<<<<<< HEAD
-docker imgaes
-=======
 docker images
->>>>>>> master_bak
 ```
 
 ##### 运行容器
@@ -48,9 +38,7 @@ docker ps -a
 
 ##### 删除容器
 ```bash
-<<<<<<< HEAD
 docker rm
-=======
 docker rm 1adbdsaf
  
 ```
@@ -58,20 +46,10 @@ docker rm 1adbdsaf
 ##### 删除所有已出的容器
 ```bash
 docker rmi `docker ps -a | grep  "Exited" | awk '{print $1}'`
- 
->>>>>>> master_bak
 ```
 
 ##### 删除镜像
 ```bash
-<<<<<<< HEAD
-docker rmi
-```
-
-##### 在host和container之间拷贝文件
-```bash
-docker cp
-=======
 docker rmi 1232a
 ```
 
@@ -86,7 +64,7 @@ docker rmi `docker images | grep  "<none>" | awk '{print $3}'`
 docker cp
 
 docker cp <containerId>:/file/path/within/container /host/path/targe
->>>>>>> master_bak
+
 ```
 
 ##### 保存改动为新的镜像
@@ -98,15 +76,11 @@ docker commit
 
 ```bash
 docker exec -it [container id] bash
-<<<<<<< HEAD
-```
-
-=======
-
 docker exec -it [container id] /bin/sh
 ```
 
 ##### 启动docker的jenkins时给jenkins授权,1000:1000为jenkins用户和用户组
+
 ```bash
 sudo chown -R 1000:1000 /home/docker/jenkins
 ```
@@ -180,7 +154,6 @@ echo "-----------------start api start---------------------"
 docker-compose up -d
 echo "-----------------start api end---------------------"
 
->>>>>>> master_bak
 
 
 
