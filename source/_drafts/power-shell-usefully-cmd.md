@@ -24,3 +24,7 @@ tasklist | findstr "14256"
 
 com.docker.backend.exe       14256 Services                   0      9,680 K
 ```
+## 杀进程
+```
+ taskkill /pid 14256 -f
+```
